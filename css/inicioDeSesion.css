@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --azul: #0f787f;
+    --amarillo: #ffcc00;
+    --grisOscuro:#1d1d1d;
+    --grisIntermedio: #b3b3b3 ;
+    --grisClaro:#f0f0f0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+  }
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 1em;
+    width: 100%;
+    background-color: white; 
+    z-index: 1000; 
+  }
+
+.header-container {
+    margin: 0 auto; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.logo img {
+    width: 10em;
+    height: auto;
+}
+
+.volver{
+    display: flex;
+}
+
+.volver a {
+    color: var(--amarillo); 
+    font-size: 1.2em;
+    text-decoration: none;
+    margin-top: 0.3em;
+    font-weight: bold;
+}
+
+.volver a:hover {
+    color: var(--azul);
+    text-decoration: underline;
+}
+
+.flecha img{
+    width: 2em;
+    height: auto;
+}
+
+
+.btn {
+    color: #fff;
+    border-radius: 2em;
+    padding: 4px 1em;
+    border: none;
+}
+
+
+.btn-azul {
+    background-color: var(--azul);
+    font-size: 1.2em;
+}
+.btn-azul:hover {
+    cursor: pointer;
+    background-color: var(--amarillo);
+}
+
+
+.btn-formularios {
+    width: 10%;
+    margin-top: 2em;
+    display: inline-block;
+    white-space: nowrap;
+    min-width: 10rem;
+}
+
+.Formulario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+
+form {
+    min-width: 130%; 
+    max-width: 500px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+h1 {
+    color: var(--azul);
+    font-weight: bold;
+    text-align: center;
+    font-size: 3em;
+    margin-bottom: 0.5em;
+    white-space: nowrap;
+}
+
+label {
+    color: var(--azul);
+    display: block;
+    margin-bottom: 0.5em;
+    font-size: 1.1em;
+    flex-wrap: nowrap;
+}
+
+
+input {
+    border: 1px solid var(--amarillo); 
+    border-radius: 1em;
+    padding: 0.6em;
+    height: 2.2em;
+    width: 100%;
+    margin-bottom: 1em;
+    font-size: 1em;
+    min-width: 20em;
+}
+
+input::placeholder{
+    color: var(--grisIntermedio);
+    font-size: 1em;
+}
+
+input:focus {
+    border-color: #0f787f; 
+    outline: none;
+}
+
+#texto-Olvido-De-Contraseña {
+    display: flex;
+    justify-content: flex-end;  
+    margin-top: -0.5em;
+    margin-left: 10em;
+}
+
+#texto-Olvido-De-Contraseña a {
+    color: var(--azul); 
+    font-size: 0.75em;
+    text-decoration: none; 
+}
+
+#texto-Olvido-De-Contraseña a:hover {
+    text-decoration: underline; 
+}
+
+#texto-Registro {
+    font-size: 0.7em;
+    margin-top: 1em;
+    text-align: center;
+}
+
+#texto-Registro a {
+    text-decoration: none;
+    color: var(--azul);
+}
+
+#texto-Registro a:hover {
+    text-decoration: underline;
+}
