@@ -1,0 +1,116 @@
+footer {
+    background-color: black;
+    height: 10em;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 3em;
+    padding-bottom: 2em;
+}
+
+.columna_footer a {
+    display: flex;
+    justify-content: flex-start;
+    color: #ffcc00;
+}
+
+.titulo_footer {
+    color: #0f787f;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: x-large;
+    font-weight: 100;
+    margin-bottom: 1em;
+}
+
+.item_inferior {
+    margin-bottom: 0.5em;
+    color: #ffcc00;
+}
+
+/*
+       código Nico
+       */
+
+
+.dropbtn {
+    color: black;
+    font-size: 17px;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+
+}
+
+.dropbtn-footer {
+    color: #ffcc00;
+}
+
+.dropbtn::after {
+    display: flex;
+    content: "\25BC";
+    color: #44a6a6;
+    margin-top: 2%;
+    margin-left: 5px;
+    font-size: 12px;
+}
+
+.dropdown {
+    position: relative;
+    z-index: 2;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: black;
+    padding: 10px;
+    top: 100%;
+    width: 150px;
+    overflow-y: auto;
+    max-height: 100px;
+}
+
+.dropdown-content::-webkit-scrollbar {
+    width: 0.5rem;
+    /* Ancho del scrollbar vertical */
+}
+
+.dropdown-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    /* Color de la pista */
+    border-radius: 2rem;
+    border-color: #0f787f;
+    border: 1px solid #0f787f;
+}
+
+.dropdown-content::-webkit-scrollbar-thumb {
+    background: #a1dbdb;
+    /* Color del asa */
+    border-radius: 2rem;
+    border: 0.5px solid black;
+}
+
+
+.dropdown-content li {
+    list-style: none;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 8px;
+    text-decoration: none;
+    color: #0f787f;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    color: #0f787f;
+    background-color: transparent;
+}

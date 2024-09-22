@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+ 
+:root {
+    --azul: #0f787f;
+    --amarillo: #ffcc00;
+    --grisOscuro:#1d1d1d;
+    --grisIntermedio: #b3b3b3 ;
+    --grisClaro:#f0f0f0;
+}
+ 
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    list-style: none;
+}
+ 
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+ 
+.header {
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    z-index: 1000;
+    box-shadow: 1px 13px 20px 0px rgba(0, 0, 0, 0.1);
+}
+ 
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 20px;
+}
+ 
+.item-header {
+    display: flex;
+}
+ 
+.item-header-carrito {
+    width: 15%;
+    margin-right: -2em;
+    justify-content: right;
+}
+ 
+ 
+.img-carrito {
+    width: 4%;
+    margin-left: 10em;
+}
+ 
+.numero-carrito-fijo {
+    font-size: small;
+    color: var(--azul);
+}
+ 
+.logo-container {
+    flex: 1;
+}
+ 
+.logo {
+    max-height: 50px;
+}
+ 
+.nav-bar {
+    flex: 2;
+    text-align: center;
+}
+ 
+.nav-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+ 
+.nav-menu li {
+    margin: 0 15px;
+    position: relative;
+    display: inline-block;
+ 
+}
+ 
+.nav-menu li:hover ul{
+  display: block;
+}
+ 
+ 
+.nav-menu ul{
+    display: none;
+    position: absolute;
+    width: 205%;
+    top: 100%;
+    left: 0;
+    background-color: var(--grisClaro);
+    border-radius: 2em;
+  }
+ 
+  .nav-menu ul li a{
+    display: block;
+   padding: 10px;
+   text-decoration: none;
+   color: var(--grisOscuro);
+ 
+  }
+ 
+ 
+.nav-menu a {
+    text-decoration: none;
+    color: var(--grisOscuro);
+    font-weight: bold;
+    transition: color 0.3s;
+}
+ 
+ 
+.nav-menu a:hover {
+    color: var(--azul);
+}
+ 
+.header-actions {
+    flex: 1;
+    text-align: right;
+    margin-right:-5em ;
+}
+ 
+ 
+.btn {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 2em;
+    background-color: var(--azul);
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background-color 0.3s;
+}
+ 
+.btn:hover {
+    background-color: var(--amarillo);
+}

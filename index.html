@@ -4,90 +4,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/estilos.css">
-    <!--<link rel="stylesheet" href="./css/header.css">
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/nav.css">
-    <link rel="stylesheet" href="./css/footer.css">-->
-    <title>Pagina de Inicio</title>
-    <!--ESTO ES EL LOGO QUE APARECERA EN NOMBRE DE LA PÁGINA-->
-
-    <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/header&nav.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <title>Página de Inicio</title>
     <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="favicon/android-icon-192x192.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-    <link rel="manifest" href="favicon/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 </head>
 
 <body>
-
     <header class="header">
-        <figure class="item-header item-header-logo">
-            <a href="index.html">
-                <img src="images/LogoTest.png" class="logo" alt="Logo Aprender">
-            </a>
-        </figure>
-        <article class="item-header item-header-barra">
-            <input class="barra" type="text" list="cursos" placeholder="Buscar cursos" name="Buscador de cursos">
-            <datalist id="cursos">
-                <option value="curso 1">
-                <option value="curso 2">
-                <option value="curso 3">
-                <option value="curso 4">
-            </datalist>
-        </article>
-
-        <figure class="item-header item-header-carrito">
+        <div class="header-content">
+            <figure class="logo-container">
+                <a href="index.html">
+                    <img src="images/LogoTest.png" alt="Logo Aprender" class="logo">
+                </a>
+            </figure>
+            <nav class="nav-bar">
+                <ul class="nav-menu">
+                    <li><a href="#">Cursos</a>
+                        <ul>
+                            <li class="contenido"><a href="./html/detalleDeCurso.html">Curso 1</a></li>
+                            <li class="contenido"><a href="./html/detalleDeCurso.html">Curso 2</a></li>
+                            <li class="contenido"><a href="./html/detalleDeCurso.html">Curso 3</a></li>
+                            <li class="contenido"><a href="./html/detalleDeCurso.html">Curso 4</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Empresas</a></li>
+                    <li><a href="#">Giftcard</a></li>
+                    <li><a href="#">Próximas Fechas</a></li>
+                </ul>
+            </nav>
             <img class="img-carrito" src="images/carritoDeComprasColor.png" alt="CarroDeCompras">
             <figcaption class="numero-carrito-fijo"><strong>2</strong></figcaption>
-        </figure>
+            <div class="header-actions">
+                <button class="btn">Iniciar Sesión</button>
+                <button class="btn">Registrarse</button>
+            </div>
+        </div>
     </header>
-
-    <nav>
-        <!-- Estaba pensando agregar tipo una línea sombreada abajo del nav. Porque es toda blanca la página 
-         valen ya hizo un diseño en Canva, revisarlo-->
-        <ul class="nav-items-menu">
-            <li class="desplegable items item-principio">
-                <h4>Cursos</h4>
-                <button class="flecha-cursos"> &#9662;</button>
-                <ul class="contenedor-desplegable">
-                    <li class="contenido"><a href="./html/detalleDeCurso.html">Curso 1</a></li>
-                    <li class="contenido"><a href="./html/detalleDeCurso.html">Curso 2</a></li>
-                    <li class="contenido"><a href="./html/detalleDeCurso.html">Curso 3</a></li>
-                    <li class="contenido"><a href="./html/detalleDeCurso.html">Curso 4</a></li>
-                </ul>
-            </li>
-            <li class="items">
-                <a href="./html/formularioEmpresa.html">
-                    <h4> Empresas </h4>
-                </a>
-
-            </li>
-
-            <li class="items">
-                <a href="./html/giffCard.html">
-                    <h4> Giftcard</h4>
-                </a>
-            </li>
-            <li class="items item-final">
-                <a href="./html/calendario.html">
-                    <h4> Proximas fechas </h4>
-                </a>
-            </li>
-        </ul>
-    </nav>
     <!-- BARRA DEGRADE -->
     <main class="main">
         <!-- SECCION CARROUSEL -->
@@ -138,7 +94,7 @@
         </section>
 
         <section class="section-main-cursos-destacados">
-            <p class="titulo-cursos-destacados"> Cursos Destacados</p>
+            <p class="titulo-cursos-destacados"> Oferta de</p>
 
             <article class="article-cursos-destacados">
                 <div class="div-curso-destacado">
@@ -161,7 +117,7 @@
                             </div>
                             <div class="segunda-particion">
                                 <p>VIRTUAL</p>
-                                <button class="boton-comprar-curso" type="submit">Comprar</button>
+                                
                             </div>
                         </div>
                     </div>
@@ -169,7 +125,7 @@
                 <div class="div-curso-destacado">
                     <figure class="bloque-curso-destacado"> <img class="imagen-curso-destacado"
                             src="./images/ciberseguridad.png" alt="curso de ciberseguridad">
-                        <figcaption><a class="vinculo-detalle-curso" href="./html/detalleDeCurso.html">Ver Detalle</a>
+                        <figcaption><a class="btn" href="./html/detalleDeCurso.html">Ver Detalle</a>
                         </figcaption>
                     </figure>
                     <div class="bloque-curso-destacado">
@@ -186,17 +142,110 @@
                             </div>
                             <div class="segunda-particion">
                                 <p>VIRTUAL</p>
-                                <button class="boton-comprar-curso" type="submit">Comprar</button>
+                                
                             </div>
                         </div>
             </article>
-            <div class="contenedor-circulo">
-                <div class="circulo pequenio"></div>
-                <div class="circulo medio"></div>
-                <div class="circulo grande"></div>
-                <div class="circulo medio"></div>
-                <div class="circulo pequenio"></div>
+            <article class="article-cursos-destacados">
+            <div class="div-curso-destacado">
+                <figure class="bloque-curso-destacado"><img class="imagen-curso-destacado" src="./images/uxui.png"
+                        alt="curso de experiencia e interfaz de usuario">
+                    <figcaption><a class="vinculo-detalle-curso btn" href="./html/detalleDeCurso.html">Ver Detalle</a>
+                    </figcaption>
+                </figure>
+                <div class="bloque-curso-destacado">
+                    <div>
+                        <p class="titulo-curso">Diseño UX/UI</p>
+                        <p>Lonioasdmpa asdasdasd
+                            adasdasda kfopdskf ksdof
+                            sdfsdokopf ksod sdkofps</p>
+                    </div>
+                    <div class="particion-datos-curso">
+                        <div class="primer-particion">
+                            <p><strong>15 horas</strong></p>
+                            <p><strong>$0000</strong></p>
+                        </div>
+                        <div class="segunda-particion">
+                            <p>VIRTUAL</p>
+                            
+                        </div>
+                    </div>
+                </div>
             </div>
+            <div class="div-curso-destacado">
+                <figure class="bloque-curso-destacado"> <img class="imagen-curso-destacado"
+                        src="./images/ciberseguridad.png" alt="curso de ciberseguridad">
+                    <figcaption><a class="vinculo-detalle-curso" href="./html/detalleDeCurso.html">Ver Detalle</a>
+                    </figcaption>
+                </figure>
+                <div class="bloque-curso-destacado">
+                    <div>
+                        <p class="titulo-curso">Ciberseguridad</p>
+                        <p>Lonioasdmpa asdasdasd
+                            adasdasdakfopdskf ksdof
+                            sdfsdokopf ksod sdkofps</p>
+                    </div>
+                    <div class="particion-datos-curso">
+                        <div class="primer-particion">
+                            <p><strong>20 horas</strong></p>
+                            <p><strong>$0000</strong></p>
+                        </div>
+                        <div class="segunda-particion">
+                            <p>VIRTUAL</p>
+                            
+                        </div>
+                    </div>
+                    </article>
+                    <article class="article-cursos-destacados">
+                        <div class="div-curso-destacado">
+                            <figure class="bloque-curso-destacado"><img class="imagen-curso-destacado" src="./images/uxui.png"
+                                    alt="curso de experiencia e interfaz de usuario">
+                                <figcaption><a class="vinculo-detalle-curso" href="./html/detalleDeCurso.html">Ver Detalle</a>
+                                </figcaption>
+                            </figure>
+                            <div class="bloque-curso-destacado">
+                                <div>
+                                    <p class="titulo-curso">Diseño UX/UI</p>
+                                    <p>Lonioasdmpa asdasdasd
+                                        adasdasda kfopdskf ksdof
+                                        sdfsdokopf ksod sdkofps</p>
+                                </div>
+                                <div class="particion-datos-curso">
+                                    <div class="primer-particion">
+                                        <p><strong>15 horas</strong></p>
+                                        <p><strong>$0000</strong></p>
+                                    </div>
+                                    <div class="segunda-particion">
+                                        <p>VIRTUAL</p>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="div-curso-destacado">
+                            <figure class="bloque-curso-destacado"> <img class="imagen-curso-destacado"
+                                    src="./images/ciberseguridad.png" alt="curso de ciberseguridad">
+                                <figcaption><a class="vinculo-detalle-curso" href="./html/detalleDeCurso.html">Ver Detalle</a>
+                                </figcaption>
+                            </figure>
+                            <div class="bloque-curso-destacado">
+                                <div>
+                                    <p class="titulo-curso">Ciberseguridad</p>
+                                    <p>Lonioasdmpa asdasdasd
+                                        adasdasdakfopdskf ksdof
+                                        sdfsdokopf ksod sdkofps</p>
+                                </div>
+                                <div class="particion-datos-curso">
+                                    <div class="primer-particion">
+                                        <p><strong>20 horas</strong></p>
+                                        <p><strong>$0000</strong></p>
+                                    </div>
+                                    <div class="segunda-particion">
+                                        <p>VIRTUAL</p>
+                                        
+                                    </div>
+                                </div>
+                    </article>
         </section>
         <!-- SECCION MEDIOS DE PAGO -->
         <section class="section-medios-de-pago">
