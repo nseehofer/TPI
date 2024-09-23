@@ -113,50 +113,73 @@ details p {
     font-size: 16px;
     color: #f1c40f;
 }
-
-/* Cursos relacionados */
-.related-courses {
-    padding: 20px;
-    background-color: white;
-    margin: 20px auto;
-    max-width: 800px;
+.article-cursos-destacados {
     display: flex;
+    width: 100%;
+    justify-content: center;
+    height: 12rem;
+    gap: 5%;
 }
 
-.related-courses h3 {
-    font-size: 20px;
-    margin-bottom: 20px;
+.div-curso-destacado {
+    display: flex;
+    background-color: #f0f0f0;
+    border-radius: 2rem;
+    width: 30%;
+    gap: 5%;
+
 }
 
-.course-card {
-    width: 45%;
-    margin-right: 2%;
-    padding: 15px;
-    border: 1px solid #ccc;
-    background-color: #f9f9f9;
-    text-align: center;
-    border-radius: 5px;
+.titulo-curso {
+    color: #0f787f;
+    font-size: x-large;
+    font-weight: bold;
 }
 
-.course-card h4 {
-    font-size: 18px;
-    color: #00bfa5;
+.bloque-curso-destacado {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 55%;
 }
 
-.course-card p {
-    font-size: 16px;
+.particion-datos-curso {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    font-weight: bold;
+    align-items: center;
 }
 
-.course-card a {
-    display: block;
-    padding: 10px;
-    background-color: #00bfa5;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 10px;
+.segunda-particion {
+    padding-right: 10%;
 }
 
-.course-card a:hover {
-    background-color: #008e76;
+.contenedor_boton {
+    position: absolute;
+    bottom: 3%;
+    transform: translate(-50%);
+    left: 48%;
+}
+
+.imagen-curso-destacado {
+    align-self: center;
+    width: 90%;
+    border-radius: 2rem;
+}
+.btn_detalle {
+    padding: 6px 5px;
+    border: none;
+    border-radius: 2em;
+    background-color: var(--azul);
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background-color 0.3s;
+}
+
+.btn_detalle:hover {
+    background-color: var(--amarillo);
 }
