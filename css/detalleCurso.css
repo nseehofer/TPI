@@ -1,0 +1,162 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+/* Volver */
+.volver {
+    text-decoration: none;
+    font-size: 18px;
+    color: #f1c40f;
+    margin: 20px;
+    display: inline-block;
+}
+
+/* Detalle del curso */
+.course-details {
+    display: flex;
+    padding: 20px;
+    background-color: white;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.course-image img {
+    width: 200px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.course-info {
+    margin-left: 20px;
+}
+
+.course-info h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.course-info p {
+    margin: 5px 0;
+}
+
+.inscribirse {
+    padding: 10px 20px;
+    background-color: #00bfa5;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.inscribirse:hover {
+    background-color: #008e76;
+}
+
+/* Contenidos por clase */
+.content-instructor {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.class-contents {
+    width: 50%;
+}
+
+.class-contents h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+details {
+    background-color: #e6f7f7;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+details[open] summary {
+    font-weight: bold;
+    color: #00796b;
+}
+
+details summary {
+    font-size: 18px;
+}
+
+details p {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+/* Instructor */
+.instructor-info {
+    text-align: center;
+}
+
+.instructor-info img {
+    width: 75%;
+    height: 75%;
+    border-radius: 50%;
+}
+
+.instructor-info h3 {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.instructor-info span {
+    font-size: 16px;
+    color: #f1c40f;
+}
+
+/* Cursos relacionados */
+.related-courses {
+    padding: 20px;
+    background-color: white;
+    margin: 20px auto;
+    max-width: 800px;
+    display: flex;
+}
+
+.related-courses h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.course-card {
+    width: 45%;
+    margin-right: 2%;
+    padding: 15px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.course-card h4 {
+    font-size: 18px;
+    color: #00bfa5;
+}
+
+.course-card p {
+    font-size: 16px;
+}
+
+.course-card a {
+    display: block;
+    padding: 10px;
+    background-color: #00bfa5;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.course-card a:hover {
+    background-color: #008e76;
+}
