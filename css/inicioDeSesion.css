@@ -19,15 +19,20 @@ html, body {
     height: 100%;
     margin: 0;
   }
+  
   header {
-    position: fixed;
-    top: 0;
-    left: 0;
     padding: 1em;
     width: 100%;
     background-color: white; 
-    z-index: 1000; 
+
   }
+
+  .Formulario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+}
 
 .header-container {
     margin: 0 auto; 
@@ -91,16 +96,10 @@ html, body {
     min-width: 10rem;
 }
 
-.Formulario {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-}
 
 
 form {
-    min-width: 130%; 
+    min-width: 100%; 
     max-width: 500px; 
     display: flex;
     flex-direction: column;
@@ -115,6 +114,7 @@ h1 {
     font-size: 3em;
     margin-bottom: 0.5em;
     white-space: nowrap;
+    
 }
 
 label {
