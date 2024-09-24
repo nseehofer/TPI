@@ -157,12 +157,14 @@ html {
 
 /* HEADER RESPONSIVE LISTO*/
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 575px) {
     .header {
         width: 100%;
     }
 
-    .header .ocultar-en-movil {
+    .header .contenedor_carrito,
+    .header form,
+    .nav-bar {
         display: none;
     }
 
@@ -174,7 +176,7 @@ html {
 
     .header {
         justify-content: center;
-        gap:5%;
+        gap: 5%;
     }
 
     .header .logo-container {
@@ -195,6 +197,100 @@ html {
         font-size: 74%;
     }
 
-   
 
+
+}
+
+@media screen and (min-width: 576px) and (max-width: 767px) {
+
+    .header {
+        width: 100%;
+    }
+
+    .contenedor_carrito,
+    .nav-bar {
+        display: none
+    }
+
+    .header .logo-container,
+    .header .contenedor_carrito_btn {
+        display: flex;
+        /* O el estilo que necesites */
+    }
+
+    .header {
+        justify-content: center;
+        gap: 5%;
+    }
+
+    .header .logo-container {
+        width: 35%;
+    }
+
+    .header .logo-container img {
+        width: 100%;
+    }
+
+    .header .contenedor_carrito_btn {
+        justify-content: flex-end;
+        width: 55%;
+    }
+
+    .header .contenedor_carrito_btn .btn {
+        padding: 4px 8px;
+        font-size: 74%;
+    }
+
+
+
+
+
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+    .header {
+        width: 100%;
+    }
+
+    .contenedor_carrito,
+    .header form {
+        display: none
+    }
+
+    .nav-bar {
+        display: block;
+        text-wrap: nowrap;
+    }
+
+    .header .logo-container,
+    .header .contenedor_carrito_btn {
+        display: flex;
+        /* O el estilo que necesites */
+    }
+
+
+
+    .header {
+        justify-content: center;
+        gap: 5%;
+    }
+
+    .header .logo-container {
+        width: 35%;
+    }
+
+    .header .logo-container img {
+        width: 100%;
+    }
+
+    .header .contenedor_carrito_btn {
+        justify-content: flex-start;
+        width: 55%;
+    }
+
+    .header .contenedor_carrito_btn .btn {
+        padding: 4px 8px;
+        font-size: 74%;
+    }
 }

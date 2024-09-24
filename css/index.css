@@ -11,6 +11,7 @@
 main {
     display: flex;
     flex-direction: column;
+    width:100%;
 }
 
 /*CARROUSEL*/
@@ -264,9 +265,6 @@ h5 {
     width: 50%;
 }
 
-@media screen and (max-width: 768px) {
-    main{
-        width:100%;
+@media screen and (max-width: 575px) {
 
-    }
 }

@@ -78,19 +78,22 @@
 }
 
 .mostrar_en_movil {
-    display: none
+    display: none;
 }
 
 /* UTILIZO EL OCULTAR EN MOVIL PARA ALGUNOS ELEMENTOS DE MI CALENDARIO, RECORDAR QUE ESE CODIGO ESTA EN EL MEDIA QUERIES DEL HEADER&FOOTER */
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width:575px) {
     .main_proximas_fechas {
         width: 100%;
         height: auto;
     }
 
-    .ocultar-en-movil {
-        display: none;
+    .img-flecha,
+    .nav-bar,
+    .header form,
+    .contenedor_carrito_btn .contenedor_carrito,.ocultar-en-movil {
+        display: none
     }
 
     .main_proximas_fechas .section_contenedor {
@@ -98,17 +101,6 @@
         position: relative;
     }
 
-    /*.main_proximas_fechas .img-flecha {
-        position: absolute;
-        height: 4%;
-        top: 14.5%;
-        left: 30%;
-    }
-
-    .main_proximas_fechas .flecha-derecha {
-        left: 69.5%;
-        top:14.5%;
-    }*/
 
     .mostrar_en_movil {
         display: block;
@@ -154,4 +146,114 @@
         text-wrap: nowrap;
     }
 
+}
+
+@media screen and (min-width: 576px) and (max-width: 767px) {
+
+    .main_proximas_fechas {
+        width: 100%;
+        height: auto;
+    }
+
+    .img-flecha {
+        display: none;
+    }
+
+
+    .main_proximas_fechas .section_contenedor {
+        height: 30rem;
+        position: relative;
+    }
+
+
+    .mostrar_en_movil {
+        display: block;
+        position: absolute;
+        text-align: center;
+        top: 8%;
+        font-weight: 600;
+        border-radius: 2rem;
+        padding: 1%;
+        border: 0.5px solid #ffcc00;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .mostrar_en_movil .flecha-mes {
+        color: #0F787f;
+    }
+
+    /* REVISAR EL WIDTH PORQUE ESTOY OCULTANDO LAS COLUMNAS DEL SABADO Y DOMINGO */
+
+    .main_proximas_fechas .section_contenedor .section_principal .columna_fecha {
+        width: 19%;
+        justify-content: center;
+    }
+
+    /* REVISAR SI EL 70% LO PUEDO PONER TODO EN UN CONTENEDOR DE CSS */
+
+    .columna_fecha .dia {
+        font-size: 70%;
+        overflow: hidden;
+    }
+
+    .columna_fecha .contenedor_fecha,
+    .columna_fecha .numero_fecha,
+    .columna_fecha .contenedor_curso {
+        font-size: 70%;
+        height: 15%;
+    }
+
+
+    .contenedor_fecha .contenedor_curso {
+        overflow: hidden;
+        text-wrap: nowrap;
+    }
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+
+    .main_proximas_fechas {
+        width: 100%;
+        height: auto;
+    }
+
+    .mostrar_en_movil {
+        display: none;
+    }
+
+    .main_proximas_fechas .section_contenedor {
+        height: 30rem;
+        position: relative;
+    }
+
+
+
+    /* REVISAR EL WIDTH PORQUE ESTOY OCULTANDO LAS COLUMNAS DEL SABADO Y DOMINGO */
+
+    .main_proximas_fechas .section_contenedor .section_principal .columna_fecha {
+        width: 19%;
+        justify-content: center;
+    }
+
+    /* REVISAR SI EL 70% LO PUEDO PONER TODO EN UN CONTENEDOR DE CSS */
+
+    .columna_fecha .dia {
+        font-size: 70%;
+        overflow: hidden;
+    }
+
+    .columna_fecha .contenedor_fecha,
+    .columna_fecha .numero_fecha,
+    .columna_fecha .contenedor_curso {
+        font-size: 70%;
+        height: 15%;
+    }
+
+
+    .contenedor_fecha .contenedor_curso {
+        overflow: hidden;
+        text-wrap: nowrap;
+    }
 }
