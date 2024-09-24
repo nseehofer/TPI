@@ -1,3 +1,11 @@
+:root {
+    --azul: #0f787f;
+    --amarillo: #ffcc00;
+    --grisOscuro: #1d1d1d;
+    --grisIntermedio: #b3b3b3;
+    --grisClaro: #f0f0f0;
+}
+
 /* MAIN */
 
 main {
@@ -8,15 +16,17 @@ main {
 /*CARROUSEL*/
 
 .section-main-carrousel {
-    display: flex;
-    height: 50%;
-    width: 100%;
-    overflow: hidden;
+    width: 110rem;
+    align-self: center;
+}
 
+.contenedor_imagen_carrousel {
+    width: 100%;
+    position: relative;
 }
 
 .img-carrousel-pincipal {
-    height: 33rem;
+    height: 50rem;
     width: 100%;
     object-fit: cover;
 }
@@ -25,64 +35,73 @@ main {
     position: absolute;
     color: #ffcc00;
     width: 5%;
-    margin-top: 17%;
-    margin-left: 15%;
+    top: 50%;
+    left: 15%;
+    transform: translateY(-50%);
 }
 
 .img-flecha-carrousel-derecha {
     position: absolute;
     color: #ffcc00;
     width: 5%;
-    margin-top: 17%;
-    margin-left: 80%;
+    top: 50%;
+    right: 15%;
+    transform: translateY(-50%);
 }
 
 /* TUTORIAL */
 
 .section-main-tutorial {
     display: flex;
-    justify-content: space-around;
     align-items: center;
-    width: 100%;
+    width: 110rem;
+    align-self: center;
 }
 
 .elementos-del-tutorial {
     display: flex;
     width: 50%;
+    justify-content: flex-end;
 }
 
-.article-tutorial-titulo,
+.elementos-del-tutorial .div-texto-tutorial {
+    width: 50%;
+}
+
 .article-tutorial {
     flex-direction: column;
     align-items: center;
 }
 
-h2 {
+
+.tutorial-titulo {
     font-size: 3.5rem;
+    font-weight: bold;
 }
 
-h3 {
-    margin-right: 12.5%;
+.tutorial-subtitulo {
     font-size: 2rem;
-    color: #0f787f;
+    color: var(--azul);
+    font-weight: bold;
 }
 
-.descripcion-paso-uno {
-    padding-left: 3%;
-}
+
 
 .div-tutorial {
     display: flex;
-    flex-direction: column;
     height: 12rem;
-    width: 100%;
-    justify-content: center;
+    width: 55%;
+    gap: 5%;
+}
 
+.div-tutorial .div-imagen {
+    display: flex;
+    justify-content: center;
+    height: 4rem;
+    align-self: center;
 }
 
 .tutorial-descripcion {
-    padding-top: 1%;
-    text-align: left;
     align-self: center;
 }
 
@@ -96,44 +115,41 @@ h5 {
     color: #0f787f;
 }
 
-.img-paso-tutorial,
-.paso-uno,
-.paso-dos,
-.paso-tres {
-    position: absolute;
-    color: #ffcc00;
-    width: 5%;
-    padding-left: 12%;
-}
+
 
 /* CURSOS DESTACADOS */
 
-.titulo-cursos-destacados {
-    margin-top: 7%;
+.div-titulo-oferta-cursos {
+    display: flex;
     font-size: 2.2rem;
     font-weight: bold;
+    padding-top: 8%;
 }
 
 .section-main-cursos-destacados {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    gap: 5rem;
+    align-self: center;
+    width: 110rem;
 }
 
 .article-cursos-destacados {
     display: flex;
     width: 100%;
-    justify-content: space-around;
+    justify-content: center;
+    height: 12rem;
+    gap: 5%;
 }
 
 .div-curso-destacado {
     display: flex;
     background-color: #f0f0f0;
     border-radius: 2rem;
-    height: 18rem;
-    margin: 2%;
-    width: 50%;
+    width: 30%;
+    gap: 5%;
+
 }
 
 .titulo-curso {
@@ -143,13 +159,11 @@ h5 {
 }
 
 .bloque-curso-destacado {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    width: 50%;
-    height: 90%;
-    margin: 2%;
-
+    width: 55%;
 }
 
 .particion-datos-curso {
@@ -157,66 +171,27 @@ h5 {
     width: 100%;
     justify-content: space-between;
     font-weight: bold;
+    align-items: center;
 }
 
-.boton-comprar-curso {
-    border: none;
-    border-radius: 2rem;
-    padding: 7%;
-    background-color: #ffcc00;
+.segunda-particion {
+    padding-right: 10%;
 }
 
-.boton-comprar-curso:hover {
-    border: none;
-    font-weight: bold;
-    border-radius: 2rem;
-    padding: 7%;
-    background-color: #ffcc00;
-    cursor: pointer;
-}
-
-.vinculo-detalle-curso {
-    margin-left: 25%;
-    margin-right: 25%;
-
-
-
+.contenedor_boton {
+    position: absolute;
+    bottom: 6%;
+    transform: translate(-50%);
+    left: 48%;
 }
 
 .imagen-curso-destacado {
-    height: auto;
-    max-width: 100%;
+    align-self: center;
+    width: 90%;
     border-radius: 2rem;
 }
 
-.contenedor-circulo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
-.circulo {
-    background-color: #0f787f;
-    border-radius: 50%;
-    margin: 0 10px;
-}
-
-.circulo.pequenio {
-    width: 1rem;
-    height: 1rem;
-    background-color: #a1dbdb;
-}
-
-.circulo.medio {
-    width: 1.5rem;
-    height: 1.5rem;
-    background-color: #a1dbdb;
-}
-
-.circulo.grande {
-    width: 2.5rem;
-    height: 2.5rem;
-}
 
 /*MEDIOS DE PAGO*/
 
@@ -224,10 +199,11 @@ h5 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 20rem;
-    justify-content: space-between;
-    margin-top: 10%;
-    margin-bottom: 10%;
+    height: 30rem;
+    width: 110rem;
+    gap: 10%;
+    padding-top: 5%;
+    align-self: center;
 }
 
 .article-titulo-medio-de-pago {
@@ -244,9 +220,10 @@ h5 {
 .contenedor-carrousel-medio-de-pago {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     width: 100%;
-    height: 65%;
+    height: 50%;
+    gap: 4%;
 }
 
 .items-medio-de-pago {
@@ -271,6 +248,25 @@ h5 {
     align-items: center;
 }
 
+.contenedor-carrousel-medio-de-pago .izquierda {
+    justify-content: flex-end;
+}
+
+.contenedor-carrousel-medio-de-pago .derecha {
+    justify-content: flex-start;
+}
+
 .img-flecha-carrousel-MdPago {
     width: 50%;
+}
+
+.img-flecha-carrousel-MdPago {
+    width: 50%;
+}
+
+@media screen and (max-width: 768px) {
+    main{
+        width:100%;
+
+    }
 }

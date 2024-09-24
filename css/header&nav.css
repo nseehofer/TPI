@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
- 
+
 :root {
     --azul: #0f787f;
     --amarillo: #ffcc00;
-    --grisOscuro:#1d1d1d;
-    --grisIntermedio: #b3b3b3 ;
-    --grisClaro:#f0f0f0;
+    --grisOscuro: #1d1d1d;
+    --grisIntermedio: #b3b3b3;
+    --grisClaro: #f0f0f0;
 }
- 
+
 * {
     margin: 0;
     padding: 0;
@@ -15,65 +15,65 @@
     text-decoration: none;
     list-style: none;
 }
- 
-body, html {
+
+body,
+html {
     margin: 0;
     padding: 0;
     width: 100%;
 }
- 
+
 .header {
+    display: flex;
     position: sticky;
     top: 0;
     background-color: #fff;
     border-bottom: 1px solid #ddd;
     z-index: 1000;
     box-shadow: 1px 13px 20px 0px rgba(0, 0, 0, 0.1);
-}
- 
-.header-content {
-    display: flex;
-    justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 10px 20px;
+    height: 5rem;
+    justify-content: space-around;
 }
- 
-.item-header {
+
+
+
+
+.contenedor_carrito {
+    position: relative;
     display: flex;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
 }
- 
-.item-header-carrito {
-    width: 15%;
-    margin-right: -2em;
-    justify-content: right;
-}
- 
- 
+
 .img-carrito {
-    width: 4%;
-    margin-left: 10em;
+    width: 100%;
+    height: auto;
 }
- 
+
 .numero-carrito-fijo {
+    position: absolute;
+    left: 70%;
+    font-weight: bold;
     font-size: small;
     color: var(--azul);
+    background-color: var(--amarillo);
+    border-radius: 10rem;
+    width: 30%;
+    text-align: center;
 }
- 
-.logo-container {
-    flex: 1;
-}
- 
+
+
+
 .logo {
     max-height: 50px;
 }
- 
+
 .nav-bar {
-    flex: 2;
     text-align: center;
 }
- 
+
 .nav-menu {
     list-style: none;
     padding: 0;
@@ -81,57 +81,64 @@ body, html {
     display: flex;
     justify-content: center;
 }
- 
+
 .nav-menu li {
     margin: 0 15px;
     position: relative;
     display: inline-block;
- 
+
 }
- 
-.nav-menu li:hover ul{
-  display: block;
+
+.nav-menu li:hover ul {
+    display: block;
 }
- 
- 
-.nav-menu ul{
+
+
+.nav-menu ul {
     display: none;
     position: absolute;
-    width: 205%;
-    top: 100%;
-    left: 0;
+    right: -110%;
     background-color: var(--grisClaro);
     border-radius: 2em;
-  }
- 
-  .nav-menu ul li a{
+}
+
+.nav-menu ul li a {
     display: block;
-   padding: 10px;
-   text-decoration: none;
-   color: var(--grisOscuro);
- 
-  }
- 
- 
+    padding: 10px;
+    text-decoration: none;
+    color: var(--grisOscuro);
+
+}
+
+
 .nav-menu a {
     text-decoration: none;
     color: var(--grisOscuro);
     font-weight: bold;
     transition: color 0.3s;
 }
- 
- 
+
+
 .nav-menu a:hover {
     color: var(--azul);
 }
- 
-.header-actions {
-    flex: 1;
-    text-align: right;
-    margin-right:-5em ;
+
+.header form input {
+    border-radius: 5rem;
+    border: 1px solid var(--grisOscuro);
+    height: 1.5rem;
+    width: 12rem;
+    padding-left: 5%;
 }
- 
- 
+
+
+
+.contenedor_carrito_btn {
+    display: flex;
+
+}
+
+
 .btn {
     padding: 8px 15px;
     border: none;
@@ -143,7 +150,51 @@ body, html {
     margin-left: 10px;
     transition: background-color 0.3s;
 }
- 
+
 .btn:hover {
     background-color: var(--amarillo);
+}
+
+/* HEADER RESPONSIVE LISTO*/
+
+@media screen and (max-width: 768px) {
+    .header {
+        width: 100%;
+    }
+
+    .header .ocultar-en-movil {
+        display: none;
+    }
+
+    .header .logo-container,
+    .header .contenedor_carrito_btn {
+        display: flex;
+        /* O el estilo que necesites */
+    }
+
+    .header {
+        justify-content: center;
+        gap:5%;
+    }
+
+    .header .logo-container {
+        width: 35%;
+    }
+
+    .header .logo-container img {
+        width: 100%;
+    }
+
+    .header .contenedor_carrito_btn {
+        justify-content: flex-end;
+        width: 55%;
+    }
+
+    .header .contenedor_carrito_btn .btn {
+        padding: 4px 8px;
+        font-size: 74%;
+    }
+
+   
+
 }
