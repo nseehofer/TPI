@@ -1,35 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+:root {
+    --azul: #0f787f;
+    --amarillo: #ffcc00;
+    --grisOscuro: #1d1d1d;
+    --grisIntermedio: #b3b3b3;
+    --grisClaro: #f0f0f0;
+}
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     margin: 0;
     padding: 0;
 }
+
 /* Volver */
 .volver {
     text-decoration: none;
     font-size: 18px;
-    color: #f1c40f;
+    color: var(--amarillo);
     margin: 20px;
     display: inline-block;
+}
+
+@media (max-width: 768px) {
+    .volver {
+        font-size: 16px;
+        margin: 10px 5%;
+    }
 }
 
 /* Detalle del curso */
 .course-details {
     display: flex;
+    flex-wrap: wrap;
     padding: 20px;
     background-color: white;
     margin: 20px auto;
     max-width: 800px;
+    justify-content: center;
 }
 
 .course-image img {
-    width: 200px;
+    width: 300px;
     height: auto;
     border-radius: 8px;
 }
 
 .course-info {
     margin-left: 20px;
+    max-width: 90%;
+    text-align: center;
 }
 
 .course-info h2 {
@@ -43,7 +63,7 @@ body {
 
 .inscribirse {
     padding: 10px 20px;
-    background-color: #00bfa5;
+    background-color: var(--azul);
     color: white;
     border: none;
     border-radius: 5px;
@@ -51,14 +71,31 @@ body {
 }
 
 .inscribirse:hover {
-    background-color: #008e76;
+    background-color: var(--amarillo);
 }
 
-/* Contenidos por clase */
+@media (max-width: 768px) {
+    .course-details {
+        flex-direction: column;
+        align-items: center;
+        max-width: 100%;
+    }
+
+    .course-image img {
+        width: 80%;
+    }
+
+    .course-info {
+        margin-left: 0;
+    }
+}
+
+/* Contenidos por clase e Instructor */
 .content-instructor {
     display: flex;
     justify-content: space-around;
     padding: 20px;
+    flex-wrap: wrap;
 }
 
 .class-contents {
@@ -88,7 +125,7 @@ details summary {
     font-size: 18px;
 }
 
-details p {
+details li {
     margin: 10px 0;
     padding-left: 20px;
 }
@@ -96,11 +133,12 @@ details p {
 /* Instructor */
 .instructor-info {
     text-align: center;
+    width: 40%;
 }
 
 .instructor-info img {
-    width: 75%;
-    height: 75%;
+    width: 40%;
+    height: 55%;
     border-radius: 50%;
 }
 
@@ -113,11 +151,26 @@ details p {
     font-size: 16px;
     color: #f1c40f;
 }
+
+@media (max-width: 768px) {
+    .class-contents, .instructor-info {
+        width: 100%;
+        max-width: 600px;
+        margin: 10px 0;
+    }
+
+    .instructor-info img {
+        width: 60%;
+        max-width: 200px;
+        margin: 0 auto;
+    }
+}
 .article-cursos-destacados {
     display: flex;
+    flex-wrap: wrap;
     width: 100%;
     justify-content: center;
-    height: 12rem;
+    height: auto;
     gap: 5%;
 }
 
@@ -127,59 +180,76 @@ details p {
     border-radius: 2rem;
     width: 30%;
     gap: 5%;
-
-}
-
-.titulo-curso {
-    color: #0f787f;
-    font-size: x-large;
-    font-weight: bold;
+    margin-bottom: 20px;
+    min-width: 250px;
+    height: auto;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .bloque-curso-destacado {
-    position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
     width: 55%;
+    padding: 10px;
+}
+
+.imagen-curso-destacado img {
+    border-radius: 2rem 0 0 2rem;
+    width: 100%;
+    height: auto;
+    object-fit: cover; 
+}
+
+.titulo-curso {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    word-wrap: break-word;
 }
 
 .particion-datos-curso {
     display: flex;
-    width: 100%;
     justify-content: space-between;
-    font-weight: bold;
-    align-items: center;
-}
-
-.segunda-particion {
-    padding-right: 10%;
+    flex-wrap: wrap;
 }
 
 .contenedor_boton {
-    position: absolute;
-    bottom: 3%;
-    transform: translate(-50%);
-    left: 48%;
+    margin-top: auto;
+    display: flex;
+    justify-content: center;
 }
 
-.imagen-curso-destacado {
-    align-self: center;
-    width: 90%;
-    border-radius: 2rem;
-}
 .btn_detalle {
-    padding: 6px 5px;
-    border: none;
-    border-radius: 2em;
     background-color: var(--azul);
-    color: #fff;
-    font-size: 14px;
-    cursor: pointer;
-    margin-left: 10px;
-    transition: background-color 0.3s;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1rem;
+    border-radius: 50px;
+    transition: background-color 0.3s ease;
 }
 
 .btn_detalle:hover {
     background-color: var(--amarillo);
+}
+
+@media (max-width: 768px) {
+    .div-curso-destacado {
+        flex-direction: column;
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+    .bloque-curso-destacado {
+        width: 100%;
+        text-align: center;
+    }
+
+    .imagen-curso-destacado img {
+        border-radius: 2rem 2rem 0 0;
+        width: 100%;
+    }
 }
