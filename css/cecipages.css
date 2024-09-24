@@ -2,7 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family:"Monserrat", Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     text-decoration: none;
     list-style: none;
 
@@ -19,18 +19,13 @@ body,html{
     --color-negro:black;
 
 }
-/*header*/
-
-/*nav*/
-
-/*main*/
 
 /*¨Formulareio para empresas*/
 .formulario-inscripcion {
     max-width: 75em;
     margin: 0 auto;
     padding: 1em;
-    background-color: #fff;
+    background-color: #ffffffd8;
     border-radius: 2em;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -110,60 +105,63 @@ body,html{
     background-color:var(--color-primario);
 }
 
+/*giftcard*/
 
-/*Ceci-giftcard
-*/
-.contenedor_principal_giftcard{
+    .contenedor_principal_giftcard{
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 3em;
-    padding: 1.5em;
-}
 
-.contenedor-giftcard{
+
+    padding: 1.5em;
+     }
+     .contenedor-giftcard{
     display: flex;
     justify-content: center;
     align-items:flex-start;
     padding: 20px;
    
-}
-.giftcard{
+   }
+   .giftcard{
 
    display: flex;
    flex-direction: column;
    align-items: center;
    justify-content:space-evenly; 
    padding: 1.25em;
-   background-image: url('../images/hexagonos.jpg');
+   background-image: url('../images/panal-rojo.jpg');
    background-size: cover;
    background-position: center;
    text-align: center;
-   width: 100%;
+   width: 80%;
 
    height: 100%;
    max-height: 35em;
    border-radius: 2em;
    border: 2px solid #000;
    position: relative;
-}
+   }
 
-.a-logo{
+     .a-logo{
     color: var(--color-primario);
     font-size: 30px;
+  
     -webkit-text-stroke: -2px white;
-}
-.prender-logo{
+    }
+     .prender-logo{
     color: var(--color-blanco);
     font-size: 30px;
-    -webkit-text-stroke: -2px white;
-}
 
-.giftcard img{
+    -webkit-text-stroke: -2px white;
+    }
+
+    .giftcard img{
     width: 6em;
     height: 2em;
-}
+  
+    }
 
-.monto {
+    .monto {
     background-color:var(--color-primario);
     color: var(--color-blanco);
     padding: 0.6em;
@@ -188,20 +186,19 @@ body,html{
      top: 1em;
     left: 1em;
    */
-}
+    }
 
-
-.grupo-opciones input{
+    .grupo-opciones input{
     width: 4em;
-}
-.codigo_QR img {
+    }
+    .codigo_QR img {
     width: 10em;
     height: 10em;
     margin: 1em auto 0;
     display: block;
  
-}
-.giftcard p{
+    }
+   .giftcard p{
     color: var(--color-secundario);
  /*
    color:red;
@@ -215,37 +212,30 @@ body,html{
    font-size: 60px;
     */
     font-size: 28px;
-}
-.personalizacion_contenedor {
+    }
+    .personalizacion_contenedor {
     background-color: #e3f2fd;
     border-radius: 0.6em;
     padding: 1.2em;
     margin-top: 1em;
     width: 90%;
-}
+    }
 
-.personalizacion_contenedor h3 {
+     .personalizacion_contenedor h3 {
     margin-bottom: 1.2em;
     color: var(--color-primario);
-}
+    }
 
-form {
-    display: flex;
-    flex-direction: column;
-}
-
-
-
-
-.personalizacion_contenedor input {
+    .personalizacion_contenedor input {
     padding: 0.6em;
     margin-bottom: 1em;
     border: 1px solid var(--color-secundario);
     border-radius: 2em;
     width: 80%;
-}
+    
+    }
 
-.botones_azules {
+    .botones_azules {
     padding: 0.6em 1.6em;
     background-color: var(--color-primario);
     color: var(--color-blanco);
@@ -254,26 +244,27 @@ form {
     cursor: pointer;
     transition: background-color 0.3s ease;
     width: 70%;
-}
+    }  
 
-button:hover {
+    button:hover {
     background-color:var(--color-secundario);
-}
-.giftcard h2 {
+    }
+    .giftcard h2 {
     margin-top: 40px;
     font-size: 24px;
     color:var(--color-blanco);
     background-color: rgba(0, 0, 0, 0.5); 
     padding: 0.2em 0.5em; 
     border-radius: 0.5em;
-}
+    }
 
- .personalizacion_contenedor p {
+    .personalizacion_contenedor p {
     font-size: 18px;
     color: var(--color-primario);
     margin: 10px 0;
-}
-.circulo {
+    }
+
+    .circulo {
     width: 1.2em;
     height: 1.2em;
     border-radius: 50%;
@@ -281,9 +272,10 @@ button:hover {
     display: inline-block;
     cursor: pointer;
     margin-left: 0.5em;
-}
+   
+    }
 
-.grupo-items input{
+    .grupo-items input{
     width: 1.5em;
     height: 1.5em;
     }
@@ -312,7 +304,7 @@ button:hover {
         height: 2em;
         border: 1px var(--color-negro)solid;
         position: relative;
-        
+    
     }
     .posicion_arriba-izquierda{
         width: 1em;
@@ -343,7 +335,7 @@ button:hover {
     }
 
 
-.rojo{
+    .rojo{
     background-color: red;
     }
     .azul{
@@ -361,172 +353,387 @@ button:hover {
     .negro{
     background-color: black;
     }
-
-
+    
     .grupo-colores input[type="radio"] {
         display: none; 
-        
     }
+
     input[type="radio"]:checked + .circulo {
         border: 0.2em solid #00b29e ; 
         gap: 5em;
     }
 
 
-    /*FOOTER*/
+    /*footer pantalla grande*/
+
+    footer{
+        background-color: var(--color-negro);
+    }
+    .contenedor_columnas_footer{
+        display: grid;
+        grid-template-columns: 2fr 1fr 2fr ; 
+        grid-template-rows: auto auto; 
+        gap: 1px; 
+        padding: 2em;
+        padding-bottom: 2em;
+        line-height: 1.5em;
+    }
+    .contenedor_columnas_footer h2{
+        color: var(--color-primario);
+        padding-bottom: 1em;
+        font-family:Arial, Helvetica, sans-serif;
+    }
+
+    .fila2-footer{
+        grid-column: 1 / 4;
+        background-color: var(--color-gris);
+        padding:0.5em;
+        text-align:right;
+        font-size: x-small;
+    }
+    .contenedor_columnas_footer ul li, a{
+        transition: var(--color-primario);
+    }
+
+    .columna-footer a, ul li{
+    color: var(--color-secundario);
+    text-align: left;
+    transition: color 0.3s ease, transform 0.3s ease; 
+
+    }
+    .columna-footer ul li a:hover {
+        color:var(--color-primario); 
+        transform: scale(1.1); 
+    }
+    .columna-footer p{
+     color: grey;
+     padding-top: 5em;
+    }
+       
+    /*--------------------------------------------*/
+
+    /*footer responsivo*/
 
     .footer {
-        background-color: var(--color-negro);
-        padding: 1em;
-        text-align: center;
-        box-sizing: border-box;
-        width: 100%;
+    background-color: var(--color-negro);
+    padding: 1em;
+    text-align: center;
+    box-sizing: border-box;
+    width: 100%;
     }
-    
-    
-    .contenedor-desplegable_footer {
   
-        padding: 1em;
-
-    }
-    .contenedor-desplegable_footer h2{
-        padding: 0;
-        margin: 0;
-        color: var(--color-secundario);
-        
-    }
-    
-    .desplegable-item_footer {
-        margin-bottom: 0.3em;
-        width: 100%;
-
-    }
-    
-    
     .desplegable-boton_footer {
-        background-color: var(--color-negro);
-        color: var(--color-primario);
-        cursor: pointer;
-        padding: 0.4em;
-        border: none;
+      font-size: 1em;
+      padding: 0.8em;
+    }
      
-        text-align: left;
-        font-size: 1.2em;
-        border: 1px solid;
-        transition: background-color 0.3s ease;
-        display: block;
-      
+    .social-icons img {
+      width: 20px;
+      height: 20px;
     }
-    .desplegable-boton_footer a:hover {
-        background-color: var(--color-primario);
-    }
-    .desplegable-boton_footer:hover {
-        background-color: var(--color-secundario);
-    }
-  
-   
+
     .desplegable-contenido_footer ul li,a{
         color: var(--color-blanco);
         display: flex;
         justify-content: left;
         transition: font-size 0.3s ease-in-out;
-    
-    }
-    .desplegable-contenido_footer a:hover{
-        color: var(--color-negro) ;
-        cursor:pointer;
-        font-size: 18px;
         font-weight: bold;
-     
     }
-   
-    .desplegable-contenido_footer a:hover{
-        display:inline-block;
-        text-align: left;
-        width: 100%;
-        background-color: var(--color-secundario);
-    }
-    .desplegable-contenido_footer {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease-out;
-        background-color: var(--color-negro);
-        padding: 0 1em;
-    }
-    .desplegable-contenido_footer ul {
-        list-style: none;
+
+    .contenedor-desplegable_footer h2{
+        font-size: 16px;
         padding: 0;
-     
+        margin: 0;
+        color: var(--color-secundario);
+        
     }
-    .desplegable-contenido_footer li {
-        padding: 0.2em 0;
-        color: var(--color-blanco);
-        background-color:var(--color-negro);
-       
+  
+  .contenedor-desplegable_footer {
+    padding: 1em;
+    }
+
+    .contenedor-desplegable_footer h2{
+    padding: 0;
+    margin: 0;
+    color: var(--color-secundario);
+    
+    }
+
+.desplegable-item_footer {
+    margin-bottom: 0.3em;
+    width: 100%;
+
+}
+
+.desplegable-boton_footer {
+    background-color: var(--color-negro);
+    color: var(--color-primario);
+    cursor: pointer;
+    padding: 0.4em;
+    border: none;
+    text-align: left;
+    font-size: 1.2em;
+    border: 1px solid;
+    transition: background-color 0.3s ease;
+    display: block;
+  
+}
+.desplegable-boton_footer a:hover {
+    background-color: var(--color-primario);
+}
+.desplegable-boton_footer:hover {
+    background-color: var(--color-secundario);
+}
+
+
+.desplegable-contenido_footer ul li,a{
+    color: var(--color-blanco);
+    display: flex;
+    justify-content: left;
+    transition: font-size 0.3s ease-in-out;
+
+}
+.desplegable-contenido_footer a:hover{
+    color: var(--color-negro) ;
+    cursor:pointer;
+    font-size: 18px;
+    font-weight: bold;
+ 
+}
+
+.desplegable-contenido_footer a:hover{
+    display:inline-block;
+    text-align: left;
+    width: 100%;
+    background-color: var(--color-secundario);
+}
+.desplegable-contenido_footer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background-color: var(--color-negro);
+    padding: 0 1em;
+}
+.desplegable-contenido_footer ul {
+    list-style: none;
+    padding: 0;
+ 
+}
+.desplegable-contenido_footer li {
+    padding: 0.2em 0;
+    color: var(--color-blanco);
+    background-color:var(--color-negro);
+   
+}
+
+.desplegable-checkbox_footer {
+    display: none;
+}
+.desplegable-checkbox_footer:checked + .desplegable-boton_footer + .desplegable-contenido_footer {
+    max-height: 10em;
+}
+
+.social-icons a {
+    margin: 0 7px;
+    display: inline-block;
+}
+
+.social-icons img {
+
+    width: 25px;
+    height: 25px;
+}
+.footer p{
+    text-align: left;
+    padding-top: 2em;
+    color: var(--color-gris);
+    font-size:10px;
+}
+/*confirmacion de compra giftcard*/
+
+.contenedor-compra {
+    display: grid;
+   grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    flex-wrap: wrap;
+    max-width: 75em;
+    margin: 0 auto;
+    background-color: white;
+    padding: 1em;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.titulo-giftcard {
+    padding-top: 0.4;
+    padding-bottom: 0.4em;
+    font-size: 28px;
+}
+
+.destinatario-giftcard, .monto-giftcard, .email-giftcard {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.seccion-detalles  {
+
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    padding: 1em;
+}
+.seccion-detalles h2 {
+    color: var(--color-primario);
+}  
+.detalles{
+padding: 2em;
+}
+.detalles-tarjeta h3{
+    color: var(--color-primario);
+}
+
+.medios-pago {
+    margin-bottom: 1em;
+}
+
+.opciones-pago {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.opcion-pago input[type="radio"] {
+    display: none;
+}
+
+.opcion-pago img {
+    width: 60px;
+    height: auto;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: border 0.3s ease;
+}
+
+.opcion-pago input[type="radio"]:checked + img {
+    border: 2px solid #b31212;
+}
+
+.detalles-tarjeta {
+    background-color: #e9e9e9;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.detalles-tarjeta label {
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
+}
+
+.detalles-tarjeta input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.descuento {
+    background-color: #fffae6;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.descuento strong {
+    color: #d18d02;
+}
+
+.resumen-pago {
+    text-align: center;
+}
+
+.boton-pagar {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1em;
+}
+
+.boton-pagar:hover {
+    background-color: #218838;
+}
+
+/*  MEDIA QUERIES*/
+
+/*confimación*/
+@media (max-width: 768px) {
+    .contenedor-compra {
+        flex-direction: column;
+    }
+
+    .opciones-pago {
+        justify-content: space-between;
+    }
+
+    .boton-pagar {
+        width: 100%;
+    }
+}
+ /* Footer responsivo */
+@media screen and (min-width: 769px) {
+   
+   .footer {
+        display: none; 
     }
     
-    .desplegable-checkbox_footer {
+}
+/*inscripcion responsivo*/
+
+    @media (max-width: 480px) {
+    .grupo-campos:nth-of-type(2) {
         display: none;
     }
-    .desplegable-checkbox_footer:checked + .desplegable-boton_footer + .desplegable-contenido_footer {
-        max-height: 10em;
-    }
-    
-    .social-icons a {
-        margin: 0 7px;
-        display: inline-block;
-    }
-    
-    .social-icons img {
- 
-        width: 25px;
-        height: 25px;
-    }
-    .footer p{
-        text-align: left;
-        padding-top: 2em;
-        color: grey;
-        font-size:10px;
-    }
-   
+}
 
-
-
-
-
-
-/* RESPONSIVOS*/
- 
     @media screen and (max-width: 768px) {
-       
-         /*inscripcion*/
-         .grupo-campos {
-            grid-template-columns: 1fr 1fr; 
-        }
 
-        .boton-agregar {
-            justify-content: center;
+/*inscripcion responsivo*/
+        .grupo-campos:nth-of-type(3) {
+            display: none;
+            padding-bottom: 3em;
         }
-
-        .precio {
-            text-align: center;
+        .precio{
+            margin: 2em;
+    
+            }
+        .grupo-campos {
+            display: grid;
+            grid-template-columns:1fr;
             margin-bottom: 1em;
         }
-
-        .boton-inscribirse {
-            width: 100%; 
+        
+        .grupo-campos input {
+            padding: 10px;
+            font-size: 1em;
+            border: 2px solid #FFcc00; 
+            border-radius: 30px;
+            outline: none;
+            transition: border-color 0.3s ease;
         }
-
- /*giftcard*/
+/*giftcard*/
      .contenedor_principal_giftcard {
             grid-template-columns: 1fr; 
             grid-template-rows: auto auto;
             justify-items: center;
             padding: 0;
             width:99%;
-    }
-    .boton-agregar {
-        justify-content: center;
     }
 
     .contenedor-giftcard, .personalizacion_contenedor {
@@ -542,8 +749,8 @@ button:hover {
     .codigo_QR img {
       width: 80%;
       height: 70%;
-        margin: 1em auto 0;
-        display: block;
+      margin: 1em auto 0;
+      display: block;
      
     }
     .monto {
@@ -558,8 +765,10 @@ button:hover {
         position: absolute;
         font-size: 0.78em; 
         width: 30%;
-        top: 1em;
-        right: 1em;
+
+        /*arriba-derecha*/
+       top: 1em;
+       right: 1em;
     }
     .giftcard h2{
         font-size: 1em;
@@ -574,59 +783,11 @@ button:hover {
     .giftcard p{
         font-size: 1em;
     }
- 
-  /*footer*/
-  
-    .desplegable-boton_footer {
-      font-size: 1em;
-      padding: 0.8em;
+    .contenedor_columnas_footer {
+        display: none; 
     }
-    
-    .social-icons img {
-      width: 20px;
-      height: 20px;
+    .fila2-footer{
+        display: none;
     }
 
-    .desplegable-contenido_footer ul li,a{
-        color: var(--color-blanco);
-        display: flex;
-        justify-content: left;
-        transition: font-size 0.3s ease-in-out;
-        font-weight: bold;
-      
-     
-    }
-    .contenedor-desplegable_footer h2{
-        font-size: 16px;
-        padding: 0;
-        margin: 0;
-        color: var(--color-secundario);
-        
-    }
-  }
-  @media (max-width: 480px) {
-    .grupo-campos {
-        grid-template-columns: 1fr; 
-    }
-
-    .boton-agregar {
-        justify-content: center;
-    }
-
-    .precio {
-        text-align: center;
-        margin-bottom: 1em;
-    }
-
-    .boton-inscribirse {
-        width: 100%; 
-    }
-}
-   
- 
-  
-
-        
-       
-   
-   
+   }

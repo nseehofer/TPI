@@ -7,6 +7,8 @@
     <title>Giftcard</title>
     <!--ESTO ES EL LOGO QUE APARECERA EN NOMBRE DE LA PÁGINA-->
     <link rel="stylesheet" href="../css/cecipages.css">
+    <link rel="stylesheet" href="../css/header.css">
+
     
     <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
   
@@ -15,6 +17,7 @@
 </head>
 
 <body>
+    
     <main class="contenedor_principal_giftcard">
         <section class="contenedor-giftcard">
             <div class="giftcard">
@@ -30,8 +33,9 @@
                 <div class="codigo_QR">
                     <img src="../images/QR.jpg" alt="QR codigo">
                 </div>
-
+    
             </div>
+       
         </section>
         <section class="personalizacion_contenedor">
             <h3>Personalización de Giftcard</h3>
@@ -153,7 +157,7 @@
                     </div>
 
                     <div class="grupo-items">
-                        <img src="../images/hexagonos.jpg" alt="Opción 2" width="50">
+                        <img src="../images/circuitos.jpg" alt="Opción 2" width="50">
                         <input type="radio"  name="opcion" value="2">
 
                     </div>
@@ -174,61 +178,101 @@
 
                 </div>
 
-                <button class="botones_azules" type="submit">Confirmar</button>
+                <button class="botones_azules" type="submit">
+                    <a href="../html/pagoGiftcard.html">Confirmar</a>
+                </button>
 
             </form>
         </section>
     </main>
 
-    <footer>
-        <div class="footer">
-            <div class="footer-logo">
-                <span class="a-logo">&lt;a&gt;</span><span class="prender-logo">prender</span>
-            </div>
+    <footer >
+        <div class="contenedor_columnas_footer">
+    
+        <div class="columna-footer">
+            <h2>Nuestro grupo</h2>
+            <ul>
+                <li>Baldomar Garcia Valentina - 45.685.432</li>
+                <li>Fernandez Ivana Cecilia- DNI 37.217.330</li>
+                <li>Seehofer Nicolas Ezequiel - 40.863.696</li>
+                <li>Ticak Danilo - 45.684.769</li>
+            </ul>
 
-            <div class="contenedor-desplegable_footer">
-             
-                <div class="desplegable-item_footer">
-                    <input type="checkbox" id="desplegable-1" class="desplegable-checkbox_footer">
-                    <label for="desplegable-1" class="desplegable-boton_footer">Nuestro Grupo
-                      
-                    </label>
-                    <div class="desplegable-contenido_footer">
-                        <ul>
-                            <li>Juan Pérez - DNI 12345678</li>
-                            <li>María López - DNI 87654321</li>
-                            <li>Carlos García - DNI 23456789</li>
-                            <li>Ana Rodríguez - DNI 98765432</li>
-                        </ul>
-                    </div>
-                </div>
-
-              
-                <div class="desplegable-item_footer">
-                    <input type="checkbox" id="desplegable-2" class="desplegable-checkbox_footer">
-                    <label for="desplegable-2" class="desplegable-boton_footer">Menú</label>
-                    <div class="desplegable-contenido_footer">
-                        <ul>
-                            <li><a href="../html/forumlarioEmpresa.html">Cursos</a></li>
-                            <li><a href="../html/giffCard.html">Giftcard</a></li>
-                            <li><a href="../html/proximasFechas.html">Proximas fechas</a></li>
-                            <li><a href="../html/contacto.html">Contacto</a></li>
-
-                        </ul>
-                    </div>
-                </div>
-                <h2>Seguinos en nuestras redes</h2>
-            </div>
-
-            <div class="social-icons">
-                <a href="#"><img src="../iconos/facebook_amarillo.png" alt="Facebook"></a>
-                <a href="#"><img src="../iconos/instagram_amarillo.png" alt="Instagram"></a>
-                <a href="#"><img src="../iconos/whatsapp_amarillo.png" alt="Twitter"></a>
-                <a href="#"><img src="../iconos/youtube_amarillo.png" alt="YouTube"></a>
-            </div>
-        
-            <p> Codyright © 2024-2024 Aprender-UNLaM.Todos los derechos reservados  </p>
         </div>
+        <div class="columna-footer">
+             <h2> Menú</h2>
+             <div>
+             <ul>
+                <li><a href="../html/forumlarioEmpresa.html">Cursos</a></li>
+                <li><a href="../html/giffCard.html">Giftcard</a></li>
+                <li><a href="../html/proximasFechas.html">Proximas fechas</a></li>
+                <li><a href="../html/contacto.html">Contacto</a></li>
+
+            </ul>
+        </div>
+        </div>
+      <div class="columna-footer">
+        <h2>Seguinos en nuestras redes</h2>
+        <div class="social-icons">
+            <a href="#"><img src="../iconos/facebook_amarillo.png" alt="Facebook"></a>
+            <a href="#"><img src="../iconos/instagram_amarillo.png" alt="Instagram"></a>
+            <a href="#"><img src="../iconos/whatsapp_amarillo.png" alt="Twitter"></a>
+            <a href="#"><img src="../iconos/youtube_amarillo.png" alt="YouTube"></a>
+        </div>
+        </div>
+      </div>
+      <div class="fila2-footer">
+        <p> Codyright © 2024-2024 Aprender-UNLaM.Todos los derechos reservados  </p>
+    </div>
+
+<!--modelo responsivo-->
+    <div class="footer">
+        <div class="footer-logo">
+            <span class="a-logo">&lt;a&gt;</span><span class="prender-logo">prender</span>
+        </div>
+
+        <div class="contenedor-desplegable_footer">
+         
+            <div class="desplegable-item_footer">
+                <input type="checkbox" id="desplegable-1" class="desplegable-checkbox_footer">
+                <label for="desplegable-1" class="desplegable-boton_footer">Nuestro Grupo
+                  
+                </label>
+                <div class="desplegable-contenido_footer">
+                    <ul>
+                        <li>Baldomar Garcia Valentina - 45.685.432</li>
+                        <li>Fernandez Ivana Cecilia- DNI 37.217.330</li>
+                        <li>Seehofer Nicolas Ezequiel - 40.863.696</li>
+                        <li>Ticak Danilo - 45.684.769</li>
+                    </ul>
+                </div>
+            </div>
+
+          
+            <div class="desplegable-item_footer">
+                <input type="checkbox" id="desplegable-2" class="desplegable-checkbox_footer">
+                <label for="desplegable-2" class="desplegable-boton_footer">Menú</label>
+                <div class="desplegable-contenido_footer">
+                    <ul>
+                        <li><a href="../html/forumlarioEmpresa.html">Cursos</a></li>
+                        <li><a href="../html/giffCard.html">Giftcard</a></li>
+                        <li><a href="../html/proximasFechas.html">Proximas fechas</a></li>
+                        <li><a href="../html/contacto.html">Contacto</a></li>
+
+                    </ul>
+                </div>
+            </div>
+            <h2>Seguinos en nuestras redes</h2>
+        </div>
+
+        <div class="social-icons">
+            <a href="#"><img src="../iconos/facebook_amarillo.png" alt="Facebook"></a>
+            <a href="#"><img src="../iconos/instagram_amarillo.png" alt="Instagram"></a>
+            <a href="#"><img src="../iconos/whatsapp_amarillo.png" alt="Twitter"></a>
+            <a href="#"><img src="../iconos/youtube_amarillo.png" alt="YouTube"></a>
+        </div>
+        <p> Codyright © 2024-2024 Aprender-UNLaM.Todos los derechos reservados  </p>
+    </div>
     </footer>
 
 
