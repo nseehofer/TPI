@@ -34,7 +34,6 @@ body {
     display: flex;
     flex-wrap: wrap;
     padding: 20px;
-    background-color: white;
     margin: 20px auto;
     max-width: 800px;
     justify-content: center;
