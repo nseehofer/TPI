@@ -4,10 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> <a>prender | Diseño UX/UI</title>
-    <link rel="stylesheet" href="../css/footer.css">
-    <link rel="stylesheet" href="../css/header&nav.css">
-    <link rel="stylesheet" href="../css/detalleCurso.css">
-
+   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
     <header class="header">
@@ -46,8 +43,8 @@
                     alt="CarroDeCompras">
                 <p class="numero-carrito-fijo">2</p>
             </div>
-            <button class="btn">Iniciar Sesión</button>
-            <button class="btn">Registrarse</button>
+            <a class="btn-header">Iniciar Sesión</a>
+            <a class="btn-header">Registrarse</a>
         </div>
     </header>
 
@@ -100,14 +97,14 @@
             <p><strong>Requisitos previos:</strong> Conocimiento básico de Diseño</p>
             <p><strong>Descripción:</strong> Aprende los principios fundamentales del diseño UX/UI para crear experiencias de usuario atractivas 
                 y funcionales en plataformas digitales</p>
-            <button class="inscribirse">Inscribirse</button>
+            <button class="btn btn-azul">Inscribirse</button>
         </div>
     </section>
 
     <!-- Contenidos por clase e Instructor -->
     <div class="content-instructor">
         <section class="class-contents">
-            <h3>Contenidos por clase</h3>
+            <h3 class="tutorial-subtitulo">Contenidos por clase</h3>
             <details>
                 <summary>MÓDULO 1</summary>
                 <li>Definiciones básicas de UX y UI.</li>
@@ -136,12 +133,16 @@
             <span>★★★★★</span>
         </section>
     </div>
+
+    <section  class="section-main-cursos-destacados">
+        <div id="oferta" class="div-titulo-oferta-cursos">
+            <p> Cursos relacionados</p>
+        </div>
     <article class="article-cursos-destacados">
-        <h3>Cursos Relacionados</h3>
         <div class="div-curso-destacado">
-            <figure class="bloque-curso-destacado"><img class="imagen-curso-destacado" src="../images/fullstack.jpg"
+            <figure class="bloque-curso-destacado"><img class="imagen-curso-destacado-detalle" src="../images/fullstack.jpg"
                     alt="curso de experiencia e interfaz de usuario">
-                <figcaption class="contenedor_boton"><a class="btn_detalle" href="detalleDeCurso.html">Ver
+                <figcaption class="contenedor_boton"><a class="btn btn-header" href="detalleDeCurso.html">Ver
                         Detalle</a>
                 </figcaption>
             </figure>
@@ -163,9 +164,9 @@
             </div>
         </div>
         <div class="div-curso-destacado">
-            <figure class="bloque-curso-destacado"> <img class="imagen-curso-destacado"
+            <figure class="bloque-curso-destacado"> <img class="imagen-curso-destacado-detalle"
                     src="../images/ciberseguridad.png" alt="curso de ciberseguridad">
-                <figcaption class="contenedor_boton"><a class="btn_detalle" href="detalleDeCursoCiber.html">Ver
+                <figcaption class="contenedor_boton"><a class="btn btn-header" href="detalleDeCursoCiber.html">Ver
                         Detalle</a>
                 </figcaption>
             </figure>
