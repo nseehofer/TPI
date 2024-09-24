@@ -166,57 +166,57 @@ details li {
 }
 .article-cursos-destacados {
     display: flex;
-    flex-wrap: wrap;
+    justify-content: space-around; /* Distribuye las tarjetas con espacio entre ellas */
+    flex-wrap: wrap; /* Permite que las tarjetas se ajusten en pantallas más pequeñas */
     width: 100%;
-    justify-content: center;
-    height: auto;
-    gap: 5%;
+    gap: 2rem; /* Espacio entre tarjetas */
 }
 
 .div-curso-destacado {
     display: flex;
     background-color: #f0f0f0;
     border-radius: 2rem;
-    width: 30%;
-    gap: 5%;
-    margin-bottom: 20px;
-    min-width: 250px;
-    height: auto;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    width: 30%; /* Ajusta el ancho de la tarjeta */
+    gap: 1rem; /* Espacio entre imagen y bloque de texto */
+    padding: 1rem;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Añade una sombra para mejor visualización */
+    transition: transform 0.3s ease; /* Añade una transición suave cuando se pase el mouse */
+}
+
+.div-curso-destacado:hover {
+    transform: scale(1.05); /* Efecto de zoom cuando se pasa el mouse */
+}
+
+.imagen-curso-destacado {
+    align-self: center;
+    width: 70%; /* Ajusta el ancho de la imagen dentro de la tarjeta */
+    border-radius: 1rem;
+    object-fit: contain;
 }
 
 .bloque-curso-destacado {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    width: 55%;
-    padding: 10px;
-}
-
-.imagen-curso-destacado img {
-    border-radius: 2rem 0 0 2rem;
-    width: 100%;
-    height: auto;
-    object-fit: cover; 
+    justify-content: space-between; /* Distribuye el contenido uniformemente */
+    width: 55%; /* Ancho del bloque de texto */
 }
 
 .titulo-curso {
+    color: #0f787f;
     font-size: 1.5rem;
     font-weight: bold;
-    margin-bottom: 10px;
-    word-wrap: break-word;
 }
 
 .particion-datos-curso {
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
+    font-weight: bold;
+    align-items: center;
 }
 
 .contenedor_boton {
-    margin-top: auto;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end; /* Alinea el botón a la derecha */
 }
 
 .btn_detalle {
@@ -224,8 +224,6 @@ details li {
     border: none;
     color: white;
     padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
     font-size: 1rem;
     border-radius: 50px;
     transition: background-color 0.3s ease;
@@ -235,20 +233,22 @@ details li {
     background-color: var(--amarillo);
 }
 
+
 @media (max-width: 768px) {
     .div-curso-destacado {
         flex-direction: column;
         width: 90%;
-        margin-bottom: 20px;
+    }
+
+    .imagen-curso-destacado {
+        width: 100%;
+        height: auto;
+        border-radius: 2rem 2rem 0 0;
     }
 
     .bloque-curso-destacado {
         width: 100%;
+        padding: 10px;
         text-align: center;
-    }
-
-    .imagen-curso-destacado img {
-        border-radius: 2rem 2rem 0 0;
-        width: 100%;
     }
 }
