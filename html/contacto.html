@@ -7,6 +7,49 @@
     <title>Contacto</title>
 </head>
 <body>
+    <header class="header">
+
+        <figure class="logo-container">
+            <a href="index.html">
+                <img src="/images/LogoTest.png" alt="Logo Aprender" class="logo">
+            </a>
+        </figure>
+        <nav class="nav-bar">
+            <ul class="nav-menu">
+                <li><a href="#">Cursos</a>
+                    <ul>
+                        <li class="contenido"><a href="./html/detalleDeCurso.html">Diseño UX/UI</a></li>
+                        <li class="contenido"><a href="./html/detalleDeCurso.html">Ciberseguridad</a></li>
+                        <li class="contenido"><a href="./html/detalleDeCurso.html">Desarrollador Full Stack</a></li>
+                        <li class="contenido"><a href="./html/detalleDeCurso.html">Desarrollo Front End</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Empresas</a></li>
+                <li><a href="#">Giftcard</a></li>
+                <li><a href="../TPI/html/calendario.html">Próximas Fechas</a></li>
+            </ul>
+        </nav>
+        <form>
+            <label for="buscador"></label>
+            <input type="text" id="buscador" list="cursos" placeholder="Buscar cursos">
+            <datalist id="cursos">
+                <option value="Diseño UX/UI">
+                <option value="Ciberseguridad">
+                <option value="Desarrollador Full Stack">
+                <option value="Desarrollo Front End">
+            </datalist>
+        </form>
+        <div class="contenedor_carrito_btn">
+            <div class="contenedor_carrito"><img class="img-carrito" src="images/carritoDeComprasColor.png"
+                    alt="CarroDeCompras">
+                <p class="numero-carrito-fijo">2</p>
+            </div>
+            <button class="btn">Iniciar Sesión</button>
+            <button class="btn">Registrarse</button>
+        </div>
+
+    </header>
+
     <div class="contenedor-contacto">
         <div class="seccion-contacto">
             <form  class= "formulario-contacto" action="">
