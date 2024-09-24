@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/formularios.css">
+    <title>Contacto</title>
+</head>
+<body>
+    <header class="header">
+
+        <figure class="logo-container">
+            <a href="index.html">
+                <img src="/images/LogoTest.png" alt="Logo Aprender" class="logo">
+            </a>
+        </figure>
+        <nav class="nav-bar">
+            <ul class="nav-menu">
+                <li><a href="#">Cursos</a>
+                    <ul>
+                        <li class="contenido"><a href="./html/detalleDeCurso.html">Diseño UX/UI</a></li>
+                        <li class="contenido"><a href="./html/detalleDeCurso.html">Ciberseguridad</a></li>
+                        <li class="contenido"><a href="./html/detalleDeCurso.html">Desarrollador Full Stack</a></li>
+                        <li class="contenido"><a href="./html/detalleDeCurso.html">Desarrollo Front End</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Empresas</a></li>
+                <li><a href="#">Giftcard</a></li>
+                <li><a href="../TPI/html/calendario.html">Próximas Fechas</a></li>
+            </ul>
+        </nav>
+        <form>
+            <label for="buscador"></label>
+            <input type="text" id="buscador" list="cursos" placeholder="Buscar cursos">
+            <datalist id="cursos">
+                <option value="Diseño UX/UI">
+                <option value="Ciberseguridad">
+                <option value="Desarrollador Full Stack">
+                <option value="Desarrollo Front End">
+            </datalist>
+        </form>
+        <div class="contenedor_carrito_btn">
+            <div class="contenedor_carrito"><img class="img-carrito" src="images/carritoDeComprasColor.png"
+                    alt="CarroDeCompras">
+                <p class="numero-carrito-fijo">2</p>
+            </div>
+            <button class="btn">Iniciar Sesión</button>
+            <button class="btn">Registrarse</button>
+        </div>
+
+    </header>
+
+    <div class="contenedor-contacto">
+        <div class="seccion-contacto">
+            <form  class= "formulario-contacto" action="">
+                <h1 class="tituloPrincipal-formulario">Contacto</h1>
+                <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
+                <input type="text" id="apellido" name="apellido" placeholder="Apellido" required>
+                <input type="email" id="email" name="email" placeholder="Email" required>
+                <input type="tel" id="telefono" name="telefono" placeholder="Teléfono" required>
+                <input name="consulta" placeholder="Deje su consulta..." required>
+                <div class="contenedor-boton-contacto">
+                    <button class="btn btn-azul .btn-formulario-contacto" type="submit">Enviar</button>
+                </div>
+            </form>
+        </div>
+        <div class="seccion-info">
+            <div class="whatsapp">
+                <img class="imagen-whatsapp" src="../images/whatsapp.png" alt="">
+                <p class="telefono-contacto"> +54 9 11 1234 1234</p>
+            </div>
+            <h3 class="subtitulos-contacto">Horario de atención: </h3>
+            <h4 class="informacion-contacto">Lunes a viernes 10:00 a 18:00</h4>
+            <h3 class="subtitulos-contacto">Contacto para alumnos:</h3>
+            <h4 class="informacion-contacto">aprender@unlam.edu.com.ar</h4>
+            <h3 class="subtitulos-contacto">Contacto para empresas:</h3>
+            <h4 class="informacion-contacto">empresas@unlam.edu.com.ar</h4>
+        </div>
+    </div>
+    <div class="ubicacion">
+        <h2>Ubicación</h2>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3281.3643339769546!2d-58.56538549076068!3d-34.67075316092507!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcc62cc3ef7083%3A0x8867107f425fade5!2sUniversidad%20Nacional%20de%20La%20Matanza!5e0!3m2!1ses!2sar!4v1727147748883!5m2!1ses!2sar" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <footer >
+        <div class="contenedor_columnas_footer">
+    
+        <div class="columna-footer">
+            <h2>Nuestro grupo</h2>
+            <ul>
+                <li>Baldomar Garcia Valentina - 45.685.432</li>
+                <li>Fernandez Ivana Cecilia- DNI 37.217.330</li>
+                <li>Seehofer Nicolas Ezequiel - 40.863.696</li>
+                <li>Ticak Danilo - 45.684.769</li>
+            </ul>
+
+        </div>
+        <div class="columna-footer">
+             <h2> Menú</h2>
+             <div>
+             <ul>
+                <li><a href="../html/forumlarioEmpresa.html">Cursos</a></li>
+                <li><a href="../html/giffCard.html">Giftcard</a></li>
+                <li><a href="../html/proximasFechas.html">Proximas fechas</a></li>
+                <li><a href="../html/contacto.html">Contacto</a></li>
+
+            </ul>
+        </div>
+        </div>
+      <div class="columna-footer">
+        <h2>Seguinos en nuestras redes</h2>
+        <div class="social-icons">
+            <a href="#"><img src="../iconos/facebook_amarillo.png" alt="Facebook"></a>
+            <a href="#"><img src="../iconos/instagram_amarillo.png" alt="Instagram"></a>
+            <a href="#"><img src="../iconos/whatsapp_amarillo.png" alt="Twitter"></a>
+            <a href="#"><img src="../iconos/youtube_amarillo.png" alt="YouTube"></a>
+        </div>
+        </div>
+      </div>
+      <div class="fila2-footer">
+        <p> Codyright © 2024-2024 Aprender-UNLaM.Todos los derechos reservados  </p>
+    </div>
+
+<!--modelo responsivo-->
+    <div class="footer">
+        <div class="footer-logo">
+            <span class="a-logo">&lt;a&gt;</span><span class="prender-logo">prender</span>
+        </div>
+
+        <div class="contenedor-desplegable_footer">
+         
+            <div class="desplegable-item_footer">
+                <input type="checkbox" id="desplegable-1" class="desplegable-checkbox_footer">
+                <label for="desplegable-1" class="desplegable-boton_footer">Nuestro Grupo
+                  
+                </label>
+                <div class="desplegable-contenido_footer">
+                    <ul>
+                        <li>Baldomar Garcia Valentina - 45.685.432</li>
+                        <li>Fernandez Ivana Cecilia- DNI 37.217.330</li>
+                        <li>Seehofer Nicolas Ezequiel - 40.863.696</li>
+                        <li>Ticak Danilo - 45.684.769</li>
+                    </ul>
+                </div>
+            </div>
+
+          
+            <div class="desplegable-item_footer">
+                <input type="checkbox" id="desplegable-2" class="desplegable-checkbox_footer">
+                <label for="desplegable-2" class="desplegable-boton_footer">Menú</label>
+                <div class="desplegable-contenido_footer">
+                    <ul>
+                        <li><a href="../html/forumlarioEmpresa.html">Cursos</a></li>
+                        <li><a href="../html/giffCard.html">Giftcard</a></li>
+                        <li><a href="../html/proximasFechas.html">Proximas fechas</a></li>
+                        <li><a href="../html/contacto.html">Contacto</a></li>
+
+                    </ul>
+                </div>
+            </div>
+            <h2>Seguinos en nuestras redes</h2>
+        </div>
+
+        <div class="social-icons">
+            <a href="#"><img src="../iconos/facebook_amarillo.png" alt="Facebook"></a>
+            <a href="#"><img src="../iconos/instagram_amarillo.png" alt="Instagram"></a>
+            <a href="#"><img src="../iconos/whatsapp_amarillo.png" alt="Twitter"></a>
+            <a href="#"><img src="../iconos/youtube_amarillo.png" alt="YouTube"></a>
+        </div>
+        <p> Codyright © 2024-2024 Aprender-UNLaM.Todos los derechos reservados  </p>
+    </div>
+    </footer>
+
+
+    
+</body>
+</html>
