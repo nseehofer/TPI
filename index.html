@@ -4,9 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/index.css">
-    <link rel="stylesheet" href="./css/header&nav.css">
-    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/style.css">
     <title>Página de Inicio</title>
     <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
@@ -51,8 +49,8 @@
                     alt="CarroDeCompras">
                 <p class="numero-carrito-fijo">2</p>
             </div>
-            <button class="btn">Iniciar Sesión</button>
-            <button class="btn">Registrarse</button>
+            <a href="/html/inicioDeSesion.html" class="btn-header">Iniciar Sesión</a>
+            <a href="/html/registro.html" class="btn-header">Registrarse</a>
         </div>
 
     </header>
@@ -84,7 +82,7 @@
                     <div class="tutorial-descripcion descripcion-paso-uno">
                         <h5>Iniciar sesion</h5>
                         <p>Si aun no tenes cuenta</p>
-                        <p>necesitas <a class="vinculo-div-tutorial" href="./html/inicioDeSesion.html">registrarte</a>
+                        <p>necesitas <a class="vinculo-div-tutorial" href="./html/registro.html">registrarte</a>
                         </p>
                     </div>
                 </div>
@@ -94,7 +92,7 @@
                     </div>
                     <div class="tutorial-descripcion">
                         <h5>Elegir curso</h5>
-                        <p>Ver la <a class="vinculo-div-tutorial" href="./html/detalleDeCurso.html">oferta</a></p>
+                        <p>Ver la <a class="vinculo-div-tutorial" href="#oferta">oferta</a></p>
                     </div>
                 </div>
 
@@ -110,15 +108,15 @@
 
         </section>
 
-        <section class="section-main-cursos-destacados">
-            <div class="div-titulo-oferta-cursos">
+        <section  class="section-main-cursos-destacados">
+            <div id="oferta" class="div-titulo-oferta-cursos">
                 <p> Oferta de cursos</p>
             </div>
             <article class="article-cursos-destacados">
                 <div class="div-curso-destacado">
                     <figure class="bloque-curso-destacado"><img class="imagen-curso-destacado" src="./images/uxui.png"
                             alt="curso de experiencia e interfaz de usuario">
-                        <figcaption class="contenedor_boton"><a class="btn" href="./html/detalleDeCurso.html">Ver
+                        <figcaption class="contenedor_boton"><a class="btn-header" href="./html/detalleDeCurso.html">Ver
                                 Detalle</a>
                         </figcaption>
                     </figure>
@@ -144,7 +142,7 @@
                 <div class="div-curso-destacado">
                     <figure class="bloque-curso-destacado"> <img class="imagen-curso-destacado"
                             src="./images/ciberseguridad.png" alt="curso de ciberseguridad">
-                        <figcaption class="contenedor_boton"><a class="btn" href="./html/detalleDeCurso.html">Ver
+                        <figcaption class="contenedor_boton"><a class="btn-header" href="./html/detalleDeCurso.html">Ver
                                 Detalle</a>
                         </figcaption>
                     </figure>
@@ -170,7 +168,7 @@
                 <div class="div-curso-destacado">
                     <figure class="bloque-curso-destacado"><img class="imagen-curso-destacado" src="./images/uxui.png"
                             alt="curso de experiencia e interfaz de usuario">
-                        <figcaption class="contenedor_boton"><a class="btn" href="./html/detalleDeCurso.html">Ver
+                        <figcaption class="contenedor_boton"><a class="btn-header" href="./html/detalleDeCurso.html">Ver
                                 Detalle</a>
                         </figcaption>
                     </figure>
@@ -196,65 +194,13 @@
                 <div class="div-curso-destacado">
                     <figure class="bloque-curso-destacado"> <img class="imagen-curso-destacado"
                             src="./images/ciberseguridad.png" alt="curso de ciberseguridad">
-                        <figcaption class="contenedor_boton"><a class="btn" href="./html/detalleDeCurso.html">Ver
+                        <figcaption class="contenedor_boton"><a class="btn-header" href="./html/detalleDeCurso.html">Ver
                                 Detalle</a>
                         </figcaption>
                     </figure>
                     <div class="bloque-curso-destacado">
                         <div>
                             <p class="titulo-curso">Desarrollo Front End</p>
-                            <p>Lonioasdmpa asdasdasd
-                                adasdasdakfopdskf ksdof
-                                sdfsdokopf ksod sdkofps</p>
-                        </div>
-                        <div class="particion-datos-curso">
-                            <div class="primer-particion">
-                                <p><strong>20 horas</strong></p>
-                                <p><strong>$0000</strong></p>
-                            </div>
-                            <div class="segunda-particion">
-                                <p>VIRTUAL</p>
-
-                            </div>
-                        </div>
-            </article>
-            <article class="article-cursos-destacados">
-                <div class="div-curso-destacado">
-                    <figure class="bloque-curso-destacado"><img class="imagen-curso-destacado" src="./images/uxui.png"
-                            alt="curso de experiencia e interfaz de usuario">
-                        <figcaption class="contenedor_boton"><a class="btn" href="./html/detalleDeCurso.html">Ver
-                                Detalle</a>
-                        </figcaption>
-                    </figure>
-                    <div class="bloque-curso-destacado">
-                        <div>
-                            <p class="titulo-curso">Data Science</p>
-                            <p>Lonioasdmpa asdasdasd
-                                adasdasda kfopdskf ksdof
-                                sdfsdokopf ksod sdkofps</p>
-                        </div>
-                        <div class="particion-datos-curso">
-                            <div class="primer-particion">
-                                <p><strong>15 horas</strong></p>
-                                <p><strong>$0000</strong></p>
-                            </div>
-                            <div class="segunda-particion">
-                                <p>VIRTUAL</p>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="div-curso-destacado">
-                    <figure class="bloque-curso-destacado"> <img class="imagen-curso-destacado"
-                            src="./images/ciberseguridad.png" alt="curso de ciberseguridad">
-                        <figcaption class="contenedor_boton"><a class="btn" href="./html/detalleDeCurso.html">Ver
-                                Detalle</a>
-                        </figcaption>
-                    </figure>
-                    <div class="bloque-curso-destacado">
-                        <div>
-                            <p class="titulo-curso">Data Analytics</p>
                             <p>Lonioasdmpa asdasdasd
                                 adasdasdakfopdskf ksdof
                                 sdfsdokopf ksod sdkofps</p>
@@ -307,77 +253,7 @@
 
         </section>
     </main>
-    <footer>
-        <div class="columna_footer">
-            <h4 class="titulo_footer">Nuestro Grupo</h4>
-            <ul>
-                <li class="item_inferior">
-                    <p>Fernandez Cecilia Ivana - 37.217.330</p>
-                </li>
-                <li class="item_inferior">
-                    <p>Seehofer Nicolas Ezequiel - 40.863.696</p>
-                </li>
-                <li class="item_inferior">
-                    <p>Ticak Danilo - 45.684.769</p>
-                </li>
-                <li class="item_inferior">
-                    <p>Valentina Garcia Baldomar - 45.685.432</p>
-                </li>
-            </ul>
-        </div>
-
-        <div class="columna_footer">
-
-            <h4 class="titulo_footer">Menu</h4>
-            <ul>
-                <li class="item_inferior dropdown">
-                    <a href="#" class="dropbtn">Cursos</a> <!-- Flecha azul en el mismo enlace -->
-                    <ul class="dropdown-content">
-                        <li><a href="./html/detalleDeCurso.html">Curso 1</a></li>
-                        <li><a href="./html/detalleDeCurso.html">Curso 2</a></li>
-                        <li><a href="./html/detalleDeCurso.html">Curso 3</a></li>
-                        <li><a href="./html/detalleDeCurso.html">Curso 4</a></li>
-                    </ul>
-
-
-                </li>
-
-                <li class="item_inferior">
-                    <a href="">Empresas</a>
-                </li>
-                <li class="item_inferior">
-                    <a href="./html/giffCard.html">Giftcard</a>
-                </li>
-                <li class="item_inferior">
-                    <a href="../TPI/html/calendario.html">Proximas fechas</a>
-                </li>
-
-            </ul>
-        </div>
-        </div>
-        <div class="columna_footer">
-
-            <h4 class="titulo_footer">Sobre nosotros</h4>
-            <ul>
-                <li class="item_inferior">
-                    <p>Quiénes somos</p>
-                </li>
-                <li class="item_inferior">
-                    <a href="">Contacto</a>
-                </li>
-                <li class="item_inferior">
-                    <p>Términos y condiciones</p>
-                </li>
-                <li class="item_inferior">
-                    <p>Política de privacidad</p>
-                </li>
-
-            </ul>
-
-        </div>
-
-    </footer>
-
+    
 </body>
 
 

@@ -1,0 +1,1141 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Raleway:wght@100..900&display=swap');
+
+:root {
+    --azul: #0f787f;
+    --amarillo: #ffcc00;
+    --grisOscuro: #1d1d1d;
+    --grisIntermedio: #b3b3b3;
+    --grisClaro: #f0f0f0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+    list-style: none;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    color: var(--grisOscuro);
+    scroll-behavior: smooth;
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+
+/* HEADER PRINCIPAL */
+
+.header {
+    display: flex;
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    z-index: 1000;
+    box-shadow: 1px 13px 20px 0px rgba(0, 0, 0, 0.1);
+    align-items: center;
+    width: 100%;
+    height: 10%;
+    justify-content: space-around;
+}
+
+.contenedor_carrito {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+}
+
+.img-carrito {
+    width: 100%;
+    height: auto;
+}
+
+.numero-carrito-fijo {
+    position: absolute;
+    left: 70%;
+    font-weight: bold;
+    font-size: small;
+    color: var(--azul);
+    background-color: var(--amarillo);
+    border-radius: 10rem;
+    width: 30%;
+    text-align: center;
+}
+
+.logo {
+    max-height: 50px;
+}
+
+.nav-bar {
+    text-align: center;
+}
+
+.nav-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-menu li {
+    margin: 0 15px;
+    position: relative;
+    display: inline-block;
+
+}
+
+.nav-menu li:hover ul {
+    display: block;
+}
+
+.nav-menu ul {
+    display: none;
+    position: absolute;
+    right: -110%;
+    background-color: var(--grisClaro);
+    border-radius: 2em;
+}
+
+.nav-menu ul li a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: var(--grisOscuro);
+
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--grisOscuro);
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+
+.nav-menu a:hover {
+    color: var(--azul);
+}
+
+.header form input {
+    border-radius: 5rem;
+    border: 1px solid var(--grisOscuro);
+    height: 1.5rem;
+    width: 12rem;
+    padding-left: 5%;
+}
+
+.contenedor_carrito_btn {
+    display: flex;
+
+}
+
+/* HEADER FORMULARIOS */
+.header-formularios{
+    padding: 1em;
+    width: 100%;
+    height: 10%;
+    background-color: white;
+}
+
+.header-formularios-contenedor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.header-formularios-contenedor .logo img {
+    width: 10em;
+}
+
+.volver {
+    display: flex;
+}
+
+.volver a {
+    color: var(--amarillo);
+    font-size: 1.2em;
+    text-decoration: none;
+    font-weight: bold;
+   
+}
+
+.volver a:hover {
+    color: var(--azul);
+    text-decoration: underline;
+}
+
+.flecha img {
+    width: 2em;
+}
+
+
+/* BOTONES */
+
+.btn {
+    color: #fff;
+    border-radius: 2em;
+    padding: 4px 1em;
+    border: none;
+    max-width: 70%;
+    text-decoration: none;
+}
+
+.btn-azul {
+    background-color: var(--azul);
+    font-size: 1.2em;
+}
+
+.btn-azul:hover {
+    cursor: pointer;
+    background-color: var(--amarillo);
+}
+
+.btn-header {
+    padding: 8px 15px;
+    padding-top: 5%;
+    border: none;
+    border-radius: 2em;
+    background-color: var(--azul);
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background-color 0.3s;
+}
+
+.btn-header:hover {
+    background-color: var(--amarillo);
+}
+
+.btn-formulario-cuenta {
+    display: flex;
+    justify-content: center;
+    margin: 1em auto; 
+}
+
+
+/*CARROUSEL*/
+
+.section-main-carrousel {
+    width: 100%;
+    align-self: center;
+
+}
+
+.contenedor_imagen_carrousel {
+    width: 100%;
+    position: relative;
+    height: 90vh;
+}
+
+.img-carrousel-pincipal {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.img-flecha-carrousel-izquierda {
+    position: absolute;
+    color: #ffcc00;
+    width: 5%;
+    top: 50%;
+    left: 15%;
+    transform: translateY(-50%);
+}
+
+.img-flecha-carrousel-derecha {
+    position: absolute;
+    color: #ffcc00;
+    width: 5%;
+    top: 50%;
+    right: 15%;
+    transform: translateY(-50%);
+}
+
+/* TUTORIAL */
+
+.section-main-tutorial {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    align-self: center;
+    height: 100vh;
+}
+
+.elementos-del-tutorial {
+    display: flex;
+    width: 50%;
+    justify-content: flex-end;
+}
+
+.elementos-del-tutorial .div-texto-tutorial {
+    width: 50%;
+}
+
+.article-tutorial {
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.tutorial-titulo {
+    font-size: 3.5rem;
+    font-weight: bold;
+}
+
+.tutorial-subtitulo {
+    font-size: 2rem;
+    color: var(--azul);
+    font-weight: bold;
+}
+
+.div-tutorial {
+    display: flex;
+    height: 12rem;
+    width: 55%;
+    gap: 5%;
+}
+
+.div-tutorial .div-imagen {
+    display: flex;
+    justify-content: center;
+    height: 4rem;
+    align-self: center;
+}
+
+.tutorial-descripcion {
+    align-self: center;
+}
+
+.tutorial-descripcion h5{
+    font-size: 2rem;
+}
+
+.vinculo-div-tutorial {
+    display: inline-flex;
+    text-decoration: underline;
+    color: #0f787f;
+}
+
+/* CURSOS DESTACADOS */
+
+.div-titulo-oferta-cursos {
+    display: flex;
+    font-size: 2.2rem;
+    font-weight: bold;
+    padding-top: 8%;
+}
+
+.section-main-cursos-destacados {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5rem;
+    align-self: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.article-cursos-destacados {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    height: 12rem;
+    gap: 5%;
+}
+
+.div-curso-destacado {
+    display: flex;
+    background-color: #f0f0f0;
+    border-radius: 2rem;
+    width: 30%;
+    gap: 5%;
+
+}
+
+.titulo-curso {
+    color: #0f787f;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.bloque-curso-destacado {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 55%;
+}
+
+.particion-datos-curso {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    font-weight: bold;
+    align-items: center;
+}
+
+.segunda-particion {
+    padding-right: 10%;
+}
+
+.contenedor_boton {
+    position: absolute;
+    bottom: 6%;
+    transform: translate(-50%);
+    left: 48%;
+}
+
+.imagen-curso-destacado {
+    align-self: center;
+    width: 90%;
+    border-radius: 2rem;
+}
+
+/*MEDIOS DE PAGO*/
+
+.section-medios-de-pago {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    gap: 10%;
+    padding-top: 5%;
+    align-self: center;
+}
+
+.article-titulo-medio-de-pago {
+    display: flex;
+    height: 30%;
+    align-items: center;
+}
+
+.titulo-medio-de-pago {
+    font-weight: bold;
+    font-size: xx-large;
+}
+
+.contenedor-carrousel-medio-de-pago {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50%;
+    gap: 4%;
+}
+
+.items-medio-de-pago {
+    display: flex;
+    align-items: center;
+    width: 12%;
+    height: 80%;
+    border-radius: 2rem;
+    justify-content: center;
+    background-color: #f0f0f0;
+}
+
+.img-MdPago {
+    width: 90%;
+
+}
+
+.flecha {
+    display: flex;
+    background: white;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor-carrousel-medio-de-pago .izquierda {
+    justify-content: flex-end;
+}
+
+.contenedor-carrousel-medio-de-pago .derecha {
+    justify-content: flex-start;
+}
+
+.img-flecha-carrousel-MdPago {
+    width: 50%;
+}
+
+.img-flecha-carrousel-MdPago {
+    width: 50%;
+}
+
+/*ESTILO PROXIMAS FECHAS/CALENDARIO*/
+
+.main_proximas_fechas {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.main_proximas_fechas div {
+    align-content: center;
+}
+
+.img-flecha {
+    height: 15%;
+}
+
+.section_contenedor {
+    padding: 5%;
+    height: 40rem;
+    width: 70rem;
+}
+
+.section_principal {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 2%;
+}
+
+.columna_fecha {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 15%;
+    justify-content: start;
+    text-align: center;
+    gap: 3%;
+}
+
+.columna_fecha .contenedor_fecha {
+    display: flex;
+    flex-direction: column;
+    height: 20%;
+    width: 100%;
+    background-color: rgba(15, 120, 127, 0.5);
+    border-radius: 1rem;
+}
+
+.columna_fecha .contenedor_fecha .contenedor_curso {
+    height: 90%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5%;
+    justify-content: center
+}
+
+.columna_fecha .dia {
+    font-weight: bold;
+}
+
+.contenedor_fecha .numero_fecha {
+    font-size: medium;
+    padding-top: 2%;
+
+}
+
+.contenedor_curso a {
+
+    text-align: center;
+    border-radius: 1rem;
+    font-size: 85%;
+    font-weight: bold;
+    background-size: auto;
+    width: inherit;
+}
+
+.mostrar_en_movil {
+    display: none
+}
+
+/* UTILIZO EL OCULTAR EN MOVIL PARA ALGUNOS ELEMENTOS DE MI CALENDARIO, RECORDAR QUE ESE CODIGO ESTA EN EL MEDIA QUERIES DEL HEADER&FOOTER */
+
+@media screen and (max-width: 768px) {
+    .main_proximas_fechas {
+        width: 100%;
+        height: auto;
+    }
+
+    .ocultar-en-movil {
+        display: none;
+    }
+
+    .main_proximas_fechas .section_contenedor {
+        height: 30rem;
+        position: relative;
+    }
+
+    /*.main_proximas_fechas .img-flecha {
+        position: absolute;
+        height: 4%;
+        top: 14.5%;
+        left: 30%;
+    }
+
+    .main_proximas_fechas .flecha-derecha {
+        left: 69.5%;
+        top:14.5%;
+    }*/
+
+    .mostrar_en_movil {
+        display: block;
+        position: absolute;
+        text-align: center;
+        top: 8%;
+        font-weight: 600;
+        border-radius: 2rem;
+        padding: 1%;
+        border: 0.5px solid #ffcc00;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .mostrar_en_movil .flecha-mes {
+        color: #0F787f;
+    }
+
+    /* REVISAR EL WIDTH PORQUE ESTOY OCULTANDO LAS COLUMNAS DEL SABADO Y DOMINGO */
+
+    .main_proximas_fechas .section_contenedor .section_principal .columna_fecha {
+        width: 19%;
+        justify-content: center;
+    }
+
+    /* REVISAR SI EL 70% LO PUEDO PONER TODO EN UN CONTENEDOR DE CSS */
+
+    .columna_fecha .dia {
+        font-size: 70%;
+        overflow: hidden;
+    }
+
+    .columna_fecha .contenedor_fecha,
+    .columna_fecha .numero_fecha,
+    .columna_fecha .contenedor_curso {
+        font-size: 70%;
+        height: 15%;
+    }
+
+
+    .contenedor_fecha .contenedor_curso {
+        overflow: hidden;
+        text-wrap: nowrap;
+    }
+
+}
+
+
+
+@media screen and (max-width: 768px) {
+    main{
+        width:100%;
+
+    }
+}
+
+/* HEADER RESPONSIVE LISTO*/
+ 
+@media screen and (max-width: 575px) {
+    .header {
+        width: 100%;
+    }
+ 
+    .header .contenedor_carrito,
+    .header form,
+    .nav-bar {
+        display: none;
+    }
+ 
+    .header .logo-container,
+    .header .contenedor_carrito_btn {
+        display: flex;
+        /* O el estilo que necesites */
+    }
+ 
+    .header {
+        justify-content: center;
+        gap: 5%;
+    }
+ 
+    .header .logo-container {
+        width: 35%;
+    }
+ 
+    .header .logo-container img {
+        width: 100%;
+    }
+ 
+    .header .contenedor_carrito_btn {
+        justify-content: flex-end;
+        width: 55%;
+    }
+ 
+    .header .contenedor_carrito_btn .btn {
+        padding: 4px 8px;
+        font-size: 74%;
+    }
+ 
+ 
+ 
+}
+ 
+@media screen and (min-width: 576px) and (max-width: 767px) {
+ 
+    .header {
+        width: 100%;
+    }
+ 
+    .contenedor_carrito,
+    .nav-bar {
+        display: none
+    }
+ 
+    .header .logo-container,
+    .header .contenedor_carrito_btn {
+        display: flex;
+        /* O el estilo que necesites */
+    }
+ 
+    .header {
+        justify-content: center;
+        gap: 5%;
+    }
+ 
+    .header .logo-container {
+        width: 35%;
+    }
+ 
+    .header .logo-container img {
+        width: 100%;
+    }
+ 
+    .header .contenedor_carrito_btn {
+        justify-content: flex-end;
+        width: 55%;
+    }
+ 
+    .header .contenedor_carrito_btn .btn {
+        padding: 4px 8px;
+        font-size: 74%;
+    }
+ 
+ 
+ 
+ 
+ 
+ 
+}
+ 
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+    .header {
+        width: 100%;
+    }
+ 
+    .contenedor_carrito,
+    .header form {
+        display: none
+    }
+ 
+    .nav-bar {
+        display: block;
+        text-wrap: nowrap;
+    }
+ 
+    .header .logo-container,
+    .header .contenedor_carrito_btn {
+        display: flex;
+        /* O el estilo que necesites */
+    }
+ 
+ 
+ 
+    .header {
+        justify-content: center;
+        gap: 5%;
+    }
+ 
+    .header .logo-container {
+        width: 35%;
+    }
+ 
+    .header .logo-container img {
+        width: 100%;
+    }
+ 
+    .header .contenedor_carrito_btn {
+        justify-content: flex-start;
+        width: 55%;
+    }
+ 
+    .header .contenedor_carrito_btn .btn {
+        padding: 4px 8px;
+        font-size: 74%;
+    }
+}
+
+/* FORMULARIOS */
+.Formulario, .Formulario-registro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+}
+
+.formulario-cuenta {
+    min-width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* BOTONES */
+.btn {
+    color: #fff;
+    border-radius: 2em;
+    padding: 4px 1em;
+    border: none;
+    max-width: 70%;
+    text-decoration: none;
+}
+
+.btn-azul {
+    background-color: var(--azul);
+    font-size: 1.2em;
+}
+
+.btn-azul:hover {
+    cursor: pointer;
+    background-color: var(--amarillo);
+}
+
+.btn-formulario-cuenta {
+    display: flex;
+    justify-content: center;
+    margin: 1em auto; 
+}
+
+/* CAMPOS FORMULARIOS */
+.label-formulario-cuenta{
+    color: var(--azul);
+    display: block;
+    margin-bottom: 0.5em;
+    font-size: 1.1em;
+}
+
+input {
+    border: 1px solid var(--amarillo);
+    border-radius: 1em;
+    padding: 0.6em;
+    height: 2.2em;
+    width: 100%;
+    margin-bottom: 1em;
+    min-width: 20em;
+    font-size: 1em;
+    color: var(--grisIntermedio);
+}
+
+input::placeholder {
+    color: var(--grisIntermedio);
+}
+
+input:focus {
+    border-color: var(--azul);
+    outline: none;
+}
+
+/* TEXTOS Y TITULOS */
+h1, h2, h3 {
+    color: var(--azul);
+}
+
+.tituloPrincipal-formularios {
+    font-weight: bold;
+    text-align: center;
+    font-size: 3em;
+    margin-bottom: 0.5em;
+}
+
+.informacion-contacto{
+    font-weight: 400;
+    margin-bottom: 1.5em;
+}
+
+.parrafo-enlaceRecuperacion {
+    text-align: center;
+    color: var(--grisOscuro);
+    margin: -1em 0 2em;
+    width: 20%;
+    min-width: 22em;
+}
+
+/* ENLACES */
+#texto-Olvido-De-Contraseña {
+    display: flex;
+    justify-content: flex-end;
+    margin: -0.5em 0 0 10em;
+    font-size: 0.9em;
+}
+
+#texto-Olvido-De-Contraseña a,
+#texto-Registro a,
+#texto-InicioSesion a {
+    color: var(--azul);
+    text-decoration: none;
+}
+
+#texto-Olvido-De-Contraseña a:hover,
+#texto-Registro a:hover,
+#texto-InicioSesion a:hover {
+    text-decoration: underline;
+}
+
+/* CONTACTO */
+.contenedor-contacto {
+    width: 100%;
+    height: 100vh;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.seccion-contacto,
+.seccion-info {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.seccion-contacto {
+    min-width: 400px;
+    align-items: center;
+}
+
+.seccion-info {
+    min-width: 400px;
+    width: 30%;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1em;
+}
+
+.formulario-contacto {
+    display: flex; 
+    flex-direction: column; 
+    gap: 10px; 
+    max-width: 320px; 
+    width: 100%;
+}
+
+.contenedor-boton-contacto {
+    display: flex; 
+    justify-content: flex-end; 
+    width: 100%;
+}
+
+.ubicacion {
+    height: 100vh; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center;
+}
+
+iframe {
+    width: 100%; 
+    height: 450px; 
+    border: 0;
+}
+
+.whatsapp {
+    display: flex; 
+    margin-bottom: 2em;
+}
+
+.imagen-whatsapp {
+    max-width: 8%;
+}
+
+.telefono-contacto {
+    font-weight: bold; 
+    color: #1ba553; 
+    font-size: 1.4em;
+}
+
+.btn-formulario-contacto {
+    width: 10%;
+    margin-top: 2em;
+    display: inline-block;
+    white-space: nowrap;
+    min-width: 10rem;
+}
+
+
+/*ESTILO PROXIMAS FECHAS/CALENDARIO*/
+
+.main_proximas_fechas {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.main_proximas_fechas div {
+    align-content: center;
+}
+
+.img-flecha {
+    height: 15%;
+}
+
+.section_contenedor {
+    padding: 5%;
+    height: 40rem;
+    width: 70rem;
+}
+
+.section_principal {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 2%;
+}
+
+.columna_fecha {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 15%;
+    justify-content: start;
+    text-align: center;
+    gap: 3%;
+}
+
+.columna_fecha .contenedor_fecha {
+    display: flex;
+    flex-direction: column;
+    height: 20%;
+    width: 100%;
+    background-color: rgba(15, 120, 127, 0.5);
+    border-radius: 1rem;
+}
+
+.columna_fecha .contenedor_fecha .contenedor_curso {
+    height: 90%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5%;
+    justify-content: center
+}
+
+.columna_fecha .dia {
+    font-weight: bold;
+}
+
+.contenedor_fecha .numero_fecha {
+    font-size: medium;
+    padding-top: 2%;
+
+}
+
+.contenedor_curso a {
+
+    text-align: center;
+    border-radius: 1rem;
+    font-size: 85%;
+    font-weight: bold;
+    background-size: auto;
+    width: inherit;
+}
+
+.mostrar_en_movil {
+    display: none
+}
+
+/* UTILIZO EL OCULTAR EN MOVIL PARA ALGUNOS ELEMENTOS DE MI CALENDARIO, RECORDAR QUE ESE CODIGO ESTA EN EL MEDIA QUERIES DEL HEADER&FOOTER */
+
+@media screen and (max-width: 768px) {
+    .main_proximas_fechas {
+        width: 100%;
+        height: auto;
+    }
+
+    .ocultar-en-movil {
+        display: none;
+    }
+
+    .main_proximas_fechas .section_contenedor {
+        height: 30rem;
+        position: relative;
+    }
+
+    /*.main_proximas_fechas .img-flecha {
+        position: absolute;
+        height: 4%;
+        top: 14.5%;
+        left: 30%;
+    }
+
+    .main_proximas_fechas .flecha-derecha {
+        left: 69.5%;
+        top:14.5%;
+    }*/
+
+    .mostrar_en_movil {
+        display: block;
+        position: absolute;
+        text-align: center;
+        top: 8%;
+        font-weight: 600;
+        border-radius: 2rem;
+        padding: 1%;
+        border: 0.5px solid #ffcc00;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .mostrar_en_movil .flecha-mes {
+        color: #0F787f;
+    }
+
+    /* REVISAR EL WIDTH PORQUE ESTOY OCULTANDO LAS COLUMNAS DEL SABADO Y DOMINGO */
+
+    .main_proximas_fechas .section_contenedor .section_principal .columna_fecha {
+        width: 19%;
+        justify-content: center;
+    }
+
+    /* REVISAR SI EL 70% LO PUEDO PONER TODO EN UN CONTENEDOR DE CSS */
+
+    .columna_fecha .dia {
+        font-size: 70%;
+        overflow: hidden;
+    }
+
+    .columna_fecha .contenedor_fecha,
+    .columna_fecha .numero_fecha,
+    .columna_fecha .contenedor_curso {
+        font-size: 70%;
+        height: 15%;
+    }
+
+
+    .contenedor_fecha .contenedor_curso {
+        overflow: hidden;
+        text-wrap: nowrap;
+    }
+
+}
