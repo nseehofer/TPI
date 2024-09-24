@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><a>prender | FullStack</title>
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/header&nav.css">
+    <link rel="stylesheet" href="../css/detalleCurso.css">
+
+</head>
+<body>
+    <header class="header">
+        <figure class="logo-container">
+            <a href="index.html">
+                <img src="../images/LogoTest.png" alt="Logo Aprender" class="logo">
+            </a>
+        </figure>
+        <nav class="nav-bar">
+            <ul class="nav-menu">
+                <li><a href="#">Cursos</a>
+                    <ul>
+                        <li class="contenido"><a href="./html/detalleDeCurso.html">Diseño UX/UI</a></li>
+                        <li class="contenido"><a href="./html/detalleDeCurso.html">Ciberseguridad</a></li>
+                        <li class="contenido"><a href="./html/detalleDeCurso.html">Desarrollador Full Stack</a></li>
+                        <li class="contenido"><a href="./html/detalleDeCurso.html">Desarrollo Front End</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Empresas</a></li>
+                <li><a href="#">Giftcard</a></li>
+                <li><a href="../TPI/html/calendario.html">Próximas Fechas</a></li>
+            </ul>
+        </nav>
+        <form>
+            <label for="buscador"></label>
+            <input type="text" id="buscador" list="cursos" placeholder="Buscar cursos">
+            <datalist id="cursos">
+                <option value="Diseño UX/UI">
+                <option value="Ciberseguridad">
+                <option value="Desarrollador Full Stack">
+                <option value="Desarrollo Front End">
+            </datalist>
+        </form>
+        <div class="contenedor_carrito_btn">
+            <div class="contenedor_carrito"><img class="img-carrito" src="../images/carritoDeComprasColor.png"
+                    alt="CarroDeCompras">
+                <p class="numero-carrito-fijo">2</p>
+            </div>
+            <button class="btn">Iniciar Sesión</button>
+            <button class="btn">Registrarse</button>
+        </div>
+    </header>
+
+    <!-- Navegación principal -->
+    <nav class="nav-menu">
+        <ul class="nav-items-menu">
+            <li class="desplegable items item-principio">
+                <a href="http://">
+                    <h4>Cursos</h4>
+                </a>
+                <button class="flecha-cursos"> &#9662;</button>
+                <ul class="contenedor-desplegable">
+                    <li class="contenido"><a href="../html/curso1.html">Curso 1</a></li>
+                    <li class="contenido"><a href="../html/curso2.htm">Curso 2</a></li>
+                    <li class="contenido"><a href="../html/curso3.html">Curso 3</a></li>
+                    <li class="contenido"><a href="../html/curso4.html">Curso 4</a></li>
+                </ul>
+            </li>
+            <li class="items">
+                <a href="../html/forumlarioEmpresa.html">
+                    <h4> Empresas </h4>
+                </a>
+            </li>
+            <li class="items">
+                <a href="http://">
+                    <h4> Giftcard</h4>
+                </a>
+            </li>
+            <li class="items item-final">
+                <a href="http://">
+                    <h4> Proximas fechas </h4>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Volver -->
+    <a href="../index.html" class="volver"> &#x2190; Volver </a>
+
+    <!-- Detalle del curso -->
+    <section class="course-details">
+        <div class="course-image">
+            <img src="../images/fullstack.jpg" alt="Imagen del Curso">
+        </div>
+        <div class="course-info">
+            <h2>Desarrollo Full Stack</h2>
+            <p><strong>Valor:</strong> $60.000</p>
+            <p><strong>Modalidad:</strong> Virtual</p>
+            <p><strong>Duración:</strong> 6 meses</p>
+            <p><strong>Requisitos previos:</strong> Conocimientos en desarrollo web básico (HTML, CSS, JavaScript)</p>
+            <p><strong>Descripción:</strong> Aprende a desarrollar aplicaciones completas, tanto en el frontend como en el backend, utilizando tecnologías modernas.</p>
+            <button class="inscribirse">Inscribirse</button>
+        </div>
+    </section>
+
+    <!-- Contenidos por clase e Instructor -->
+    <div class="content-instructor">
+        <section class="class-contents">
+            <h3>Contenidos por clase</h3>
+            <details>
+                <summary>MÓDULO 1</summary>
+                <li>Fundamentos de desarrollo frontend.</li>
+                <li>Introducción a HTML, CSS y JavaScript.</li>
+            </details>
+            <details>
+                <summary>MÓDULO 2</summary>
+                <li>Desarrollo backend con Node.js.</li>
+                <li>APIs y manejo de bases de datos.</li>
+            </details>
+            <details>
+                <summary>MÓDULO 3</summary>
+                <li>Integración frontend y backend.</li>
+                <li>Desarrollo de aplicaciones full stack.</li>
+            </details>
+            <details>
+                <summary>MÓDULO 4</summary>
+                <li>Despliegue de aplicaciones web.</li>
+                <li>Optimización y mejores prácticas.</li>
+            </details>            
+        </section>
+
+        <section class="instructor-info">
+            <img src="../images/profesor.png" alt="Instructor">
+            <h3>Jorge Narvaez</h3>
+            <span>★★★★★</span>
+        </section>
+    </div>
+    <article class="article-cursos-destacados">
+        <h3>Cursos Relacionados</h3>
+        <div class="div-curso-destacado">
+            <figure class="bloque-curso-destacado"><img class="imagen-curso-destacado" src="../images/front.jpg"
+                    alt="curso de experiencia e interfaz de usuario">
+                <figcaption class="contenedor_boton"><a class="btn_detalle" href="detalleDeCurso.html">Ver
+                        Detalle</a>
+                </figcaption>
+            </figure>
+            <div class="bloque-curso-destacado">
+                <div>
+                    <p class="titulo-curso">Desarrollo Front end</p>
+                    <p>Aprende los principios fundamentales del Desarrollo Front end</p>
+                </div>
+                <div class="particion-datos-curso">
+                    <div class="primer-particion">
+                        <p><strong>4 meses</strong></p>
+                        <p><strong>$45000</strong></p>
+                    </div>
+                    <div class="segunda-particion">
+                        <p>VIRTUAL</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="div-curso-destacado">
+            <figure class="bloque-curso-destacado"> <img class="imagen-curso-destacado"
+                    src="../images/ciberseguridad.png" alt="curso de ciberseguridad">
+                <figcaption class="contenedor_boton"><a class="btn_detalle" href="detalleDeCurso.html">Ver
+                        Detalle</a>
+                </figcaption>
+            </figure>
+            <div class="bloque-curso-destacado">
+                <div>
+                    <p class="titulo-curso">Diseño UX/UI</p>
+                    <p>Aprende los principios fundamentales del Diseño UX/UI</p>
+                </div>
+                <div class="particion-datos-curso">
+                    <div class="primer-particion">
+                        <p><strong>13 meses</strong></p>
+                        <p><strong>$20000</strong></p>
+                    </div>
+                    <div class="segunda-particion">
+                        <p>VIRTUAL</p>
+
+                    </div>
+                </div>
+    </article>
+    <!-- Footer -->
+    <footer>
+        <div class="footer">
+            <div class="footer-logo">
+                <span class="a-logo">&lt;a&gt;</span><span class="prender-logo">prender</span>
+            </div>
+            <div class="contenedor-desplegable_footer">
+                
+                <div class="desplegable-item_footer">
+                    <input type="checkbox" id="desplegable-1" class="desplegable-checkbox_footer">
+                    <label for="desplegable-1" class="desplegable-boton_footer">Nuestro Grupo</label>
+                    <div class="desplegable-contenido_footer">
+                        <ul>
+                            <li>Fernandez Cecilia Ivana - 37.217.330</li>
+                            <li>Seehofer Nicolas Ezequiel - 40.863.696</li>
+                            <li>Ticak Danilo - 45.684.769</li>
+                            <li>Valentina Garcia Baldomar - 45.685.432</li>
+                        </ul>
+                    </div>
+                </div>
+              
+                <div class="desplegable-item_footer">
+                    <input type="checkbox" id="desplegable-2" class="desplegable-checkbox_footer">
+                    <label for="desplegable-2" class="desplegable-boton_footer">Menú</label>
+                    <div class="desplegable-contenido_footer">
+                        <ul>
+                            <li><a href="../html/forumlarioEmpresa.html">Cursos</a></li>
+                            <li><a href="../html/giffCard.html">Giftcard</a></li>
+                            <li><a href="../html/proximasFechas.html">Proximas fechas</a></li>
+                            <li><a href="../html/contacto.html">Contacto</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <h2>Seguinos en nuestras redes</h2>
+            </div>
+            <div class="social-icons">
+                <a href="#"><img src="../iconos/facebook_amarillo.png" alt="Facebook"></a>
+                <a href="#"><img src="../iconos/instagram_amarillo.png" alt="Instagram"></a>
+                <a href="#"><img src="../iconos/whatsapp_amarillo.png" alt="WhatsApp"></a>
+                <a href="#"><img src="../iconos/youtube_amarillo.png" alt="YouTube"></a>
+            </div>
+            <p> Codyright © 2024-2024 Aprender-UNLaM.Todos los derechos reservados  </p>
+        </div>
+    </footer>
+</body>
+</html>
