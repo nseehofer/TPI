@@ -1106,6 +1106,7 @@ iframe {
     .main_proximas_fechas {
         width: 100%;
         height: auto;
+        padding:10%;
     }
 
     .ocultar-en-movil {
