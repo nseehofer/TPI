@@ -882,18 +882,25 @@ h1, h2, h3 {
 }
 
 /* ENLACES */
-#texto-Olvido-De-Contraseña {
+#texto-Olvido-De-Contraseña a {
     display: flex;
     justify-content: flex-end;
     margin: -0.5em 0 0 10em;
     font-size: 0.9em;
+    color: var(--azul);
+    font-weight: 500;
 }
 
+#texto-Registro ,#texto-InicioSesion{
+    display: flex;
+}
 
 #texto-Registro a,
 #texto-InicioSesion a {
     color: var(--azul);
     text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9em;
 }
 
 #texto-Olvido-De-Contraseña a:hover,
