@@ -7,9 +7,7 @@
     <title>Giftcard</title>
     <!--ESTO ES EL LOGO QUE APARECERA EN NOMBRE DE LA PÁGINA-->
     <link rel="stylesheet" href="../css/cecipages.css">
-    <link rel="stylesheet" href="../css/header.css">
-
-    
+  
     <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
   
     <meta name="theme-color" content="#ffffff">
@@ -17,6 +15,7 @@
 </head>
 
 <body>
+    <a href="../index.html" class="volver"> &#x2190; Volver </a>
     
     <main class="contenedor_principal_giftcard">
         <section class="contenedor-giftcard">
@@ -81,14 +80,13 @@
                     </label>
                 </div>
 
-
                 <label for="font-size">
                     <p>Tamaño de fuente</p>
                 </label>
                 <div class="grupo-opciones">
                     <div class="grupo-items">
 
-                        <label>20px</label>
+                        <label class="label_opciones-pixeles" for="">20px</label>
                         <input type="radio" name="font-size" value="20px">
                     </div>
                     <div class="grupo-items">
@@ -105,7 +103,7 @@
                         <input type="radio" name="font-size" value="48px">
                     </div>
                     <div class="grupo-items">
-                        <label>60px</label>
+                        <label class="label_opciones-pixeles" for="">60px</label>
                         <input type="radio" name="font-size" value="60px">
                     </div>
                 </div>
@@ -177,11 +175,8 @@
                 </div>
 
                 </div>
-
-                <button class="botones_azules" type="submit">
-                    <a href="../html/pagoGiftcard.html">Confirmar</a>
-                </button>
-
+                
+                <a class="botones_azules" href="../html/confirmacionGiftcard.html"> Confirmar </a>
             </form>
         </section>
     </main>
@@ -203,9 +198,9 @@
              <h2> Menú</h2>
              <div>
              <ul>
-                <li><a href="../html/forumlarioEmpresa.html">Cursos</a></li>
-                <li><a href="../html/giffCard.html">Giftcard</a></li>
-                <li><a href="../html/proximasFechas.html">Proximas fechas</a></li>
+                <li><a href="../index.html#cursos">Cursos</a></li>
+                <li><a href="../html/giftCard.html">Giftcard</a></li>
+                <li><a href="../html/calendario.html">Proximas fechas</a></li>
                 <li><a href="../html/contacto.html">Contacto</a></li>
 
             </ul>
@@ -254,10 +249,10 @@
                 <label for="desplegable-2" class="desplegable-boton_footer">Menú</label>
                 <div class="desplegable-contenido_footer">
                     <ul>
-                        <li><a href="../html/forumlarioEmpresa.html">Cursos</a></li>
-                        <li><a href="../html/giffCard.html">Giftcard</a></li>
-                        <li><a href="../html/proximasFechas.html">Proximas fechas</a></li>
-                        <li><a href="../html/contacto.html">Contacto</a></li>
+                        <li><a href="../index.html#cursos">Cursos</a></li>
+                        <li><a href="./html/giftCard.html">Giftcard</a></li>
+                        <li><a href="./html/calendario.html">Proximas fechas</a></li>
+                        <li><a href="./html/contacto.html">Contacto</a></li>
 
                     </ul>
                 </div>
@@ -274,9 +269,6 @@
         <p> Codyright © 2024-2024 Aprender-UNLaM.Todos los derechos reservados  </p>
     </div>
     </footer>
-
-
-
 </body>
 
 </html>

@@ -12,12 +12,21 @@ body,html{
     width: 100%;
 }
 :root{
-    --color-primario: #0f787f;
-    --color-secundario:#ffcc00;
-    --color-blanco:white;
-    --color-gris:#b3b3b3;
-    --color-negro:black;
+    --azul: #0f787f;
+    --amarillo:#ffcc00;
+    --blanco:white;
+    --grisIntermedio:#b3b3b3;
+    --negro:black;
+    --grisOscuro: #1d1d1d;
+    --grisClaro: #f0f0f0;
 
+}
+.volver {
+    text-decoration: none;
+    font-size: 18px;
+    color: var(--amarillo);
+    margin: 20px;
+    display: inline-block;
 }
 
 /*¨Formulareio para empresas*/
@@ -36,7 +45,7 @@ body,html{
   
 }
 .formulario-inscripcion h1{
-    color: var(--color-primario);
+    color: var(--azul);
 }
 
 .grupo-campos {
@@ -56,7 +65,7 @@ body,html{
 }
 
 .grupo-campos input:focus {
-    border-color:var(--color-primario); 
+    border-color:var(--azul); 
 }
 
 .boton-agregar {
@@ -64,7 +73,7 @@ body,html{
     align-items: center;
     font-size: 1.2em;
     cursor: pointer;
-    color:var(--color-negro);
+    color:var(--negro);
     margin-bottom: 1.5em;
 }
 
@@ -91,8 +100,8 @@ body,html{
 }
 
 .boton-inscribirse {
-    background-color:var(--color-primario);
-    color:var(--color-secundario);
+    background-color:var(--azul);
+    color:var(--amarillo);
     font-size: 1.2em;
     padding: 10px 20px;
     border: none;
@@ -102,7 +111,7 @@ body,html{
 }
 
 .boton-inscribirse:hover {
-    background-color:var(--color-primario);
+    background-color:var(--azul);
 }
 
 /*giftcard*/
@@ -129,7 +138,7 @@ body,html{
    align-items: center;
    justify-content:space-evenly; 
    padding: 1.25em;
-   background-image: url('../images/panal-rojo.jpg');
+   background-image: url('../images/circuitos.jpg');
    background-size: cover;
    background-position: center;
    text-align: center;
@@ -143,13 +152,13 @@ body,html{
    }
 
      .a-logo{
-    color: var(--color-primario);
+    color: var(--azul);
     font-size: 30px;
   
     -webkit-text-stroke: -2px white;
     }
      .prender-logo{
-    color: var(--color-blanco);
+    color: var(--blanco);
     font-size: 30px;
 
     -webkit-text-stroke: -2px white;
@@ -162,8 +171,8 @@ body,html{
     }
 
     .monto {
-    background-color:var(--color-primario);
-    color: var(--color-blanco);
+    background-color:var(--azul);
+    color: var(--blanco);
     padding: 0.6em;
     border-radius: 3em;
     height: 2em;
@@ -199,13 +208,13 @@ body,html{
  
     }
    .giftcard p{
-    color: var(--color-secundario);
+    color: var(--amarillo);
  /*
    color:red;
    color: green;
    color:blue;
    color: white;
-   color: var(--color-negro);
+   color: var(--negro);
    font-size: 20px;
    font-size: 32px;
    font-size: 48px;
@@ -220,39 +229,47 @@ body,html{
     margin-top: 1em;
     width: 90%;
     }
+    
 
      .personalizacion_contenedor h3 {
     margin-bottom: 1.2em;
-    color: var(--color-primario);
+    color: var(--azul);
     }
 
     .personalizacion_contenedor input {
     padding: 0.6em;
     margin-bottom: 1em;
-    border: 1px solid var(--color-secundario);
+    border: 1px solid var(--amarillo);
     border-radius: 2em;
     width: 80%;
     
     }
 
     .botones_azules {
-    padding: 0.6em 1.6em;
-    background-color: var(--color-primario);
-    color: var(--color-blanco);
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    width: 70%;
-    }  
 
-    button:hover {
-    background-color:var(--color-secundario);
+        display: inline-block;
+        text-align: center;  
+        padding: 10px 20px;   
+        background-color:var(--azul);
+        color: white;        
+        border-radius: 5em;  
+        transition: background-color 0.3s ease;
+        display: flex;
+        justify-content: center; 
+        align-items: center;  
+  
+    }  
+    
+
+    .botones_azules:hover {
+    background-color:var(--amarillo);
+    transition: background-color 0.3s ease;
+
     }
     .giftcard h2 {
     margin-top: 40px;
     font-size: 24px;
-    color:var(--color-blanco);
+    color:var(--blanco);
     background-color: rgba(0, 0, 0, 0.5); 
     padding: 0.2em 0.5em; 
     border-radius: 0.5em;
@@ -260,7 +277,7 @@ body,html{
 
     .personalizacion_contenedor p {
     font-size: 18px;
-    color: var(--color-primario);
+    color: var(--azul);
     margin: 10px 0;
     }
 
@@ -282,8 +299,12 @@ body,html{
 
     .grupo-opciones {
         display: flex;
-        gap: 1em; 
+        gap: 2%; 
         margin-bottom: 1em;
+        
+    }
+    .label_opciones-pixeles{
+     margin: 0.5em;
     }
     
     .grupo-items{
@@ -302,15 +323,16 @@ body,html{
     .rectangulo-posiciones{
         width: 3em;
         height: 2em;
-        border: 1px var(--color-negro)solid;
+        border: 1px var(--negro)solid;
         position: relative;
+        margin-bottom: 0.5em;
     
     }
     .posicion_arriba-izquierda{
         width: 1em;
         height: 0.3em;
-        border: 1px var(--color-negro)solid;
-        background-color: var(--color-negro);
+        border: 1px var(--negro)solid;
+        background-color: var(--negro);
         position: absolute;
         top: 0.2em;
         left: 0.2em;
@@ -318,8 +340,8 @@ body,html{
     .posicion_arriba-derecha{
         width: 1em;
         height: 0.3em;
-        border: 1px var(--color-negro)solid;
-        background-color: var(--color-negro);
+        border: 1px var(--negro)solid;
+        background-color: var(--negro);
         position: absolute;
         top: 0.2em;
         right: 0.2em;
@@ -327,8 +349,8 @@ body,html{
     .posicion_abajo-izquierda{
         width: 1em;
         height: 0.3em;
-        border: 1px var(--color-negro)solid;
-        background-color: var(--color-negro);
+        border: 1px var(--negro)solid;
+        background-color: var(--negro);
         position: absolute;
        bottom: 0.2em;
         left: 0.2em;
@@ -358,7 +380,7 @@ body,html{
         display: none; 
     }
 
-    input[type="radio"]:checked + .circulo {
+    .grupo-colores input[type="radio"]:checked + .circulo {
         border: 0.2em solid #00b29e ; 
         gap: 5em;
     }
@@ -367,42 +389,43 @@ body,html{
     /*footer pantalla grande*/
 
     footer{
-        background-color: var(--color-negro);
+        background-color: var(--negro);
     }
     .contenedor_columnas_footer{
         display: grid;
         grid-template-columns: 2fr 1fr 2fr ; 
-        grid-template-rows: auto auto; 
+        grid-template-rows: auto auto;
+
         gap: 1px; 
-        padding: 2em;
+         padding: 2em 1em 7em 5em;
         padding-bottom: 2em;
         line-height: 1.5em;
     }
     .contenedor_columnas_footer h2{
-        color: var(--color-primario);
+        color: var(--azul);
         padding-bottom: 1em;
         font-family:Arial, Helvetica, sans-serif;
     }
 
     .fila2-footer{
         grid-column: 1 / 4;
-        background-color: var(--color-gris);
+        background-color: var(--grisIntermedio);
         padding:0.5em;
         text-align:right;
-        font-size: x-small;
+        font-size: small;
     }
     .contenedor_columnas_footer ul li, a{
-        transition: var(--color-primario);
+        transition: var(--azul);
     }
 
     .columna-footer a, ul li{
-    color: var(--color-secundario);
+    color: var(--amarillo);
     text-align: left;
     transition: color 0.3s ease, transform 0.3s ease; 
 
     }
     .columna-footer ul li a:hover {
-        color:var(--color-primario); 
+        color:var(--azul); 
         transform: scale(1.1); 
     }
     .columna-footer p{
@@ -415,7 +438,7 @@ body,html{
     /*footer responsivo*/
 
     .footer {
-    background-color: var(--color-negro);
+    background-color: var(--negro);
     padding: 1em;
     text-align: center;
     box-sizing: border-box;
@@ -433,7 +456,7 @@ body,html{
     }
 
     .desplegable-contenido_footer ul li,a{
-        color: var(--color-blanco);
+        color: var(--blanco);
         display: flex;
         justify-content: left;
         transition: font-size 0.3s ease-in-out;
@@ -444,7 +467,7 @@ body,html{
         font-size: 16px;
         padding: 0;
         margin: 0;
-        color: var(--color-secundario);
+        color: var(--amarillo);
         
     }
   
@@ -455,7 +478,7 @@ body,html{
     .contenedor-desplegable_footer h2{
     padding: 0;
     margin: 0;
-    color: var(--color-secundario);
+    color: var(--amarillo);
     
     }
 
@@ -466,8 +489,8 @@ body,html{
 }
 
 .desplegable-boton_footer {
-    background-color: var(--color-negro);
-    color: var(--color-primario);
+    background-color: var(--negro);
+    color: var(--azul);
     cursor: pointer;
     padding: 0.4em;
     border: none;
@@ -479,22 +502,22 @@ body,html{
   
 }
 .desplegable-boton_footer a:hover {
-    background-color: var(--color-primario);
+    background-color: var(--azul);
 }
 .desplegable-boton_footer:hover {
-    background-color: var(--color-secundario);
+    background-color: var(--amarillo);
 }
 
 
 .desplegable-contenido_footer ul li,a{
-    color: var(--color-blanco);
+    color: var(--blanco);
     display: flex;
     justify-content: left;
     transition: font-size 0.3s ease-in-out;
 
 }
 .desplegable-contenido_footer a:hover{
-    color: var(--color-negro) ;
+    color: var(--negro) ;
     cursor:pointer;
     font-size: 18px;
     font-weight: bold;
@@ -505,13 +528,13 @@ body,html{
     display:inline-block;
     text-align: left;
     width: 100%;
-    background-color: var(--color-secundario);
+    background-color: var(--amarillo);
 }
 .desplegable-contenido_footer {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease-out;
-    background-color: var(--color-negro);
+    background-color: var(--negro);
     padding: 0 1em;
 }
 .desplegable-contenido_footer ul {
@@ -521,8 +544,8 @@ body,html{
 }
 .desplegable-contenido_footer li {
     padding: 0.2em 0;
-    color: var(--color-blanco);
-    background-color:var(--color-negro);
+    color: var(--blanco);
+    background-color:var(--negro);
    
 }
 
@@ -546,7 +569,7 @@ body,html{
 .footer p{
     text-align: left;
     padding-top: 2em;
-    color: var(--color-gris);
+    color: var(--grisIntermedio);
     font-size:10px;
 }
 /*confirmacion de compra giftcard*/
@@ -573,6 +596,7 @@ body,html{
 .destinatario-giftcard, .monto-giftcard, .email-giftcard {
     font-size: 18px;
     margin: 10px 0;
+    padding-top: 1em;
 }
 
 .seccion-detalles  {
@@ -580,15 +604,17 @@ body,html{
     background-color: #f7f7f7;
     border-radius: 8px;
     padding: 1em;
+    text-align: left;
 }
 .seccion-detalles h2 {
-    color: var(--color-primario);
+    color: var(--azul);
 }  
 .detalles{
-padding: 2em;
+padding-bottom: 1em;
+padding-top: 1em;
 }
 .detalles-tarjeta h3{
-    color: var(--color-primario);
+    color: var(--azul);
 }
 
 .medios-pago {
@@ -600,7 +626,9 @@ padding: 2em;
     justify-content: space-around;
     flex-wrap: wrap;
     gap: 10px;
+    padding: 1em;
 }
+
 
 .opcion-pago input[type="radio"] {
     display: none;
@@ -656,18 +684,18 @@ padding: 2em;
 }
 
 .boton-pagar {
-    background-color: #28a745;
+    background-color: var(--azul);
     color: white;
     border: none;
     padding: 15px 30px;
     font-size: 18px;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
     margin-top: 1em;
 }
 
 .boton-pagar:hover {
-    background-color: #218838;
+    background-color: var(--amarillo);
 }
 
 /*  MEDIA QUERIES*/
@@ -684,6 +712,11 @@ padding: 2em;
 
     .boton-pagar {
         width: 100%;
+    }
+
+    .contenedor-compra{
+        grid-template-columns: 1fr; 
+        grid-template-areas: "contenedor-giftcard" "seccion-detalles";
     }
 }
  /* Footer responsivo */
@@ -754,8 +787,8 @@ padding: 2em;
      
     }
     .monto {
-        background-color:var(--color-primario);
-        color: var(--color-blanco);
+        background-color:var(--azul);
+        color: var(--blanco);
         padding: 0.6em;
         border-radius: 3em;
         height: 10%;
