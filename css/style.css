@@ -1296,6 +1296,78 @@ details li {
     object-fit: contain;
 }
 
+.div-titulo-oferta-cursos-detalle {
+    display: flex;
+    font-size: 2.2rem;
+    font-weight: bold;
+    padding-top: 8%;
+}
+
+.section-main-cursos-destacados-detalle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5rem;
+    align-self: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.article-cursos-destacados-detalle {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 5%; /* Ajusta el espacio entre los artículos */
+    padding: 2rem 0; /* Añadido espacio superior e inferior */
+}
+
+.div-curso-destacado-detalle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f0f0f0;
+    border-radius: 2rem;
+    width: 30%;
+    padding: 2rem; /* Añade espacio interno */
+    min-height: 20rem; /* Altura mínima para que las tarjetas no queden muy pequeñas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añadido sombra para dar un efecto de elevación */
+}
+
+.titulo-curso-detalle {
+    color: #0f787f;
+    font-size: x-large;
+    font-weight: bold;
+    text-align: center;
+}
+
+.bloque-curso-destacado-detalle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    height: 100%; /* Asegura que ocupe toda la altura disponible */
+}
+
+.particion-datos-curso-detalle {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    font-weight: bold;
+    align-items: center;
+}
+
+.segunda-particion-detalle {
+    padding-right: 10%;
+}
+
+/* Cambia el contenedor del botón a flex para centrarlo */
+.contenedor_boton-detalle {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem; /* Añade espacio para separar el botón del contenido */
+}
 
 .btn_detalle {
     background-color: var(--azul);
@@ -1311,21 +1383,14 @@ details li {
     background-color: var(--amarillo);
 }
 
+/* Ajustes responsivos */
 @media (max-width: 768px) {
-    .div-curso-destacado {
-        flex-direction: column;
-        width: 90%;
+    .div-curso-destacado-detalle {
+        width: 90%; /* Expande los cursos en pantallas más pequeñas */
     }
 
-    .imagen-curso-destacado {
-        width: 100%;
-        height: auto;
-        border-radius: 2rem 2rem 0 0;
-    }
-
-    .bloque-curso-destacado {
-        width: 100%;
-        padding: 10px;
-        text-align: center;
+    .article-cursos-destacados-detalle {
+        flex-direction: column; /* Coloca los cursos en columna en pantallas pequeñas */
+        gap: 2rem; /* Ajusta el espacio entre los cursos */
     }
 }
