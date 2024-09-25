@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmación de Compra - Gift Card</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="stylesheet" href="../css/cecipages.css">
+</head>
+<body>
+    <main>
+        <a href="../html/giftCard.html" class="volver"> &#x2190; Volver </a>
+    <div class="contenedor-compra">
+        
+        <div class="contenedor-giftcard">
+
+            <div class="giftcard">
+                <div class="monto">
+                    <span>$15.000</span>
+                </div>
+
+                <h2>GIFT-CARD</h2>
+
+                <p><span class="a-logo">&lt;a&gt;</span><span class="prender-logo">prender</span></p>
+
+                <p>Maria Perez</p>
+                <div class="codigo_QR">
+                    <img src="../images/QR.jpg" alt="QR codigo">
+                </div>
+
+            </div>
+        </div>
+
+    
+        <div class="seccion-detalles">
+            <h2>Detalles de la Compra</h2>
+       
+                <div class="detalles">
+                    <p class="titulo-giftcard">GIFT CARD</p>
+                    <p class="destinatario-giftcard">Para: <span>María Pérez</span></p>
+                    <p class="monto-giftcard">Valor: $15.000</p>
+                    <p class="email-giftcard">Envío a: <span>maria.perez@example.com</span></p>
+                
+                </div>
+               
+                <div class="medios-pago">
+                <h3>Elige un método de pago:</h3>
+                <div class="opciones-pago">
+                 
+                    <label class="opcion-pago">
+                        <input type="radio" name="pago" value="credito">
+                        <img src="../images/visa.png" alt="Tarjeta de Crédito">
+                    </label>
+                   
+                    <label class="opcion-pago">
+                        <input type="radio" name="pago" value="paypal">
+                        <img src="../images/paypal.png" alt="PayPal">
+                    </label>
+                   
+                    <label class="opcion-pago">
+                        <input type="radio" name="pago" value="mercadopago">
+                        <img src="../images/MERCADO-PAGO.png" alt="Mercado Pago">
+                    </label>
+                 
+                    <label class="opcion-pago">
+                        <input type="radio" name="pago" value="rapipago">
+                        <img src="../images/rapi.png" alt="RapiPago">
+                    </label>
+                </div>
+            </div>
+
+
+            <div class="detalles-tarjeta">
+                <h3>Detalles de la Tarjeta de Débito</h3>
+                <form>
+                    <label for="numero-tarjeta">Número de Tarjeta:</label>
+                    <input type="text" id="numero-tarjeta" name="numero-tarjeta" placeholder="1234 5678 9101 1121">
+
+                    <label for="nombre-titular">Nombre del Titular:</label>
+                    <input type="text" id="nombre-titular" name="nombre-titular" placeholder="Juan Pérez">
+
+                    <label for="fecha-vencimiento">Fecha de Vencimiento:</label>
+                    <input type="text" id="fecha-vencimiento" name="fecha-vencimiento" placeholder="MM/AA">
+
+                    <label for="cvv">CVV:</label>
+                    <input type="text" id="cvv" name="cvv" placeholder="123">
+                </form>
+            </div>
+
+       
+            <div class="descuento">
+                <p><strong>¡10% de descuento!</strong> al pagar con Tarjeta de Débito.</p>
+            </div>
+
+         
+            <div class="resumen-pago">
+                <p><strong>Monto total:</strong> $13.500 (descuento aplicado)</p>
+                <button class="boton-pagar">Pagar</button>
+            </div>
+        </div>
+    </div>
+</main>
+
+    <footer >
+        <div class="contenedor_columnas_footer">
+    
+        <div class="columna-footer">
+            <h2>Nuestro grupo</h2>
+            <ul>
+                <li>Baldomar Garcia Valentina - 45.685.432</li>
+                <li>Fernandez Ivana Cecilia- DNI 37.217.330</li>
+                <li>Seehofer Nicolas Ezequiel - 40.863.696</li>
+                <li>Ticak Danilo - 45.684.769</li>
+            </ul>
+
+        </div>
+        <div class="columna-footer">
+             <h2> Menú</h2>
+             <div>
+             <ul>
+                <li><a href="../index.html#cursos">Cursos</a></li>
+                <li><a href="../html/giftCard.html">Giftcard</a></li>
+                <li><a href="../html/calendario.html">Proximas fechas</a></li>
+                <li><a href="../html/contacto.html">Contacto</a></li>
+
+            </ul>
+        </div>
+        </div>
+      <div class="columna-footer">
+        <h2>Seguinos en nuestras redes</h2>
+        <div class="social-icons">
+            <a href="#"><img src="../iconos/facebook_amarillo.png" alt="Facebook"></a>
+            <a href="#"><img src="../iconos/instagram_amarillo.png" alt="Instagram"></a>
+            <a href="#"><img src="../iconos/whatsapp_amarillo.png" alt="Twitter"></a>
+            <a href="#"><img src="../iconos/youtube_amarillo.png" alt="YouTube"></a>
+        </div>
+        </div>
+      </div>
+      <div class="fila2-footer">
+        <p> Codyright © 2024-2024 Aprender-UNLaM.Todos los derechos reservados  </p>
+    </div>
+
+<!--modelo responsivo-->
+    <div class="footer">
+        <div class="footer-logo">
+            <span class="a-logo">&lt;a&gt;</span><span class="prender-logo">prender</span>
+        </div>
+
+        <div class="contenedor-desplegable_footer">
+         
+            <div class="desplegable-item_footer">
+                <input type="checkbox" id="desplegable-1" class="desplegable-checkbox_footer">
+                <label for="desplegable-1" class="desplegable-boton_footer">Nuestro Grupo
+                  
+                </label>
+                <div class="desplegable-contenido_footer">
+                    <ul>
+                        <li>Baldomar Garcia Valentina - 45.685.432</li>
+                        <li>Fernandez Ivana Cecilia- DNI 37.217.330</li>
+                        <li>Seehofer Nicolas Ezequiel - 40.863.696</li>
+                        <li>Ticak Danilo - 45.684.769</li>
+                    </ul>
+                </div>
+            </div>
+
+          
+            <div class="desplegable-item_footer">
+                <input type="checkbox" id="desplegable-2" class="desplegable-checkbox_footer">
+                <label for="desplegable-2" class="desplegable-boton_footer">Menú</label>
+                <div class="desplegable-contenido_footer">
+                    <ul>
+                     
+                        <li><a href="../index.html#cursos">Cursos</a></li>
+                        <li><a href="../html/giftCard.html">Giftcard</a></li>
+                        <li><a href="../html/calendario.html">Proximas fechas</a></li>
+                        <li><a href="../html/contacto.html">Contacto</a></li>
+
+                    </ul>
+                </div>
+            </div>
+            <h2>Seguinos en nuestras redes</h2>
+        </div>
+
+        <div class="social-icons">
+            <a href="#"><img src="../iconos/facebook_amarillo.png" alt="Facebook"></a>
+            <a href="#"><img src="../iconos/instagram_amarillo.png" alt="Instagram"></a>
+            <a href="#"><img src="../iconos/whatsapp_amarillo.png" alt="Twitter"></a>
+            <a href="#"><img src="../iconos/youtube_amarillo.png" alt="YouTube"></a>
+        </div>
+        <p> Codyright © 2024-2024 Aprender-UNLaM.Todos los derechos reservados  </p>
+    </div>
+    </footer>
+</body>
+</html>
