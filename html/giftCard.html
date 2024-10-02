@@ -17,8 +17,10 @@
 <body>
     <a href="../index.html" class="volver"> &#x2190; Volver </a>
     
-    <main class="contenedor_principal_giftcard">
-        <section class="contenedor-giftcard">
+    <main >
+        <section class="contenedor_principal_giftcard">
+        <div class="contenedor-giftcard">
+            
             <div class="giftcard">
                 <div class="monto">
                     <span>$15.000</span>
@@ -32,21 +34,21 @@
                 <div class="codigo_QR">
                     <img src="../images/QR.jpg" alt="QR codigo">
                 </div>
-    
             </div>
-       
-        </section>
-        <section class="personalizacion_contenedor">
+            </div>
+     
+   <div class="personalizacion_contenedor">
+        
             <h3>Personalización de Giftcard</h3>
-            <form action="#">
+            <form action="../html/confirmacionGiftcard.html">
                 <label for="nombre">
                     <p>Nombre Destinatario</p>
                 </label>
-                <input type="text" placeholder="Nombre Destinatario">
+                <input type="text" placeholder="Nombre Destinatario" required>
                 <label for="email">
                     <p>Mail Destinatario</p>
                 </label>
-                <input type="email" placeholder="Mail Destinatario">
+                <input type="email" placeholder="Mail Destinatario" required>
 
 
                 <label for="color">
@@ -111,7 +113,7 @@
                 <label for="monto">
                     <p>Monto</p>
                 </label>
-                <input class="input_numero" type="number" id="monto" placeholder="Monto">
+                <input class="input_numero" type="number" id="monto" placeholder="Monto" required>
 
                 <label for="Ubicación">
                     <p>Ubicación</p>
@@ -173,11 +175,11 @@
                         <input type="radio" name="opcion" value="5">
                     </div>
                 </div>
-
-                </div>
-                
-                <a class="botones_azules" href="../html/confirmacionGiftcard.html"> Confirmar </a>
-            </form>
+                <button class="botones_azules" type="submit"> Confirmar</button>
+    
+        </div>
+    </form>
+    </div>
         </section>
     </main>
 
