@@ -152,16 +152,14 @@ body {
     width: 100%;
     height: 10%;
     background-color: white;
-}
-
-.header-formularios-contenedor {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 0 auto;
 }
 
-.header-formularios-contenedor .logo img {
+
+.header-formularios .logo img {
     width: 10em;
 }
 
@@ -811,15 +809,18 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 90%;
+    height: 90vh;
 }
 
 .formulario-cuenta {
-    min-width: 100%;
+    width: 90%;
     max-width: 500px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    padding: 1em;
+
 }
 
 /* BOTONES */
@@ -863,7 +864,7 @@ body {
     height: 2.2em;
     width: 100%;
     margin-bottom: 1em;
-    min-width: 20em;
+    min-width: 18em;
     font-size: 1em;
     color: var(--grisIntermedio);
 }
@@ -876,6 +877,81 @@ body {
     border-color: var(--azul);
     outline: none;
 }
+
+
+@media (max-width: 400px) {
+    .Formulario,
+    .Formulario-registro {
+        height: 90vh;
+        padding: 1.5em 0;
+        display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+
+    .formulario-cuenta {
+        width: 80%;
+        padding: 0 1em;
+    }
+
+    .btn {
+        max-width: 100%;
+        padding: 12px;
+    }
+
+    .label-formulario-cuenta {
+        font-size: 1em;
+    }
+
+    .input-formulario {
+        font-size: 0.9em;
+    }
+}
+
+/* Teléfonos pequeños (menos de 600px) */
+@media (max-width: 600px) {
+    .Formulario,
+    .Formulario-registro {
+        height: 90vh;
+        padding: 2em 0;
+        display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+
+    .formulario-cuenta {
+        width: 95%;
+    }
+
+    .btn {
+        max-width: 100%;
+        padding: 10px;
+    }
+}
+
+/* Tablets (entre 600px y 900px) */
+@media (min-width: 600px) and (max-width: 900px) {
+    .formulario-cuenta {
+        max-width: 600px;
+    }
+
+    .btn {
+        max-width: 80%;
+    }
+}
+
+/* Notebook y Computadora (más de 900px) */
+@media (min-width: 900px) {
+    .formulario-cuenta {
+        max-width: 700px;
+    }
+
+    .btn {
+        max-width: 70%;
+    }
+}
+
+
 
 /* TEXTOS Y TITULOS */
 h1,
@@ -908,10 +984,10 @@ h3 {
 #texto-Olvido-De-Contraseña a {
     display: flex;
     justify-content: flex-end;
-    margin: -0.5em 0 0 10em;
     font-size: 0.9em;
     color: var(--azul);
     font-weight: 500;
+    text-align: center;
 }
 
 #texto-Registro,
