@@ -1012,7 +1012,6 @@ h3 {
 /* CONTACTO */
 .contenedor-contacto {
     width: 100%;
-    height: 100vh;
     padding: 20px;
     display: flex;
     justify-content: center;
@@ -1028,6 +1027,7 @@ h3 {
 
 .seccion-contacto {
     min-width: 400px;
+    min-height: 90vh;
     align-items: center;
 }
 
@@ -1037,6 +1037,7 @@ h3 {
     flex-direction: column;
     align-items: flex-start;
     padding: 1em;
+    margin-bottom: 2em; 
 }
 
 .formulario-contacto {
@@ -1054,7 +1055,7 @@ h3 {
 }
 
 .ubicacion {
-    height: 100vh;
+    min-height: 90vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1089,6 +1090,7 @@ iframe {
     white-space: nowrap;
     min-width: 10rem;
 }
+
 
 
 /*ESTILO PROXIMAS FECHAS/CALENDARIO*/
