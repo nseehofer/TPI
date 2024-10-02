@@ -2253,6 +2253,7 @@ a {
 @media (max-width: 768px) {
     .contenedor-compra {
         flex-direction: column;
+     
     }
 
     .opciones-pago {
@@ -2266,6 +2267,12 @@ a {
     .contenedor-compra {
         grid-template-columns: 1fr;
         grid-template-areas: "contenedor-giftcard" "seccion-detalles";
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .contenedor-compra{
+padding: 5em;
     }
 }
 
