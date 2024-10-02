@@ -41,299 +41,251 @@
         <div class="contenedor_carrito_btn">
             <div class="contenedor_carrito"><img class="img-carrito" src="images/carritoDeComprasColor.png"
                     alt="CarroDeCompras">
-                <p class="numero-carrito-fijo">2</p>
+                <a href="./html/carritoDeCompra.html" class="numero-carrito-fijo">2</a>
             </div>
             <a href="./html/inicioDeSesion.html" class="btn-header">Iniciar Sesión</a>
-            <a href="./html/registro.html" class="btn-header ocultar">Registrarse</a>
+            <a href="./html/registro.html" class="btn-header">Registrarse</a>
         </div>
 
     </header>
     <!-- BARRA DEGRADE -->
-    <main class="main">
-        <!-- SECCION CARROUSEL -->
-        <section class="section-main-carrousel">
-            <article class="contenedor_imagen_carrousel">
-                <img class="img-carrousel-pincipal" src="./images/sliderImagen.jpeg" alt="imagen-carrousel-principal">
-                <img class="img-flecha-carrousel-izquierda" src="./images/FlechaIzquierda.png" alt="flechas-carrousel">
-                <img class="img-flecha-carrousel-derecha" src="./images/FlechaDerecha.png" alt="flechas-carrousel">
-            </article>
-        </section>
-        <!-- SECCION TUTORIAL -->
-        <section class="section-main-tutorial">
+    <main class="main"></main>
+    <!-- SECCION CARROUSEL -->
+    <section class="section-main-carrousel">
+        <article class="contenedor_imagen_carrousel">
+            <img class="img-carrousel-pincipal" src="./images/sliderImagen.jpeg" alt="imagen-carrousel-principal">
+            <img class="img-flecha-carrousel-izquierda" src="./images/FlechaIzquierda.png" alt="flechas-carrousel">
+            <img class="img-flecha-carrousel-derecha" src="./images/FlechaDerecha.png" alt="flechas-carrousel">
+        </article>
+    </section>
 
-            <article class="elementos-del-tutorial">
-                <div class="div-texto-tutorial">
-                    <p class="tutorial-titulo">Inscripcion</h2>
-                    <p class="tutorial-subtitulo">Pasos a seguir</h3>
-                </div>
-            </article>
-
-            <article class="elementos-del-tutorial article-tutorial">
-                <div class="div-tutorial">
-                    <!--NO PUEDO ENTENDER PORQUE ESTE ME QUEDA ALGO CORRIDO HACIA LA IZQUIERDA-->
-                    <div class="div-imagen"><img src="./images/primerPaso.png" alt="primer paso inscripcion">
-                    </div>
-                    <div class="tutorial-descripcion descripcion-paso-uno">
-                        <p class="titulo">Iniciar sesion</p>
-                        <p>Si aun no tenes cuenta</p>
-                        <p>necesitas <a class="vinculo-div-tutorial" href="./html/registro.html">registrarte</a>
-                        </p>
-                    </div>
-                </div>
-
-                <div class="div-tutorial">
-                    <div class="div-imagen"><img src="./images/segundoPaso.png" alt="segundo paso inscripcion">
-                    </div>
-                    <div class="tutorial-descripcion">
-                        <p class="titulo">Elegir curso</p>
-                        <p>Ver la <a class="vinculo-div-tutorial" href="#oferta">oferta</a></p>
-                    </div>
-                </div>
-
-                <div class="div-tutorial">
-                    <div class="div-imagen"><img src="./images/tercerPaso.png" alt="tercer paso inscripcion">
-                    </div>
-                    <div class="tutorial-descripcion">
-                        <p class="titulo">Inscribirse</p>
-                        <p>Completar el formulario</p>
-                    </div>
-                </div>
-            </article>
-
-        </section>
-
-        <section  class="section-main-cursos-destacados">
-            <div id="oferta" class="div-titulo-oferta-cursos">
-                <p> Oferta de cursos</p>
+    <section class="section-main-pasos-a-seguir">
+        <article class="article-titulo-pasos-a-seguir">
+            <div class="div-inscripcion">
+                <p class="titulo inscripcion">Inscripcion</p>
+                <p class="titulo pasos">Pasos a seguir</p>
             </div>
-            <article class="article-cursos-destacados">
-                <div class="div-curso-destacado">
-                    <figure class="bloque-curso-destacado"><img class="imagen-curso-destacado" src="./images/uxui.png"
-                            alt="curso de experiencia e interfaz de usuario">
-                        <figcaption class="contenedor_boton"><a class="btn-header" href="./html/detalleDeCurso.html">Ver
-                                Detalle</a>
-                        </figcaption>
-                    </figure>
-                    <div class="bloque-curso-destacado">
-                        <div>
-                            <p class="titulo-curso">Diseño UX/UI</p>
-                            <p>Lonioasdmpa asdasdasd
-                                adasdasda kfopdskf ksdof
-                                sdfsdokopf ksod sdkofps</p>
-                        </div>
-                        <div class="particion-datos-curso">
-                            <div class="primer-particion">
-                                <p><strong>$0000</strong></p>
-                                <p><strong>15 horas</strong></p>
-                            </div>
-                            <div class="segunda-particion">
-                                <p>VIRTUAL</p>
+        </article>
+        <article class="article-pasos-enumerados">
+            <div class="div-paso paso-uno">
+                <p class="titulo">Iniciar Sesion</p>
+                <p>Si aún no tenes cuenta</p>
+                <p>necesitas
+                    <a class="vinculo-div-tutorial" href="./html/registro.html">registrarte</a>
+            </div>
+            <div class="div-paso paso-dos">
+                <p class="titulo">Elegir curso</p>
+                <p>Navega hacia abajo para</p>
+                <p>ver la <a class="vinculo-div-tutorial" href="#oferta">oferta</a></p>
+            </div>
+            <div class="div-paso paso-tres">
+                <p class="titulo">Inscribirse</p>
+                <p>Completar el formulario</p>
+            </div>
+        </article>
 
-                            </div>
-                        </div>
-                    </div>
+    </section>
+
+    <section class="section-oferta-de-cursos">
+        <p class="titulo">Oferta de cursos</p>
+        <article class="article-oferta-de-curso">
+            <div class="div-curso">
+                <figure class="figure-img-curso">
+                    <img src="./images/ciberseguridad.png" alt="Curso de CiberSeguridad">
+                    <figcaption class="figcaption-epigrafe-curso" class="contenedor_boton"><a class="btn-header"
+                            href="./html/detalleDeCursoCiber.html">Ver
+                            Detalle</a>
+                    </figcaption>
+                </figure>
+                <div>
+                    <p class="titulo-curso">CiberSeguridad</h2>
+                    <p><strong>Valor:</strong> $50.000</p>
+                    <p><strong>Modalidad:</strong> Virtual</p>
+                    <p><strong>Duración:</strong> 5 meses</p>
+                    <p class="ocultar"><strong>Requisitos previos:</strong> Conocimiento básico de redes</p>
+                    <p class="ocultar"><strong>Descripción:</strong> Aprende los conceptos básicos de ciberseguridad
+                        para proteger
+                        redes y sistemas contra amenazas y ataques.</p>
                 </div>
-                <div class="div-curso-destacado">
-                    <figure class="bloque-curso-destacado"> <img class="imagen-curso-destacado"
-                            src="./images/ciberseguridad.png" alt="curso de ciberseguridad">
-                        <figcaption class="contenedor_boton"><a class="btn-header" href="./html/detalleDeCursoCiber.html">Ver
-                                Detalle</a>
-                        </figcaption>
-                    </figure>
-                    <div class="bloque-curso-destacado">
-                        <div>
-                            <p class="titulo-curso">Ciberseguridad</p>
-                            <p>Lonioasdmpa asdasdasd
-                                adasdasdakfopdskf ksdof
-                                sdfsdokopf ksod sdkofps</p>
-                        </div>
-                        <div class="particion-datos-curso">
-                            <div class="primer-particion">
-                                <p><strong>$0000</strong></p>
-                                <p><strong>20 horas</strong></p>
-                            </div>
-                            <div class="segunda-particion">
-                                <p>VIRTUAL</p>
+            </div>
 
-                            </div>
-                        </div>
-            </article>
-            <article class="article-cursos-destacados">
-                <div class="div-curso-destacado">
-                    <figure class="bloque-curso-destacado"><img class="imagen-curso-destacado" src="./images/fullstack.jpg"
-                            alt="curso de experiencia e interfaz de usuario">
-                        <figcaption class="contenedor_boton"><a class="btn-header" href="./html/detalleDeCursoFullStack.html">Ver
-                                Detalle</a>
-                        </figcaption>
-                    </figure>
-                    <div class="bloque-curso-destacado">
-                        <div>
-                            <p class="titulo-curso">Desarrollador Full Stack</p>
-                            <p>Lonioasdmpa asdasdasd
-                                adasdasda kfopdskf ksdof
-                                sdfsdokopf ksod sdkofps</p>
-                        </div>
-                        <div class="particion-datos-curso">
-                            <div class="primer-particion">
-                                <p><strong>$0000</strong></p>
-                                <p><strong>15 horas</strong></p>
-                            </div>
-                            <div class="segunda-particion">
-                                <p>VIRTUAL</p>
-
-                            </div>
-                        </div>
-                    </div>
+            <div class="div-curso">
+                <figure class="figure-img-curso">
+                    <img src="./images/uxui.png" alt="Curso de Diseño UX-UI">
+                    <figcaption class="figcaption-epigrafe-curso" class="contenedor_boton"><a class="btn-header"
+                            href="./html/detalleDeCurso.html">Ver
+                            Detalle</a>
+                    </figcaption>
+                </figure>
+                <div>
+                    <p class="titulo-curso">Diseño UX-UI</h2>
+                    <p><strong>Valor:</strong> $20.000</p>
+                    <p><strong>Modalidad:</strong> Virtual</p>
+                    <p><strong>Duración:</strong> 13 meses</p>
+                    <p class="ocultar"><strong>Requisitos previos:</strong> Conocimiento básico de Diseño</p>
+                    <p class="ocultar"><strong>Descripción:</strong> Aprende los principios fundamentales del diseño
+                        UX/UI para
+                        crear experiencias de usuario atractivas
+                        y funcionales en plataformas digitales</p>
                 </div>
-                <div class="div-curso-destacado">
-                    <figure class="bloque-curso-destacado"> <img class="imagen-curso-destacado"
-                            src="./images/front.jpg" alt="curso de ciberseguridad">
-                        <figcaption class="contenedor_boton"><a class="btn-header" href="./html/detalleDeCursoFront.html">Ver
-                                Detalle</a>
-                        </figcaption>
-                    </figure>
-                    <div class="bloque-curso-destacado">
-                        <div>
-                            <p class="titulo-curso">Desarrollo Front End</p>
-                            <p>Lonioasdmpa asdasdasd
-                                adasdasdakfopdskf ksdof
-                                sdfsdokopf ksod sdkofps</p>
-                        </div>
-                        <div class="particion-datos-curso">
-                            <div class="primer-particion">
-                                <p><strong>$0000</strong></p>
-                                <p><strong>20 horas</strong></p>
-                            </div>
-                            <div class="segunda-particion">
-                                <p>VIRTUAL</p>
+            </div>
+        </article>
+        <!-- OTRO ARTICLE DE CURSOS -->
 
-                            </div>
-                        </div>
-            </article>
-        </section>
-        <!-- SECCION MEDIOS DE PAGO -->
-        <section class="section-medios-de-pago">
-            <article class="article-titulo-medio-de-pago">
-                <p class="titulo-medio-de-pago">Medios de pago</p>
-            </article>
-
-            <article class="contenedor-carrousel-medio-de-pago">
-                <figure class="items-medio-de-pago flecha izquierda">
-                    <img class="img-flecha-carrousel-MdPago" src="images/FlechaIzquierdaCarrouselMdPagos.png"
-                        alt="direcionar el carrousel de medios de pagos hacia la izquierda">
+        <article class="article-oferta-de-curso">
+            <div class="div-curso">
+                <figure class="figure-img-curso">
+                    <img src="./images/front.jpg" alt="Desarrollo Front End">
+                    <figcaption class="figcaption-epigrafe-curso" class="contenedor_boton"><a class="btn-header"
+                            href="./html/detalleDeCursoFront.html">Ver
+                            Detalle</a>
+                    </figcaption>
                 </figure>
+                <div>
+                    <p class="titulo-curso">Desarrollo Front End</h2>
+                    <p><strong>Valor:</strong> $45.000</p>
+                    <p><strong>Modalidad:</strong> Virtual</p>
+                    <p><strong>Duración:</strong> 4 meses</p>
+                    <p class="ocultar"><strong>Requisitos previos:</strong> Conocimientos básicos de HTML y CSS</p>
+                    <p class="ocultar"><strong>Descripción:</strong> Aprende a desarrollar interfaces web modernas y
+                        atractivas
+                        utilizando HTML, CSS y JavaScript.</p>
+                </div>
+            </div>
 
-                <figure class="items-medio-de-pago ocultar">
-                    <img class="img-MdPago" src="./images/TcoTd.png" alt="medio de pago tarjeta debito y credito">
+            <div class="div-curso">
+                <figure class="figure-img-curso">
+                    <img src="./images/fullstack.jpg" alt="Desarrollo Full Stack">
+                    <figcaption class="figcaption-epigrafe-curso" class="contenedor_boton"><a class="btn-header"
+                            href="./html/detalleDeCursoFullStack.html">Ver
+                            Detalle</a>
+                    </figcaption>
                 </figure>
+                <div>
+                    <p class="titulo-curso">Desarrollo Full Stack</h2>
+                    <p><strong>Valor:</strong> $60.000</p>
+                    <p><strong>Modalidad:</strong> Virtual</p>
+                    <p><strong>Duración:</strong> 6 meses</p>
+                    <p class="ocultar"><strong>Requisitos previos:</strong> Conocimientos en desarrollo web básico
+                        (HTML, CSS,
+                        JavaScript)</p>
+                    <p class="ocultar"><strong>Descripción:</strong> Aprende a desarrollar aplicaciones completas, tanto
+                        en el
+                        frontend como en el backend, utilizando tecnologías modernas.</p>
+                </div>
+            </div>
+        </article>
 
-                <figure class="items-medio-de-pago">
-                    <img class="img-MdPago" src="./images/mpago.png" alt="medio de pago merdcado pago">
-                </figure>
+    </section>
 
-                <figure class="items-medio-de-pago">
-                    <img class="img-MdPago" src="./images/rapipago.png" alt="medio de pago rapipago">
-                </figure>
+    <section class="section-medio-de-pago">
+        <div class="div-titulo-medio-de-pago">
+            <p class="titulo">Medios de pago</p>
+        </div>
+        <article class="article-medio-de-pago">
+            <figure class="figure-flecha"><img src="./images/FlechaIzquierdaCarrouselMdPagos.png"></figure>
+            <figure class="figure-medio-de-pago ocultar"><img src="./images/visa.png"></figure>
+            <figure class="figure-medio-de-pago"><img src="./images/rpago.png"></figure>
+            <figure class="figure-medio-de-pago ocultar "> <img src="./images/paypal.png"></figure>
+            <figure class="figure-medio-de-pago"><img src="./images/mpago.png"></figure>
+            <figure class="figure-flecha"><img src="./images/FlechaDerechaCarrouselMdPagos.png"></figure>
+        </article>
+    </section>
 
-                <figure class="items-medio-de-pago ocultar">
-                    <img class="img-MdPago" src="./images/paypal.png" alt="medio de pago paypal">
-                </figure>
-
-                <figure class="items-medio-de-pago flecha derecha">
-                    <img class="img-flecha-carrousel-MdPago" src="images/FlechaDerechaCarrouselMdPagos.png"
-                        alt="direcionar el carrousel de medios de pagos hacia la derecha">
-                </figure>
-            </article>
-
-        </section>
     </main>
-    <footer >
+    <footer>
         <div class="contenedor_columnas_footer">
-    
-        <div class="columna-footer">
-            <h2>Nuestro grupo</h2>
-            <ul>
-                <li>Baldomar Garcia Valentina - 45.685.432</li>
-                <li>Fernandez Ivana Cecilia - 37.217.330</li>
-                <li>Seehofer Nicolas Ezequiel - 40.863.696</li>
-                <li>Ticak Danilo - 45.684.769</li>
-            </ul>
 
-        </div>
-        <div class="columna-footer">
-             <h2> Menú</h2>
-             <div>
-             <ul>
-                <li><a href="#oferta">Cursos</a></li>
-                <li><a href="./html/giftCard.html">Giftcard</a></li>
-                <li><a href="./html/calendario.html">Proximas fechas</a></li>
-                <li><a href="./html/contacto.html">Contacto</a></li>
+            <div class="columna-footer">
+                <h2>Nuestro grupo</h2>
+                <ul>
+                    <li>Baldomar Garcia Valentina - 45.685.432</li>
+                    <li>Fernandez Ivana Cecilia - 37.217.330</li>
+                    <li>Seehofer Nicolas Ezequiel - 40.863.696</li>
+                    <li>Ticak Danilo - 45.684.769</li>
+                </ul>
 
-            </ul>
-        </div>
-        </div>
-      <div class="columna-footer">
-        <h2>Seguinos en nuestras redes</h2>
-        <div class="social-icons">
-            <a href="https://www.facebook.com/UnlamOficial"><img src="iconos/facebook_amarillo.png" alt="Facebook"></a>
-            <a href="https://www.instagram.com/unlamoficial/?hl=es"><img src="iconos/instagram_amarillo.png" alt="Instagram"></a>
-            <a href="#"><img src="iconos/whatsapp_amarillo.png" alt="whatsapp"></a>
-            <a href="https://www.youtube.com/@UNLaMOficial"><img src="iconos/youtube_amarillo.png" alt="YouTube"></a>
-        </div>
-        </div>
-      </div>
-      <div class="fila2-footer">
-        <p> Codyright © 2024-2024 Aprender-UNLaM.Todos los derechos reservados  </p>
-    </div>
-
-<!--modelo responsivo-->
-    <div class="footer">
-        <div class="footer-logo">
-            <span class="a-logo">&lt;a&gt;</span><span class="prender-logo">prender</span>
-        </div>
-
-        <div class="contenedor-desplegable_footer">
-         
-            <div class="desplegable-item_footer">
-                <input type="checkbox" id="desplegable-1" class="desplegable-checkbox_footer">
-                <label for="desplegable-1" class="desplegable-boton_footer">Nuestro Grupo
-                  
-                </label>
-                <div class="desplegable-contenido_footer">
-                    <ul>
-                        <li>Baldomar Garcia Valentina - 45.685.432</li>
-                        <li>Fernandez Ivana Cecilia - 37.217.330</li>
-                        <li>Seehofer Nicolas Ezequiel - 40.863.696</li>
-                        <li>Ticak Danilo - 45.684.769</li>
-                    </ul>
-                </div>
             </div>
-
-          
-            <div class="desplegable-item_footer">
-                <input type="checkbox" id="desplegable-2" class="desplegable-checkbox_footer">
-                <label for="desplegable-2" class="desplegable-boton_footer">Menú</label>
-                <div class="desplegable-contenido_footer">
+            <div class="columna-footer">
+                <h2> Menú</h2>
+                <div>
                     <ul>
                         <li><a href="#oferta">Cursos</a></li>
                         <li><a href="./html/giftCard.html">Giftcard</a></li>
                         <li><a href="./html/calendario.html">Proximas fechas</a></li>
-                        <li><a href="../html/contacto.html">Contacto</a></li>
+                        <li><a href="./html/contacto.html">Contacto</a></li>
 
                     </ul>
                 </div>
             </div>
-            <h2>Seguinos en nuestras redes</h2>
+            <div class="columna-footer">
+                <h2>Seguinos en nuestras redes</h2>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/UnlamOficial"><img src="iconos/facebook_amarillo.png"
+                            alt="Facebook"></a>
+                    <a href="https://www.instagram.com/unlamoficial/?hl=es"><img src="iconos/instagram_amarillo.png"
+                            alt="Instagram"></a>
+                    <a href="#"><img src="iconos/whatsapp_amarillo.png" alt="whatsapp"></a>
+                    <a href="https://www.youtube.com/@UNLaMOficial"><img src="iconos/youtube_amarillo.png"
+                            alt="YouTube"></a>
+                </div>
+            </div>
+        </div>
+        <div class="fila2-footer">
+            <p> Codyright © 2024-2024 Aprender-UNLaM.Todos los derechos reservados </p>
         </div>
 
-        <div class="social-icons">
-            <a href="https://www.facebook.com/UnlamOficial"><img src="./iconos/facebook_amarillo.png" alt="Facebook"></a>
-            <a href="https://www.instagram.com/unlamoficial/?hl=es"><img src="./iconos/instagram_amarillo.png" alt="Instagram"></a>
-            <a href="#"><img src="./iconos/whatsapp_amarillo.png" alt="Twitter"></a>
-            <a href="https://www.youtube.com/@UNLaMOficial"><img src="./iconos/youtube_amarillo.png" alt="YouTube"></a>
+        <!--modelo responsivo-->
+        <div class="footer">
+            <div class="footer-logo">
+                <span class="a-logo">&lt;a&gt;</span><span class="prender-logo">prender</span>
+            </div>
+
+            <div class="contenedor-desplegable_footer">
+
+                <div class="desplegable-item_footer">
+                    <input type="checkbox" id="desplegable-1" class="desplegable-checkbox_footer">
+                    <label for="desplegable-1" class="desplegable-boton_footer">Nuestro Grupo
+
+                    </label>
+                    <div class="desplegable-contenido_footer">
+                        <ul>
+                            <li>Baldomar Garcia Valentina - 45.685.432</li>
+                            <li>Fernandez Ivana Cecilia - 37.217.330</li>
+                            <li>Seehofer Nicolas Ezequiel - 40.863.696</li>
+                            <li>Ticak Danilo - 45.684.769</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="desplegable-item_footer">
+                    <input type="checkbox" id="desplegable-2" class="desplegable-checkbox_footer">
+                    <label for="desplegable-2" class="desplegable-boton_footer">Menú</label>
+                    <div class="desplegable-contenido_footer">
+                        <ul>
+                            <li><a href="#oferta">Cursos</a></li>
+                            <li><a href="./html/giftCard.html">Giftcard</a></li>
+                            <li><a href="./html/calendario.html">Proximas fechas</a></li>
+                            <li><a href="../html/contacto.html">Contacto</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+                <h2>Seguinos en nuestras redes</h2>
+            </div>
+
+            <div class="social-icons">
+                <a href="https://www.facebook.com/UnlamOficial"><img src="./iconos/facebook_amarillo.png"
+                        alt="Facebook"></a>
+                <a href="https://www.instagram.com/unlamoficial/?hl=es"><img src="./iconos/instagram_amarillo.png"
+                        alt="Instagram"></a>
+                <a href="#"><img src="./iconos/whatsapp_amarillo.png" alt="Twitter"></a>
+                <a href="https://www.youtube.com/@UNLaMOficial"><img src="./iconos/youtube_amarillo.png"
+                        alt="YouTube"></a>
+            </div>
+            <p> Codyright © 2024-2024 Aprender-UNLaM.Todos los derechos reservados </p>
         </div>
-        <p> Codyright © 2024-2024 Aprender-UNLaM.Todos los derechos reservados  </p>
-    </div>
     </footer>
 </body>
 
