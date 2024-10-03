@@ -27,13 +27,15 @@ body {
     color: var(--grisOscuro);
     scroll-behavior: smooth;
 }
+
 /*Sesion iniciada*/
-.icon-img{
+.icon-img {
     width: 2.5em;
     height: 2.5em;
 }
-.usuario_icon{
-padding-left: 2em;
+
+.usuario_icon {
+    padding-left: 2em;
 }
 
 
@@ -158,12 +160,22 @@ padding-left: 2em;
 .header-formularios {
     padding: 1em;
     width: 100%;
-    height: 10%;
     background-color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 0 auto;
+}
+
+.header-formularios .header-formularios-contenedor {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+
+}
+
+.header-formularios .header-formularios-contenedor .logo {
+    align-self: center;
 }
 
 
@@ -1315,7 +1327,7 @@ padding-left: 2em;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 90vh;
+    
 }
 
 .formulario-cuenta {
@@ -1386,13 +1398,14 @@ padding-left: 2em;
 
 
 @media (max-width: 400px) {
+
     .Formulario,
     .Formulario-registro {
-        height: 90vh;
+        
         padding: 1.5em 0;
         display: flex;
-    justify-content: center;
-    align-items: center;
+        justify-content: center;
+        align-items: center;
     }
 
     .formulario-cuenta {
@@ -1416,13 +1429,14 @@ padding-left: 2em;
 
 /* Teléfonos pequeños (menos de 600px) */
 @media (max-width: 600px) {
+
     .Formulario,
     .Formulario-registro {
-        height: 90vh;
+        
         padding: 2em 0;
         display: flex;
-    justify-content: center;
-    align-items: center;
+        justify-content: center;
+        align-items: center;
     }
 
     .formulario-cuenta {
@@ -1543,7 +1557,7 @@ h3 {
     flex-direction: column;
     align-items: flex-start;
     padding: 1em;
-    margin-bottom: 2em; 
+    margin-bottom: 2em;
 }
 
 .formulario-contacto {
@@ -2031,12 +2045,13 @@ details li {
 
 /*¨Formulareio para empresas*/
 .cuerpo-formulario-inscripcion {
-    min-height:100vh ;
+    min-height: 100vh;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
 }
+
 .formulario-inscripcion {
     height: fit-content;
     max-width: 100%;
@@ -2063,7 +2078,7 @@ details li {
     margin-bottom: 1em;
     border-radius: 1em;
     padding: 1em;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .grupo-campos .input-descripcion {
@@ -2108,7 +2123,7 @@ details li {
     padding: 1em;
     display: inline-block;
     border-radius: 5px;
-  
+
 }
 
 .titulo-inscripcion {
@@ -2267,7 +2282,7 @@ details li {
 
 .botones_azules {
 
-   font-size: 1.2em;
+    font-size: 1.2em;
     padding: 10px 20px;
     background-color: var(--azul);
     color: white;
@@ -2774,7 +2789,7 @@ a {
 @media (max-width: 768px) {
     .contenedor-compra {
         flex-direction: column;
-     
+
     }
 
     .opciones-pago {
@@ -2792,8 +2807,8 @@ a {
 }
 
 @media screen and (max-width: 1024px) {
-    .contenedor-compra{
-padding: 5em;
+    .contenedor-compra {
+        padding: 5em;
     }
 }
 
@@ -2816,7 +2831,7 @@ padding: 5em;
 
 @media screen and (max-width: 768px) {
 
-  
+
     .grupo-campos:nth-of-type(3) {
         display: none;
         padding-bottom: 3em;
@@ -3028,26 +3043,27 @@ padding: 5em;
     .article_cursos_carrito,
     .article_cursos_precio_total {
         width: 100%;
-    }}
-    /*Pago exitoso-página*/
-    .modal {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5); 
-        pointer-events: none;
     }
-    
-    .modal-contenido {
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        text-align: center;
-    }
-    
+}
+
+/*Pago exitoso-página*/
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+}
+
+.modal-contenido {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
