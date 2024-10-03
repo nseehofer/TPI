@@ -27,12 +27,22 @@ body {
     color: var(--grisOscuro);
     scroll-behavior: smooth;
 }
+/*Sesion iniciada*/
+.icon-img{
+    width: 2.5em;
+    height: 2.5em;
+}
+.usuario_icon{
+padding-left: 2em;
+}
+
 
 .main {
     display: flex;
     flex-direction: column;
     width: 100%;
 }
+
 
 
 /* HEADER PRINCIPAL */
@@ -3005,4 +3015,26 @@ padding: 5em;
     .article_cursos_carrito,
     .article_cursos_precio_total {
         width: 100%;
+    }}
+    /*Pago exitoso-página*/
+    .modal {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); 
+        pointer-events: none;
     }
+    
+    .modal-contenido {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+    
