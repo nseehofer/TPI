@@ -1700,6 +1700,8 @@ iframe {
 
 /* UTILIZO EL OCULTAR EN MOVIL PARA ALGUNOS ELEMENTOS DE MI CALENDARIO, RECORDAR QUE ESE CODIGO ESTA EN EL MEDIA QUERIES DEL HEADER&FOOTER */
 
+
+
 @media screen and (max-width: 768px) {
     .main_proximas_fechas {
         width: 100%;
@@ -2821,11 +2823,15 @@ a {
 
 }
 
-/*inscripcion responsivo*/
+/*inscripcion y inicio sesion logo responsivo*/
 
-@media (max-width: 480px) {
+@media (max-width: 580px) {
     .grupo-campos:nth-of-type(2) {
         display: none;
+    }
+    .usuario_icon{
+       padding-right: 38%;
+      
     }
 }
 
