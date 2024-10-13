@@ -227,7 +227,7 @@ body {
 }
 
 .btn-header {
-    padding: 8px 15px;
+    padding: .5em 1rem;
     padding-top: 5%;
     border: none;
     border-radius: 2em;
@@ -237,7 +237,9 @@ body {
     cursor: pointer;
     margin-left: 10px;
     transition: background-color 0.3s;
+    text-align: center;
 }
+
 
 .btn-header:hover {
     background-color: var(--amarillo);
