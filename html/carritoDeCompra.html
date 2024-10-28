@@ -39,12 +39,15 @@
             </datalist>
         </form>
         <div class="contenedor_carrito_btn">
-            <div class="contenedor_carrito"><img class="img-carrito" src="../images/carritoDeComprasColor.png"
-                    alt="CarroDeCompras">
-                <p class="numero-carrito-fijo">2</p>
-            </div>
-            <a href="../html/inicioDeSesion.html" class="btn-header">Iniciar Sesión</a>
-            <a href="../html/registro.html" class="btn-header">Registrarse</a>
+            <div class="contenedor_carrito js_contenedor_carrito"><img class="img-carrito"
+                    src="../images/carritoDeComprasColor.png" alt="CarroDeCompras">
+                <a href="./html/carritoDeCompra.html" class="numero-carrito-fijo js-numero-carrito">0</a>
+                <ul class="carrito-lista">
+                </ul> 
+        </div>
+        <a href="./html/inicioDeSesion.html" class="btn-header">Iniciar Sesión</a>
+        <a href="./html/registro.html" class="btn-header">Registrarse</a>
+
         </div>
 
     </header>
@@ -53,57 +56,20 @@
         <section class="section_principal_carrito">
 
 
-            <article class="article_cursos_carrito">
-                <p class="titulo_carrito">Carrito</p>
-                <div class="div_curso_carrito">
-                    <div class="div_contenedor_imagen">
-                        <img src="../images/uxui.png" alt="curso en cuestion">
-                    </div>
-                    <div class="div_contenedor_texto_curso">
-                        <div class="titulo_curso">
-                            <p>Diseño UX/UI</p>
-                        </div>
-                        <div>
-                            <p>Por Juan Garay</p>
-                        </div>
-                        <div>
-                            <p>20hs - VIRTUAL</p>
-                        </div>
-                        <div>
-                            <p class="precio_curso">$12000</p>
-                        </div>
-                    </div>
-                </div>
+            <article class="article_cursos_carrito js_article_cursos_carrito">
 
-                <div class="div_curso_carrito">
-                    <div class="div_contenedor_imagen">
-                        <img src="../images/fullstack.jpg" alt="curso en cuestion">
-                    </div>
-                    <div class="div_contenedor_texto_curso">
-                        <div class="titulo_curso">
-                            <p>Desarrollador Full Stack</p>
-                        </div>
-                        <div>
-                            <p>Por Juan Garay</p>
-                        </div>
-                        <div>
-                            <p>40hs - VIRTUAL</p>
-                        </div>
-                        <div>
-                            <p class="precio_curso"> $25000</p>
-                        </div>
-                    </div>
-                </div>
 
             </article>
 
             <article class="article_cursos_precio_total">
-
+                <div>
+                    <p class="titulo_carrito">Carrito</p>
+                </div>
                 <div class="div_total_carrito">
                     <p>Total:</p>
                 </div>
                 <div class="div_precio_total_carrito">
-                    <p>$37000</p>
+                    <p>$0</p>
                 </div>
 
                 <div class="boton_pagar_carrito">
@@ -210,6 +176,7 @@
             <p> Codyright © 2024-2024 Aprender-UNLaM.Todos los derechos reservados </p>
         </div>
     </footer>
+    <script src="../js/jsCarritoDeCompra.js"></script>
 </body>
 
 </html>

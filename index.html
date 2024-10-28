@@ -38,24 +38,32 @@
                 <option value="Desarrollo Front End">
             </datalist>
         </form>
+        <!-- TENGO CAMBIOS EN EL HEADER -->
         <div class="contenedor_carrito_btn">
-            <div class="contenedor_carrito"><img class="img-carrito" src="images/carritoDeComprasColor.png"
-                    alt="CarroDeCompras">
-                <a href="./html/carritoDeCompra.html" class="numero-carrito-fijo">2</a>
-            </div>
-            <a href="./html/inicioDeSesion.html" class="btn-header">Iniciar Sesión</a>
-            <a href="./html/registro.html" class="btn-header">Registrarse</a>
+            <div class="contenedor_carrito js_contenedor_carrito"><img class="img-carrito"
+                    src="images/carritoDeComprasColor.png" alt="CarroDeCompras">
+                <a href="./html/carritoDeCompra.html" class="numero-carrito-fijo js-numero-carrito">0</a>
+                <ul class="carrito-lista">
+                </ul> 
+        </div>
+        <a href="./html/inicioDeSesion.html" class="btn-header">Iniciar Sesión</a>
+        <a href="./html/registro.html" class="btn-header">Registrarse</a>
+
         </div>
 
     </header>
     <!-- BARRA DEGRADE -->
-    <main class="main"></main>
+    <main class="main">
     <!-- SECCION CARROUSEL -->
     <section class="section-main-carrousel">
-        <article class="contenedor_imagen_carrousel">
-            <img class="img-carrousel-pincipal" src="./images/sliderImagen.jpeg" alt="imagen-carrousel-principal">
-            <img class="img-flecha-carrousel-izquierda" src="./images/FlechaIzquierda.png" alt="flechas-carrousel">
-            <img class="img-flecha-carrousel-derecha" src="./images/FlechaDerecha.png" alt="flechas-carrousel">
+        <article class="contenedor_imagen_carrousel js_contenedor_imagen_carrousel">
+            <img class="img-carrousel-principal js-img-carrousel" src="./images/sliderImagen.jpeg"
+                alt="imagen-carrousel-principal">
+            <div class="selector">
+                <button data-index="0"></button>
+                <button data-index="1"></button>
+                <button data-index="2"></button>
+            </div>
         </article>
     </section>
 
@@ -106,6 +114,9 @@
                         para proteger
                         redes y sistemas contra amenazas y ataques.</p>
                 </div>
+                <div class="contenedor-carrito-oferta-cursos js-carrito-curso" id="2"><img
+                    class="img-carrito-cursos" src="./images/carritoDeComprasColor.png"
+                    alt="carrito de compras"></div>
             </div>
 
             <div class="div-curso">
@@ -127,6 +138,9 @@
                         crear experiencias de usuario atractivas
                         y funcionales en plataformas digitales</p>
                 </div>
+                <div class="contenedor-carrito-oferta-cursos js-carrito-curso" id="1"><img
+                    class="img-carrito-cursos" src="./images/carritoDeComprasColor.png"
+                    alt="carrito de compras"></div>
             </div>
         </article>
         <!-- OTRO ARTICLE DE CURSOS -->
@@ -150,6 +164,9 @@
                         atractivas
                         utilizando HTML, CSS y JavaScript.</p>
                 </div>
+                <div class="contenedor-carrito-oferta-cursos js-carrito-curso" id="4"><img
+                    class="img-carrito-cursos" src="./images/carritoDeComprasColor.png"
+                    alt="carrito de compras"></div>
             </div>
 
             <div class="div-curso">
@@ -172,6 +189,9 @@
                         en el
                         frontend como en el backend, utilizando tecnologías modernas.</p>
                 </div>
+                <div class="contenedor-carrito-oferta-cursos js-carrito-curso" id="3"><img
+                    class="img-carrito-cursos" src="./images/carritoDeComprasColor.png"
+                    alt="carrito de compras"></div>
             </div>
         </article>
 
@@ -286,6 +306,7 @@
             <p> Codyright © 2024-2024 Aprender-UNLaM.Todos los derechos reservados </p>
         </div>
     </footer>
+    <script src="./js/jsIndex.js"></script>
 </body>
 
 
