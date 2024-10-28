@@ -85,17 +85,28 @@
             <img src="../images/fullstack.jpg" alt="Imagen del Curso">
         </div>
         <div class="course-info">
-            <h2>Desarrollo Full Stack</h2>
-            <p><strong>Valor:</strong> $60.000</p>
-            <p><strong>Modalidad:</strong> Virtual</p>
-            <p><strong>Duración:</strong> 6 meses</p>
+            <h2 class="course-title">Desarrollo Full Stack</h2>
+            <p><strong>Valor:</strong><span class="course-price">$60.000</span></p>
+            <p><strong>Modalidad:</strong><span class="course-mode">Virtual</span></p>
+            <p><strong>Duración:</strong><span class="course-duration">6 meses</span></p>
             <p><strong>Requisitos previos:</strong> Conocimientos en desarrollo web básico (HTML, CSS, JavaScript)</p>
             <p><strong>Descripción:</strong> Aprende a desarrollar aplicaciones completas, tanto en el frontend como en el backend, utilizando tecnologías modernas.</p>
 
         </div>
         <a class="btn btn-azul" href="../html/formularioEmpresa.html">Inscribirse</a>
     </section>
-
+    <div id="modal-inscripcion" class="modal_detalle">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>¡Felicitaciones!</h2>
+            <p>Te has inscrito exitosamente en el curso.</p>
+            <p><strong>Curso:</strong> <span id="modal-course-title"></span></p>
+            <p><strong>Modalidad:</strong> <span id="modal-course-mode"></span></p>
+            <p><strong>Duración:</strong> <span id="modal-course-duration"></span></p>
+            <p><strong>Valor:</strong> <span id="modal-course-price"></span></p>
+            <button id="close-btn" class="btn btn-azul">Cerrar</button>
+        </div>
+    </div>
     <!-- Contenidos por clase e Instructor -->
     <div class="content-instructor">
         <section class="class-contents">
@@ -272,5 +283,6 @@
         <p> Codyright © 2024-2024 Aprender-UNLaM.Todos los derechos reservados  </p>
     </div>
     </footer>
+    <script src="../script_modal_detalle.js"></script>
 </body>
 </html>
