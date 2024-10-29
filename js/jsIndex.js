@@ -71,30 +71,24 @@ console.log(todosLosCursos);
 
 const cursos = [
     { id: 1, nombre: 'Diseño UX/UI', precio: 20000, duracion: '13 meses', modalidad: 'Virtual', imagen: '../images/uxui.png' },
-    { id: 2, nombre: 'Ciberseguridad', precio: 50000, duracion: '5 meses', modalidad: 'Virtual',imagen: '../images/ciberseguridad.png' },
-    { id: 3, nombre: 'Desarrollo Full Stack', precio: 60000, duracion: '6 meses', modalidad: 'Virtual',imagen: '../images/fullstack.jpg' },
-    { id: 4, nombre: 'Desarrollo Front End', precio: 45000, duracion: '4 meses', modalidad: 'Virtual',imagen: '../images/front.jpg' }
+    { id: 2, nombre: 'Ciberseguridad', precio: 50000, duracion: '5 meses', modalidad: 'Virtual', imagen: '../images/ciberseguridad.png' },
+    { id: 3, nombre: 'Desarrollo Full Stack', precio: 60000, duracion: '6 meses', modalidad: 'Virtual', imagen: '../images/fullstack.jpg' },
+    { id: 4, nombre: 'Desarrollo Front End', precio: 45000, duracion: '4 meses', modalidad: 'Virtual', imagen: '../images/front.jpg' }
 ];
 
-// Inicializar el carrito
 function initCarrito() {
     const numeroCarrito = document.querySelector('.js-numero-carrito');
     let numeroActual = parseInt(sessionStorage.getItem('numeroCarrito')) || 0;
     numeroCarrito.textContent = numeroActual.toString();
 
-    // Recuperar cursos agregados desde sessionStorage
     let cursosAgregados = JSON.parse(sessionStorage.getItem('cursosAgregados')) || [];
-    
-    // Mostrar mensaje si no hay cursos agregados
+
     mostrarMensajeSiCarritoVacio(numeroActual);
 
-    // Marcar cursos ya añadidos
     marcarCursosAniadidos(cursosAgregados);
 
-    // Mostrar cursos en el carrito
     cursosAgregados.forEach(cursoId => agregarCursoAlCarrito(cursoId));
 
-    // Marcar los cursos que ya están en el carrito
     function marcarCursosAniadidos(cursosAgregados) {
         const contenedoresCarritoCurso = document.querySelectorAll('.js-carrito-curso');
         contenedoresCarritoCurso.forEach(contenedor => {
@@ -102,46 +96,38 @@ function initCarrito() {
             if (cursosAgregados.includes(cursoId)) {
                 contenedor.classList.add('aniadido');
             } else {
-                contenedor.classList.remove('aniadido'); // Asegúrate de eliminar la clase si no está en el carrito
+                contenedor.classList.remove('aniadido'); 
             }
-    
-            // Asegurarse de que el evento click solo se añada una vez
+
             contenedor.removeEventListener('click', handleAgregarCurso);
-            if (!cursosAgregados.includes(cursoId)) { // Solo añadir el evento si el curso no está en el carrito
+            if (!cursosAgregados.includes(cursoId)) { 
                 contenedor.addEventListener('click', handleAgregarCurso);
             }
-    
+
             function handleAgregarCurso() {
                 agregarCurso(cursoId, cursosAgregados);
             }
         });
     }
 
-    // Agregar curso al carrito
     function agregarCurso(cursoId, cursosAgregados) {
-        // Actualizar la lista de cursos agregados desde sessionStorage
         cursosAgregados = JSON.parse(sessionStorage.getItem('cursosAgregados')) || [];
 
-        // Verificar si el curso ya está en el carrito
         if (!cursosAgregados.includes(cursoId)) {
-            // Actualizar contador
             let numeroActual = parseInt(sessionStorage.getItem('numeroCarrito')) || 0;
             numeroActual += 1;
             sessionStorage.setItem('numeroCarrito', numeroActual);
             document.querySelector('.js-numero-carrito').textContent = numeroActual.toString();
 
-            // Agregar curso a la lista de cursos agregados
             cursosAgregados.push(cursoId);
             sessionStorage.setItem('cursosAgregados', JSON.stringify(cursosAgregados));
 
             agregarCursoAlCarrito(cursoId);
 
-            // Ocultar mensaje de carrito vacío
             mostrarMensajeSiCarritoVacio(numeroActual);
         }
     }
 
-    // Función para agregar el curso a la lista visual del carrito
     function agregarCursoAlCarrito(cursoId) {
         const curso = cursos.find(c => c.id.toString() === cursoId);
         const carritoLista = document.querySelector('.carrito-lista');
@@ -157,18 +143,15 @@ function initCarrito() {
         `;
         carritoLista.appendChild(cursoElemento);
 
-        // Actualizar contador y manejar eliminación
         actualizarContadorYEliminar(cursoElemento, cursoId);
     }
 
-    // Actualizar contador y eliminar curso
     function actualizarContadorYEliminar(cursoElemento, cursoId) {
         const numeroCarrito = document.querySelector('.js-numero-carrito');
 
         cursoElemento.querySelector('.btn-borrar').addEventListener('click', function () {
             cursoElemento.remove();
 
-            // Disminuir el contador solo en 1
             let numeroActual = parseInt(sessionStorage.getItem('numeroCarrito')) || 0;
             if (numeroActual > 0) {
                 numeroActual -= 1;
@@ -176,15 +159,14 @@ function initCarrito() {
                 numeroCarrito.textContent = numeroActual.toString();
             }
 
-            // Eliminar el curso de la lista de cursos agregados
             let cursosAgregados = JSON.parse(sessionStorage.getItem('cursosAgregados')) || [];
             cursosAgregados = cursosAgregados.filter(id => id !== cursoId);
             sessionStorage.setItem('cursosAgregados', JSON.stringify(cursosAgregados));
 
-            // Mostrar mensaje si el carrito está vacío
+            
             mostrarMensajeSiCarritoVacio(numeroActual);
 
-            // Permitir agregar el curso nuevamente
+            
             const contenedorCurso = document.getElementById(cursoId);
             if (contenedorCurso) {
                 contenedorCurso.classList.remove('aniadido');
@@ -198,7 +180,7 @@ function initCarrito() {
         });
     }
 
-    // Mostrar mensaje si el carrito está vacío
+   
     function mostrarMensajeSiCarritoVacio(numeroActual) {
         const carritoLista = document.querySelector('.carrito-lista');
         const mensajeVacio = document.querySelector('.mensaje-vacio');
@@ -218,10 +200,16 @@ function initCarrito() {
     }
 }
 
-// Iniciar la aplicación
 initCarrito();
 
 
 
+function modificarPropiedadSiScriptEjecuta() {
+    if (window.location.pathname.includes('homeSesionIniciada.html')) {
+        const contenedorListaCarrito = document.querySelector('.carrito-lista');
+        contenedorListaCarrito.classList.add('carrito-lista-sesion');
+    }
+};
 
 
+modificarPropiedadSiScriptEjecuta();

@@ -437,6 +437,10 @@ body {
 }
 
 @media screen and (max-width: 1040px) {
+    
+    .main_proximas_fechas{
+        margin-top: 10%;
+    }
 
     .section-main-pasos-a-seguir,
     .article-oferta-de-curso {
@@ -626,6 +630,10 @@ body {
     }
 
     @media screen and (max-width: 768px) {
+        .main_proximas_fechas{
+            margin-top: 10%;
+        }
+        
         .header {
             width: 100%;
             justify-content: center;
@@ -1098,6 +1106,7 @@ body {
     .main_proximas_fechas {
         width: 100%;
         height: auto;
+        margin-top: 20%;
     }
 
     .ocultar-en-movil {
@@ -1713,6 +1722,7 @@ iframe {
         width: 100%;
         height: auto;
         padding: 10%;
+        margin-top: 20%;
     }
 
     .ocultar-en-movil {
@@ -3152,6 +3162,22 @@ a {
     position: absolute; /* Cambiado a absolute */
     top: 102%; /* Se posiciona justo debajo del contenedor */
     left: 0; /* Alineado a la izquierda */
+    background-color: white; /* Fondo blanco */
+    border: 1px solid #ccc; /* Borde gris */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra para un efecto de elevación */
+    z-index: 2000; /* Asegurarse de que esté por encima de otros elementos */
+    width: 250px; /* Ancho del sidebar */
+    padding: 10px; /* Espaciado interno */
+    max-height: 25vh; /* Altura máxima para permitir el scroll */
+    overflow-y: auto; /* Habilita el scroll vertical */
+    transition: display 0.3s ease; /* Transición suave */
+}
+
+.carrito-lista-sesion {
+    display: none; /* Inicialmente visible */
+    position: absolute; /* Cambiado a absolute */
+    top: 102%; /* Se posiciona justo debajo del contenedor */
+    left: -200%; /* Alineado a la izquierda */
     background-color: white; /* Fondo blanco */
     border: 1px solid #ccc; /* Borde gris */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra para un efecto de elevación */

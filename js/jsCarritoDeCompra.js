@@ -10,27 +10,21 @@ function initCarritoCarritoDeCompra() {
     let numeroActual = parseInt(sessionStorage.getItem('numeroCarrito')) || 0;
     numeroCarrito.textContent = numeroActual.toString();
 
-    // Recuperar cursos agregados desde sessionStorage
     let cursosAgregados = JSON.parse(sessionStorage.getItem('cursosAgregados')) || [];
 
-    // Obtener el contenedor principal del carrito
     const articleCursosCarrito = document.querySelector('.js_article_cursos_carrito');
     const carritoLista = document.querySelector('.carrito-lista');
 
-    // Limpiar el contenedor principal del carrito
     articleCursosCarrito.innerHTML = '';
     carritoLista.innerHTML = '';
 
-    // Agregar cursos al carrito
     cursosAgregados.forEach(cursoId => {
         agregarCursoAlCarrito(cursoId);
         agregarCursoALista(cursoId);
     });
 
-    // Actualizar el precio total
     actualizarPrecioTotal();
 
-    // Función para agregar el curso al carrito
     function agregarCursoAlCarrito(cursoId) {
         const curso = cursos.find(c => c.id.toString() === cursoId);
         const divCursoCarrito = document.createElement('div');
@@ -49,13 +43,11 @@ function initCarritoCarritoDeCompra() {
         `;
         articleCursosCarrito.appendChild(divCursoCarrito);
 
-        // Añadir evento para eliminar el curso
         divCursoCarrito.querySelector('.btn-borrar-curso').addEventListener('click', function () {
             eliminarCurso(cursoId, divCursoCarrito);
         });
     }
 
-    // Función para agregar el curso a la lista visual del carrito
     function agregarCursoALista(cursoId) {
         const curso = cursos.find(c => c.id.toString() === cursoId);
         const cursoElemento = document.createElement('li');
@@ -70,7 +62,6 @@ function initCarritoCarritoDeCompra() {
         carritoLista.appendChild(cursoElemento);
     }
 
-    // Función para eliminar el curso del carrito
     function eliminarCurso(cursoId, divCursoCarrito) {
         divCursoCarrito.remove();
         let cursosAgregados = JSON.parse(sessionStorage.getItem('cursosAgregados')) || [];
@@ -84,14 +75,12 @@ function initCarritoCarritoDeCompra() {
         }
         actualizarPrecioTotal();
 
-        // Eliminar el curso de la lista visual del carrito
         const cursoElemento = carritoLista.querySelector(`li[data-id="${cursoId}"]`);
         if (cursoElemento) {
             cursoElemento.remove();
         }
     }
 
-    // Función para actualizar el precio total
     function actualizarPrecioTotal() { 
         const divPrecioTotalCarrito = document.querySelector('.precio_total_carrito');
         let totalPrecio = 0;
@@ -101,12 +90,10 @@ function initCarritoCarritoDeCompra() {
             totalPrecio += curso.precio;
         });
         divPrecioTotalCarrito.textContent = `Total: $${totalPrecio}`;
-        // Guardar el precio total en sessionStorage
         sessionStorage.setItem('precioTotal', totalPrecio);
     }
 }
 
-// Iniciar la función específica para carritoDeCompra.html
 if (window.location.pathname.includes('carritoDeCompra.html')) {
     initCarritoCarritoDeCompra();
 }
