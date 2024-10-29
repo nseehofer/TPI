@@ -92,8 +92,8 @@ function initCarritoCarritoDeCompra() {
     }
 
     // Función para actualizar el precio total
-    function actualizarPrecioTotal() {
-        const divPrecioTotalCarrito = document.querySelector('.div_precio_total_carrito p');
+    function actualizarPrecioTotal() { 
+        const divPrecioTotalCarrito = document.querySelector('.precio_total_carrito');
         let totalPrecio = 0;
         let cursosAgregados = JSON.parse(sessionStorage.getItem('cursosAgregados')) || [];
         cursosAgregados.forEach(cursoId => {
@@ -101,6 +101,8 @@ function initCarritoCarritoDeCompra() {
             totalPrecio += curso.precio;
         });
         divPrecioTotalCarrito.textContent = `Total: $${totalPrecio}`;
+        // Guardar el precio total en sessionStorage
+        sessionStorage.setItem('precioTotal', totalPrecio);
     }
 }
 
@@ -108,3 +110,4 @@ function initCarritoCarritoDeCompra() {
 if (window.location.pathname.includes('carritoDeCompra.html')) {
     initCarritoCarritoDeCompra();
 }
+
