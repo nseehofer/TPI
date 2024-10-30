@@ -2113,7 +2113,7 @@ details li {
     border-color: var(--azul);
 }
 
-.boton-agregar {
+.boton-agregar-quitar {
     display: flex;
     align-items: center;
     font-size: 1.2em;
@@ -2122,7 +2122,7 @@ details li {
     margin-bottom: 1.5em;
 }
 
-.boton-agregar span {
+.boton-agregar-quitar span {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2132,6 +2132,16 @@ details li {
     border-radius: 50%;
     margin-right: 10px;
     font-size: 1.5em;
+}
+.container-agregar-quitar button{
+    border:none ;
+    background-color: transparent;
+
+   
+}
+.container-agregar-quitar{
+   display: flex;
+   gap: 3em;
 }
 
 .precio {
@@ -2869,6 +2879,15 @@ a {
         display: grid;
         grid-template-columns: max-content;
         margin-bottom: 1em;
+        justify-content: center;
+    }
+    .container-agregar-quitar{
+        display: flex;
+        flex-direction: column;
+        gap: .5em;
+    }
+    .boton-agregar-quitar{
+        font-size: .9em;
     }
 
     .grupo-campos input {
