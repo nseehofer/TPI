@@ -65,6 +65,7 @@ function cerrarModal() {
     modal.style.display = "none";
     agregarCursoAlCarrito();
     mostrarNumeroYContenidoCarrito(); 
+}
 
 closeBtn.addEventListener("click", cerrarModal);
 closeModalBtn.addEventListener("click", cerrarModal);
@@ -168,4 +169,3 @@ const paginasConCarrito = [
 ];  
 
 initCarritoEnPaginas(paginasConCarrito);
-}
