@@ -51,7 +51,7 @@ body {
 
 .header {
     display: flex;
-    position: sticky;
+    position: fixed;
     top: 0;
     background-color: #fff;
     border-bottom: 1px solid #ddd;
@@ -60,7 +60,7 @@ body {
     align-items: center;
     width: 100%;
     justify-content: space-around;
-    overflow-x: hidden;
+    /*--overflow-x: hidden;*/
 }
 
 .contenedor_carrito {
@@ -85,7 +85,7 @@ body {
     background-color: var(--amarillo);
     border-radius: 10rem;
     width: 30%;
-    text-align: center;
+    justify-content: center;
 }
 
 .logo {
@@ -264,12 +264,16 @@ body {
     width: 100%;
     position: relative;
     height: 90vh;
+    overflow: hidden;
+    display: flex;
 }
 
-.img-carrousel-pincipal {
+.img-carrousel-principal {
     height: 100%;
     width: 100%;
     object-fit: cover;
+    transition: 0.5s ease;
+    z-index: 1;
 }
 
 .img-flecha-carrousel-izquierda {
@@ -433,6 +437,10 @@ body {
 }
 
 @media screen and (max-width: 1040px) {
+    
+    .main_proximas_fechas{
+        margin-top: 10%;
+    }
 
     .section-main-pasos-a-seguir,
     .article-oferta-de-curso {
@@ -622,6 +630,10 @@ body {
     }
 
     @media screen and (max-width: 768px) {
+        .main_proximas_fechas{
+            margin-top: 10%;
+        }
+        
         .header {
             width: 100%;
             justify-content: center;
@@ -1094,6 +1106,7 @@ body {
     .main_proximas_fechas {
         width: 100%;
         height: auto;
+        margin-top: 20%;
     }
 
     .ocultar-en-movil {
@@ -1329,7 +1342,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
 }
 
 .formulario-cuenta {
@@ -1403,7 +1416,7 @@ body {
 
     .Formulario,
     .Formulario-registro {
-        
+
         padding: 1.5em 0;
         display: flex;
         justify-content: center;
@@ -1434,7 +1447,7 @@ body {
 
     .Formulario,
     .Formulario-registro {
-        
+
         padding: 2em 0;
         display: flex;
         justify-content: center;
@@ -1709,6 +1722,7 @@ iframe {
         width: 100%;
         height: auto;
         padding: 10%;
+        margin-top: 20%;
     }
 
     .ocultar-en-movil {
@@ -2831,9 +2845,10 @@ a {
     .grupo-campos:nth-of-type(2) {
         display: none;
     }
-    .usuario_icon{
-       padding-right: 38%;
-      
+
+    .usuario_icon {
+        padding-right: 38%;
+
     }
 }
 
@@ -3000,7 +3015,7 @@ a {
 }
 
 .article_cursos_carrito {
-    gap: 1rem;
+    gap: 2rem;
 }
 
 .titulo_carrito {
@@ -3011,7 +3026,7 @@ a {
 
 .article_cursos_carrito .div_curso_carrito {
     gap: 0.5rem;
-    border-bottom: 1px solid grey;
+    border-bottom: 0.5px solid grey;
 }
 
 .article_cursos_carrito .div_curso_carrito .div_contenedor_imagen {
@@ -3026,6 +3041,7 @@ a {
 
 .article_cursos_carrito .div_contenedor_texto_curso {
     width: 80%;
+    gap:0.2rem;
 }
 
 .article_cursos_carrito .div_contenedor_texto_curso .titulo_curso,
@@ -3112,3 +3128,205 @@ a {
     text-decoration: none;
     cursor: pointer;
 }
+
+/* CLASES AGREGADAS POR NICO */
+.contenedor-carrito-oferta-cursos {
+    position: absolute;
+    width: 2.5rem;
+    height: 2.5rem;
+    top: 5%;
+    right: 5%;
+}
+
+.img-carrito-cursos {
+    width: 100%;
+    height: auto;
+}
+
+.contenedor-carrito-oferta-cursos:hover {
+    border: 1.5px solid var(--amarillo);
+    border-radius: 2rem;
+}
+
+.js-contenedor-lista-carrito {
+    display: none
+}
+
+.js-contenedor-lista-carrito:hover {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    justify-content: space-around;
+}
+
+.div-curso {
+    position: relative;
+}
+
+/* PARA EL CARROUSEL */
+
+.transicion {
+    opacity: 0;
+}
+
+.selector {
+    position: absolute;
+    left: 50%;
+    top: 90%;
+    text-align: center;
+    z-index: 2;
+}
+
+.selector button {
+    border-radius: 2rem;
+    width: 0.6rem;
+    height: 0.6rem;
+    cursor: pointer;
+}
+
+/*PARA EL CARRITO */
+
+/* Estilo general para el contenedor del carrito */
+.contenedor_carrito_btn {
+    position: relative;
+    /* Necesario para el posicionamiento del sidebar */
+    z-index: 1000;
+}
+
+/* Estilo para la lista del carrito */
+.carrito-lista {
+    display: none; /* Inicialmente visible */
+    position: absolute; /* Cambiado a absolute */
+    top: 102%; /* Se posiciona justo debajo del contenedor */
+    left: 0; /* Alineado a la izquierda */
+    background-color: white; /* Fondo blanco */
+    border: 1px solid #ccc; /* Borde gris */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra para un efecto de elevación */
+    z-index: 2000; /* Asegurarse de que esté por encima de otros elementos */
+    width: 250px; /* Ancho del sidebar */
+    padding: 10px; /* Espaciado interno */
+    max-height: 25vh; /* Altura máxima para permitir el scroll */
+    overflow-y: auto; /* Habilita el scroll vertical */
+    transition: display 0.3s ease; /* Transición suave */
+}
+
+.carrito-lista-sesion {
+    display: none; /* Inicialmente visible */
+    position: absolute; /* Cambiado a absolute */
+    top: 102%; /* Se posiciona justo debajo del contenedor */
+    left: -200%; /* Alineado a la izquierda */
+    background-color: white; /* Fondo blanco */
+    border: 1px solid #ccc; /* Borde gris */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra para un efecto de elevación */
+    z-index: 2000; /* Asegurarse de que esté por encima de otros elementos */
+    width: 250px; /* Ancho del sidebar */
+    padding: 10px; /* Espaciado interno */
+    max-height: 25vh; /* Altura máxima para permitir el scroll */
+    overflow-y: auto; /* Habilita el scroll vertical */
+    transition: display 0.3s ease; /* Transición suave */
+}
+
+/* Estilo del scrollbar para Webkit (Chrome, Safari) */
+.carrito-lista::-webkit-scrollbar {
+    width: 10px; /* Ancho del scrollbar */
+}
+
+.carrito-lista::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Color de fondo del track */
+    border-radius: 10px; /* Bordes redondeados del track */
+}
+
+.carrito-lista::-webkit-scrollbar-thumb {
+    background: #888; /* Color del thumb (parte que se mueve) */
+    border-radius: 10px; /* Bordes redondeados del thumb */
+}
+
+.carrito-lista::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Color del thumb cuando se pasa el ratón por encima */
+}
+
+/* Estilo del scrollbar para Firefox */
+.carrito-lista {
+    scrollbar-width: thin; /* Puede ser auto, thin, o none */
+    scrollbar-color: #888 #f1f1f1; /* Color del thumb y del track */
+}
+
+.carrito-precio-curso,
+.carrito-duracion-curso,
+.carrito-modalidad-curso {
+    color: black;
+}
+
+/* Mostrar la lista del carrito al pasar el mouse */
+.contenedor_carrito_btn:hover .carrito-lista {
+    display: block;
+    /* Muestra la lista al pasar el mouse */
+}
+
+/* Estilo para los elementos de la lista */
+.carrito-elemento-lista {
+    display:flex;
+    flex-direction: column;
+    /* Espaciado entre elementos */
+}
+
+/* Estilo para el texto dentro de los elementos de la lista */
+.carrito-nombre-curso,
+.carrito-precio-curso,
+.carrito-duracion-curso,
+.carrito-modalidad-curso {
+    margin: 0;
+    /* Elimina márgenes por defecto */
+    font-size: 14px;
+    /* Tamaño de fuente */
+}
+
+/* Estilo para el contenedor del carrito al pasar el mouse */
+.contenedor_carrito_btn:hover {
+    cursor: pointer;
+    /* Cambia el cursor al pasar el mouse */
+}
+
+.carrito-nombre-curso {
+    text-align: center;
+    color: var(--azul);
+    font-weight: bold;
+    padding-bottom: 2%;
+    padding-top: 2%;
+}
+
+/* BOTON */
+
+.btn-borrar {
+    padding: 8px 15px;
+    padding-top: 5%;
+    border: none;
+    border-radius: 2em;
+    background-color: red;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background-color 0.3s;
+}
+
+.btn-borrar-curso {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 2em;
+    background-color: red;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    width: max-content;
+    transition: background-color 0.3s;
+}
+
+
+.btn-borrar:hover , .btn-borrar-curso:hover {
+    background-color: var(--amarillo);
+    color: red;
+}
+
+/**/
+
