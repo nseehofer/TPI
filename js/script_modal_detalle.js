@@ -1,4 +1,3 @@
-// Lista de cursos
 const cursos = [
     { id: 1, nombre: 'Diseño UX/UI', precio: 20000, duracion: '13 meses', modalidad: 'Virtual', imagen: '../images/uxui.png' },
     { id: 2, nombre: 'Ciberseguridad', precio: 50000, duracion: '5 meses', modalidad: 'Virtual', imagen: '../images/ciberseguridad.png' },
@@ -6,37 +5,30 @@ const cursos = [
     { id: 4, nombre: 'Desarrollo Front End', precio: 45000, duracion: '4 meses', modalidad: 'Virtual', imagen: '../images/front.jpg' }
 ];
 
-// Obtener elementos del modal
 const modal = document.getElementById("modal-inscripcion");
 const inscribirseBtn = document.querySelector(".btn.btn-azul");
 const closeBtn = document.querySelector(".close");
 const closeModalBtn = document.getElementById("close-btn");
 const cartCounter = document.querySelector('.js-numero-carrito');
 
-// Obtener los contenedores de datos para el modal y carrito
 const modalTitle = document.getElementById("modal-course-title");
 const modalMode = document.getElementById("modal-course-mode");
 const modalDuration = document.getElementById("modal-course-duration");
 const modalPrice = document.getElementById("modal-course-price");
 
-// Mostrar el modal al hacer clic en "Inscribirse"
 inscribirseBtn.addEventListener("click", function(event) {
     event.preventDefault();
 
-    // Obtener datos del curso desde el HTML
     const courseTitle = document.querySelector(".course-title").textContent;
 
-    // Verificar si el curso ya está en el carrito
     let cursosAgregados = JSON.parse(sessionStorage.getItem('cursosAgregados')) || [];
     const cursoEnCarrito = cursos.find(c => c.nombre === courseTitle && cursosAgregados.includes(c.id.toString()));
 
     if (cursoEnCarrito) {
-        // Si el curso ya está en el carrito, no mostrar el modal
         alert("Este curso ya está en el carrito.");
         return;
     }
 
-    // Obtener y asignar datos del curso para el modal
     const courseMode = document.querySelector(".course-mode").textContent;
     const courseDuration = document.querySelector(".course-duration").textContent;
     const coursePrice = document.querySelector(".course-price").textContent;
@@ -46,11 +38,9 @@ inscribirseBtn.addEventListener("click", function(event) {
     modalDuration.textContent = courseDuration;
     modalPrice.textContent = coursePrice;
 
-    // Mostrar el modal
     modal.style.display = "block";
 });
 
-// Función para agregar el curso al carrito y actualizar el contador
 function agregarCursoAlCarrito() {
     const courseTitle = modalTitle.textContent;
     const curso = cursos.find(c => c.nombre === courseTitle);
@@ -71,12 +61,10 @@ function agregarCursoAlCarrito() {
     }
 }
 
-// Funciones para cerrar el modal y agregar el curso al carrito sin redirección
 function cerrarModal() {
     modal.style.display = "none";
     agregarCursoAlCarrito();
-    mostrarNumeroYContenidoCarrito(); // Actualiza el contenido del carrito después de cerrarlo
-}
+    mostrarNumeroYContenidoCarrito(); 
 
 closeBtn.addEventListener("click", cerrarModal);
 closeModalBtn.addEventListener("click", cerrarModal);
@@ -86,7 +74,6 @@ window.addEventListener("click", function(event) {
     }
 });
 
-// Mostrar el número y contenido del carrito
 function mostrarNumeroYContenidoCarrito() {
     const numeroCarrito = document.querySelector('.js-numero-carrito');
     let numeroActual = parseInt(sessionStorage.getItem('numeroCarrito')) || 0;
@@ -114,7 +101,6 @@ function mostrarNumeroYContenidoCarrito() {
                 `;
                 carritoLista.appendChild(cursoElemento);
 
-                // Añadir evento para eliminar el curso
                 cursoElemento.querySelector('.btn-borrar').addEventListener('click', function () {
                     eliminarCurso(cursoId);
                 });
@@ -125,7 +111,6 @@ function mostrarNumeroYContenidoCarrito() {
     actualizarPrecioTotal();
 }
 
-// Función para eliminar un curso del carrito
 function eliminarCurso(cursoId) {
     let cursosAgregados = JSON.parse(sessionStorage.getItem('cursosAgregados')) || [];
     cursosAgregados = cursosAgregados.filter(id => id !== cursoId);
@@ -151,7 +136,6 @@ function eliminarCurso(cursoId) {
     actualizarPrecioTotal();
 }
 
-// Actualizar el precio total del carrito
 function actualizarPrecioTotal() {
     const divPrecioTotalCarrito = document.querySelector('.precio_total_carrito');
     let totalPrecio = 0;
@@ -166,7 +150,6 @@ function actualizarPrecioTotal() {
     sessionStorage.setItem('precioTotal', totalPrecio);
 }
 
-// Inicializar el carrito en páginas específicas
 function initCarritoEnPaginas(paginas) {
     const pathname = window.location.pathname;
     if (paginas.some(pagina => pathname.includes(pagina))) {
@@ -185,3 +168,4 @@ const paginasConCarrito = [
 ];  
 
 initCarritoEnPaginas(paginasConCarrito);
+}
