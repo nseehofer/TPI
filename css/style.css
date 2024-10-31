@@ -2287,32 +2287,31 @@ details li {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    gap: 2.5em;
     padding: 1.25em;
     background-image: url('../images/circuitos.jpg');
     background-size: cover;
     background-position: center;
     text-align: center;
-    width: 80%;
-
+    width: 100%;
     height: 100%;
     max-height: 35em;
     border-radius: 2em;
-    border: 2px solid #000;
     position: relative;
+    border: none;
+    box-shadow: 10px 20px 20px 1px;
+
 }
 
 .a-logo {
     color: var(--azul);
-    font-size: 30px;
-
+    font-size: 2em;
     -webkit-text-stroke: -2px white;
 }
 
 .prender-logo {
     color: var(--blanco);
-    font-size: 30px;
-
+    font-size: 2em;
     -webkit-text-stroke: -2px white;
 }
 
@@ -2322,31 +2321,20 @@ details li {
 
 }
 
-.monto {
+.giftcard .monto {
     background-color: var(--azul);
-    color: var(--blanco);
-    padding: 0.6em;
-    border-radius: 3em;
-    height: 2em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    font-size: 1.5em;
-    width: 4em;
-
-    /*arriba-derecha*/
-    top: 1em;
-    right: 1em;
-
-    /*abajo-izquierda
-    bottom: 1em;
-    left: 1em;
-   */
-    /*arriba-izquierda
-     top: 1em;
-    left: 1em;
-   */
+        color: var(--blanco);
+        padding: 0.2em;
+        border-radius: 3em;
+        height: auto;
+        width: auto; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        font-size: 1.5em; 
+        margin: .3em;
+        
 }
 
 .grupo-opciones input {
@@ -2354,7 +2342,7 @@ details li {
 }
 
 .codigo_QR img {
-    width: 10em;
+    width: 8em;
     height: 10em;
     margin: 1em auto 0;
     display: block;
@@ -2362,23 +2350,15 @@ details li {
 }
 
 .giftcard p {
-    color: var(--amarillo);
-    /*
-   color:red;
-   color: green;
-   color:blue;
-   color: white;
-   color: var(--negro);
-   font-size: 20px;
-   font-size: 32px;
-   font-size: 48px;
-   font-size: 60px;
-    */
-    font-size: 28px;
+    color: var(--blanco);
+    
+}
+.nombre-logo{
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; 
+
 }
 
 .personalizacion_contenedor {
-    background-color: #e3f2fd;
     border-radius: 0.6em;
     padding: 1.2em;
     margin-top: 1em;
@@ -2421,7 +2401,7 @@ details li {
 
 .giftcard h2 {
     margin-top: 40px;
-    font-size: 24px;
+    font-size: 2em;
     color: var(--blanco);
     background-color: rgba(0, 0, 0, 0.5);
     padding: 0.2em 0.5em;
@@ -2952,6 +2932,13 @@ a {
         padding-right: 38%;
 
     }
+    .giftcard .monto {
+        font-size: 0.8em;
+    margin:1em;
+    }
+    .codigo_QR img {
+        width: 25vw;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -3004,12 +2991,12 @@ a {
 
     .contenedor-giftcard,
     .personalizacion_contenedor {
-        width: 75%;
+        width: 100%;
     }
 
     .giftcard,
     .personalizacion_contenedor {
-        max-width: 70%;
+        max-width: 100%;
         max-height: auto;
         justify-items: center;
         margin-bottom: 1em;
@@ -3019,7 +3006,6 @@ a {
         width: 80%;
         height: 70%;
         margin: 1em auto 0;
-        display: block;
 
     }
 
@@ -3067,6 +3053,39 @@ a {
 
 
 
+}
+@media screen and (max-width: 480px) {
+    .giftcard .monto {
+        font-size: 0.7em;
+    margin:1em;
+    }
+    .codigo_QR img {
+        width: 25vw;
+    }
+    .giftcard h2 {
+        font-size: 1.2em;
+    }
+
+    .a-logo {
+        font-size: 1em;
+    }
+
+    .prender-logo {
+        font-size: 1em;
+    }
+
+    .giftcard p {
+        font-size: 1em;
+    }
+
+    .contenedor_principal_giftcard {
+        grid-template-columns: 1fr; 
+        padding: 1em;
+    }
+
+    .giftcard {
+        width: 100%; 
+    }
 }
 
 /*ESTILO PARA CARRITO DE COMPRAS*/
