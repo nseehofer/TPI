@@ -93,10 +93,10 @@
             <img src="../images/front.jpg" alt="Imagen del Curso">
         </div>
         <div class="course-info">
-            <h2>Desarrollo Front End</h2>
-            <p><strong>Valor:</strong> $45.000</p>
-            <p><strong>Modalidad:</strong> Virtual</p>
-            <p><strong>Duración:</strong> 4 meses</p>
+            <h2 class="course-title">Desarrollo Front End</h2>
+            <p><strong>Valor:</strong><span class="course-price">$45.000</span></p>
+            <p><strong>Modalidad:</strong><span class="course-mode">Virtual</span></p>
+            <p><strong>Duración:</strong><span class="course-duration">4 meses</span></p>
             <p><strong>Requisitos previos:</strong> Conocimientos básicos de HTML y CSS</p>
             <p><strong>Descripción:</strong> Aprende a desarrollar interfaces web modernas y atractivas utilizando HTML, CSS y JavaScript.</p>
            
@@ -104,7 +104,18 @@
         <a class="btn btn-azul" href="../html/formularioEmpresa.html">Inscribirse</a>
 
     </section>
-
+    <div id="modal-inscripcion" class="modal_detalle">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>¡Felicitaciones!</h2>
+            <p>Se agregó al carrito el curso.</p>
+            <p><strong>Curso:</strong> <span id="modal-course-title"></span></p>
+            <p><strong>Modalidad:</strong> <span id="modal-course-mode"></span></p>
+            <p><strong>Duración:</strong> <span id="modal-course-duration"></span></p>
+            <p><strong>Valor:</strong> <span id="modal-course-price"></span></p>
+            <button id="close-btn" class="btn btn-azul">Cerrar</button>
+        </div>
+    </div>
     <!-- Contenidos por clase e Instructor -->
     <div class="content-instructor">
         <section class="class-contents">
@@ -147,7 +158,7 @@
                     <img class="imagen-curso-destacado-detalle" src="../images/fullstack.jpg"
                         alt="curso de experiencia e interfaz de usuario">
                     <figcaption class="contenedor_boton-detalle">
-                        <a class="btn_detalle" href="detalleDeCurso.html">Ver Detalle</a>
+                        <a class="btn_detalle" href="detalleDeCursoFullStack.html">Ver Detalle</a>
                     </figcaption>
                 </figure>
                 <div class="bloque-curso-destacado-detalle">
@@ -281,6 +292,6 @@
         <p> Codyright © 2024-2024 Aprender-UNLaM.Todos los derechos reservados  </p>
     </div>
     </footer>
-    <script src="../js/jsInicializarListaDeCarrito.js"></script>
+    <script src="../js/js_modal_detalle.js"></script>
 </body>
 </html>
