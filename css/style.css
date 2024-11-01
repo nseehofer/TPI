@@ -2152,6 +2152,7 @@ details li {
 
 
 /*¨Formulareio para empresas*/
+
 .cuerpo-formulario-inscripcion {
     min-height: 100vh;
     display: flex;
@@ -2266,6 +2267,41 @@ details li {
 .boton-inscribirse:hover {
     background-color: var(--azul);
 }
+
+/*modal form inscripcion*/
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
 
 /*giftcard*/
 
@@ -2941,45 +2977,28 @@ a {
     .codigo_QR img {
         width: 25vw;
     }
-   /* 
-.boton-agregar-quitar {
-    display: flex;
-    gap: .3em;
-}*/
+
 .container-btnes-mas-menos{
     display: flex;
-    
     gap: 0.2;
-      
 }
 
 }
 
 @media screen and (max-width: 768px) {
-
-
     .grupo-campos:nth-of-type(3) {
         display: none;
         padding-bottom: 3em;
     }
-
     .precio {
         margin: 2em;
-
     }
-
     .grupo-campos {
         display: grid;
         grid-template-columns: max-content;
         margin-bottom: 1em;
         justify-content: center;
     }
-
-    /*.container-agregar-quitar {
-        display: flex;
-        flex-direction: column;
-        gap: .5em;
-    }*/
 
     .boton-agregar-quitar {
         font-size: .9em;
@@ -3020,7 +3039,6 @@ a {
         width: 80%;
         height: 70%;
         margin: 1em auto 0;
-
     }
 
     .monto {
@@ -3036,7 +3054,7 @@ a {
         font-size: 0.78em;
         width: 30%;
 
-        /*arriba-derecha*/
+        /*arriba-derecha por defecto*/
         top: 1em;
         right: 1em;
     }
@@ -3064,9 +3082,6 @@ a {
     .fila2-footer {
         display: none;
     }
-
-
-
 }
 @media screen and (max-width: 480px) {
     .giftcard .monto {

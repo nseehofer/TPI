@@ -1,23 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
-
-
- 
-  const params = new URLSearchParams(window.location.search);
-  const cursoSeleccionado = params.get('curso');
-
-
-  if (cursoSeleccionado) {
-      const tituloCurso = document.querySelector('.formulario-inscripcion h1');
-      tituloCurso.textContent = cursoSeleccionado;
-  }
-
-
-
     const containerCampos = document.querySelector('.grupo-campos');
     const btnAgregar = document.querySelector('.container-btnes-mas-menos .boton-agregar-quitar:first-child');
     const btnQuitar = document.querySelector('.container-btnes-mas-menos .boton-agregar-quitar:last-child');
     const precioElemento = document.querySelector('.precio');
-    const precioPorPersona = 20; // USD 20
+    const precioPorPersona = 18000;
     const btnInscribirse = document.getElementById('btnInscribirse');
     const modal = document.getElementById('modalResumen');
     const closeModal = document.getElementById('closeModal');
@@ -43,7 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
         actualizarTotal();
     }
 
-    
     function quitarPersona() {
         if (totalPersonas > 1) {
             const ultimoGrupo = containerCampos.nextElementSibling;
@@ -53,11 +38,42 @@ document.addEventListener('DOMContentLoaded', () => {
                 actualizarTotal();
             }
         } else {
-            
             containerCampos.querySelectorAll('input').forEach(input => input.value = '');
         }
     }
 
+    function guardarDatosEnLocalStorage() {
+        const inscritos = [];
+        document.querySelectorAll('.grupo-campos').forEach(grupo => {
+            const nombre = grupo.querySelector('input[placeholder="Nombre"]').value;
+            const apellido = grupo.querySelector('input[placeholder="Apellido"]').value;
+            const dni = grupo.querySelector('input[placeholder="DNI"]').value;
+            const email = grupo.querySelector('input[placeholder="E-mail"]').value;
+
+            inscritos.push({ nombre, apellido, dni, email });
+        });
+        localStorage.setItem('inscritos', JSON.stringify(inscritos));
+        localStorage.setItem('totalPago', totalPersonas * precioPorPersona);
+    }
+
+    function mostrarResumen() {
+        guardarDatosEnLocalStorage();
+
+        const listaInscritos = document.getElementById('listaInscritos');
+        listaInscritos.innerHTML = '';
+
+        const inscritos = JSON.parse(localStorage.getItem('inscritos'));
+        inscritos.forEach(inscrito => {
+            const p = document.createElement('p');
+            p.textContent = `${inscrito.nombre} ${inscrito.apellido} - DNI: ${inscrito.dni} - Email: ${inscrito.email}`;
+            listaInscritos.appendChild(p);
+        });
+
+        const totalPago = document.getElementById('totalPago');
+        totalPago.textContent = `$ ${localStorage.getItem('totalPago')}`;
+
+        modal.style.display = 'flex';
+    }
 
     btnAgregar.addEventListener('click', (e) => {
         e.preventDefault();
@@ -74,8 +90,16 @@ document.addEventListener('DOMContentLoaded', () => {
         mostrarResumen();
     });
 
+    // Listener para cerrar el modal
     closeModal.addEventListener('click', () => {
         modal.style.display = 'none';
+    });
+
+    // Cerrar el modal al hacer clic fuera del contenido
+    window.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+        }
     });
 
     actualizarTotal();
