@@ -2224,16 +2224,18 @@ details li {
     font-size: 1.5em;
 }
 
-.container-agregar-quitar button {
+.container-btnes-mas-menos button {
     border: none;
     background-color: transparent;
+    padding: 0;
 
 
 }
 
-.container-agregar-quitar {
+.container-btnes-mas-menos {
     display: flex;
-    gap: 3em;
+    flex-wrap: wrap;
+    gap: 1em;
 }
 
 .precio {
@@ -2939,6 +2941,18 @@ a {
     .codigo_QR img {
         width: 25vw;
     }
+   /* 
+.boton-agregar-quitar {
+    display: flex;
+    gap: .3em;
+}*/
+.container-btnes-mas-menos{
+    display: flex;
+    
+    gap: 0.2;
+      
+}
+
 }
 
 @media screen and (max-width: 768px) {
@@ -2961,11 +2975,11 @@ a {
         justify-content: center;
     }
 
-    .container-agregar-quitar {
+    /*.container-agregar-quitar {
         display: flex;
         flex-direction: column;
         gap: .5em;
-    }
+    }*/
 
     .boton-agregar-quitar {
         font-size: .9em;
