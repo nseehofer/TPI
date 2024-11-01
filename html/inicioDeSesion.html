@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,30 +10,32 @@
 
 <body>
     <header class="header-formularios">
-            <div class="logo">
-                <a href="../index.html">
-                    <img src="../images/LogoTest.png" alt="Logo" class="logo-img">
-                </a>
-            </div>
-            <div class="volver">
-                <div class="flecha">
+        <div class="logo">
+            <a href="../index.html">
+                <img src="../images/LogoTest.png" alt="Logo" class="logo-img">
+            </a>
+        </div>
+        <div class="volver">
+            <div class="flecha">
                 <a href="../index.html">
                     <img src="../images/FlechaIzquierda.png" alt="Logo" class="logo-img">
                 </a>
-                <a href="../index.html"">Volver</a>
+                <a href="../index.html">Volver</a>
             </div>
+        </div>
     </header>
     <main class="Formulario">
-        <form class= "formulario-cuenta"  action="../homeSesionIniciada.html">
+        <form class="formulario-cuenta" id="login-form">
             <h1 class="tituloPrincipal-formularios">Inicia Sesión</h1>
-            <div >
+            <div>
                 <label class="label-formulario-cuenta" for="email">Correo Electrónico</label>
                 <input class="input-formulario" type="email" id="email" name="email" required placeholder="ejemplo@dominio.com">
             </div>
             <div>
                 <label class="label-formulario-cuenta" for="password">Contraseña</label>
-                <input class="input-formulario"type="password" id="password" name="password" required placeholder="Contraseña">
+                <input class="input-formulario" type="password" id="password" name="password" required placeholder="Contraseña">
             </div>
+            <div id="error-message" class="error-message"></div>
             <div id="texto-Olvido-De-Contraseña">
                 <a href="../html/solicitarCambioContraseña.html">¿Olvidaste tu contraseña?</a>
             </div>
@@ -46,8 +47,6 @@
         </form>
     </main>
 
-    <script src="../js/jsInicioDeSesion.js"></script>
-
+    <script src="../js/jsInicioSesion.js"></script>
 </body>
-
 </html>
