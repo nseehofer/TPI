@@ -16,10 +16,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Cursos definidos en el JSON
     const cursos = [
-        { id: 1, nombre: 'Diseño UX/UI', precio: 20000, duracion: '13 meses', modalidad: 'Virtual', imagen: '../images/uxui.png' },
-        { id: 2, nombre: 'Ciberseguridad', precio: 50000, duracion: '5 meses', modalidad: 'Virtual', imagen: '../images/ciberseguridad.png' },
-        { id: 3, nombre: 'Desarrollo Full Stack', precio: 60000, duracion: '6 meses', modalidad: 'Virtual', imagen: '../images/fullstack.jpg' },
-        { id: 4, nombre: 'Desarrollo Front End', precio: 45000, duracion: '4 meses', modalidad: 'Virtual', imagen: '../images/front.jpg' }
+        { id: 1, nombre: 'Diseño UX/UI', precio: 20000, duracion: '13 meses', modalidad: 'Virtual', imagen: '../images/uxui.png', href: '../html/detalleDeCurso.html' },
+        { id: 2, nombre: 'Ciberseguridad', precio: 50000, duracion: '5 meses', modalidad: 'Virtual', imagen: '../images/ciberseguridad.png', href: '../html/detalleDeCursoCiber.html' },
+        { id: 3, nombre: 'Desarrollo Full Stack', precio: 60000, duracion: '6 meses', modalidad: 'Virtual', imagen: '../images/fullstack.jpg', href: '../html/detalleDeCursoFullStack.html' },
+        { id: 4, nombre: 'Desarrollo Front End', precio: 45000, duracion: '4 meses', modalidad: 'Virtual', imagen: '../images/front.jpg', href: '../html/detalleDeCursoFront.html' }
     ];
 
     const cursosPorDia = {
@@ -80,18 +80,18 @@ document.addEventListener('DOMContentLoaded', function () {
         popUp.innerHTML = `
             <div class="popup-contenido">
                 <img src="${curso.imagen}" alt="${curso.nombre}" class="popup-imagen">
-                <h2>${curso.nombre}</h2>
-                <p>Precio: $${curso.precio}</p>
-                <a href="" class="btn-ver-detalle">Ver Detalle</a>
+                <p class="texto-popup-curso">${curso.nombre}</p>
+                <p class="texto-popup-curso">Precio: $${curso.precio}</p>
+                <a href="${curso.href}" class="btn-ver-detalle">Ver Detalle</a>
             </div>
         `;
         document.body.appendChild(popUp);
 
-        // Posicionar el pop-up justo encima del elemento
-        const rect = elemento.getBoundingClientRect();
+        // Posicionar el pop-up en el centro de la página
         popUp.style.position = 'absolute';
-        popUp.style.top = `${rect.top - popUp.offsetHeight}px`;
-        popUp.style.left = `${rect.left}px`;
+        popUp.style.top = '50%';
+        popUp.style.left = '50%';
+        popUp.style.transform = 'translate(-50%, -50%)';
 
         // Cerrar el pop-up al hacer clic fuera de él
         document.addEventListener('click', function cerrarPopUp(event) {

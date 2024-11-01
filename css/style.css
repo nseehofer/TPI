@@ -1779,6 +1779,45 @@ iframe {
     font-weight: bold;
 }
 
+.popup-curso {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.popup-curso .popup-contenido {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 0.5px solid var(--amarillo);
+}
+
+.popup-curso .popup-contenido .popup-imagen {
+    display: flex;
+    width: 90%;
+    height: auto;
+    justify-self: center;
+    padding: 3%;
+}
+
+.btn-ver-detalle {
+    display: flex;
+    justify-self: center;
+    font-size: 200%;
+    padding: 3%;
+}
+
+.texto-popup-curso{
+    color: var(--azul);
+    display: flex;
+    justify-self: center;
+    font-size: 250%;
+    font-weight: bold;
+}
+
+
+
 /* UTILIZO EL OCULTAR EN MOVIL PARA ALGUNOS ELEMENTOS DE MI CALENDARIO, RECORDAR QUE ESE CODIGO ESTA EN EL MEDIA QUERIES DEL HEADER&FOOTER */
 
 
