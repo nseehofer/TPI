@@ -3,18 +3,17 @@ document.addEventListener('DOMContentLoaded', function () {
         "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
         "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
     ];
-    
+
     let fechaActual = new Date();
     let indiceMesActual = fechaActual.getMonth();
     let añoActual = fechaActual.getFullYear();
-    
+
     const mostrarMes = document.querySelector('.p-mes-actual');
     const mostrarMesMovil = document.querySelector('.mostrar_en_movil');
     const flechaIzquierda = document.querySelector('.img-flecha[src*="FlechaIzquierda"]');
     const flechaDerecha = document.querySelector('.img-flecha[src*="FlechaDerecha"]');
     const columnasFecha = document.querySelectorAll('.columna_fecha');
 
-    // Cursos definidos en el JSON
     const cursos = [
         { id: 1, nombre: 'Diseño UX/UI', precio: 20000, duracion: '13 meses', modalidad: 'Virtual', imagen: '../images/uxui.png', href: '../html/detalleDeCurso.html' },
         { id: 2, nombre: 'Ciberseguridad', precio: 50000, duracion: '5 meses', modalidad: 'Virtual', imagen: '../images/ciberseguridad.png', href: '../html/detalleDeCursoCiber.html' },
@@ -23,8 +22,8 @@ document.addEventListener('DOMContentLoaded', function () {
     ];
 
     const cursosPorDia = {
-        9: [1, 2], // IDs de los cursos para el 09/09/2024
-        26: [4] // ID del curso para el 26/09/2024
+        9: [1, 2],
+        26: [4]
     };
 
     function actualizarCalendario() {
@@ -32,11 +31,9 @@ document.addEventListener('DOMContentLoaded', function () {
         mostrarMes.textContent = `${nombreMes} ${añoActual}`;
         mostrarMesMovil.innerHTML = `<span class="flecha-mes"><</span> ${nombreMes} <span class="flecha-mes">></span>`;
 
-        // Obtener el número de días en el mes actual
         const diasEnMes = new Date(añoActual, indiceMesActual + 1, 0).getDate();
-        const primerDia = new Date(añoActual, indiceMesActual, 1).getDay(); // Obtener el primer día del mes
+        const primerDia = new Date(añoActual, indiceMesActual, 1).getDay();
 
-        // Limpiar los contenedores de fechas
         columnasFecha.forEach(columna => {
             const contenedoresFecha = columna.querySelectorAll('.contenedor_fecha');
             contenedoresFecha.forEach(contenedor => {
@@ -45,7 +42,6 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
 
-        // Llenar los días en el calendario
         let dia = 1;
         for (let i = 0; i < columnasFecha.length; i++) {
             const contenedoresFecha = columnasFecha[i].querySelectorAll('.contenedor_fecha');
@@ -54,8 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 const numeroFecha = contenedor.querySelector('.numero_fecha');
                 if (dia <= diasEnMes) {
                     numeroFecha.textContent = `${dia.toString().padStart(2, '0')}/${(indiceMesActual + 1).toString().padStart(2, '0')}`;
-                    
-                    // Mostrar los cursos correspondientes según el día
+
                     const contenedorCurso = contenedor.querySelector('.contenedor_curso');
                     if (cursosPorDia[dia]) {
                         cursosPorDia[dia].forEach(cursoId => {
@@ -68,9 +63,9 @@ document.addEventListener('DOMContentLoaded', function () {
                         });
                     }
                 }
-                dia += 7; // Incrementar el día en 7 para la siguiente semana
+                dia += 7;
             }
-            dia = i + 2; // Ajustar el día para la siguiente columna
+            dia = i + 2;
         }
     }
 
@@ -87,13 +82,11 @@ document.addEventListener('DOMContentLoaded', function () {
         `;
         document.body.appendChild(popUp);
 
-        // Posicionar el pop-up en el centro de la página
         popUp.style.position = 'absolute';
         popUp.style.top = '50%';
         popUp.style.left = '50%';
         popUp.style.transform = 'translate(-50%, -50%)';
 
-        // Cerrar el pop-up al hacer clic fuera de él
         document.addEventListener('click', function cerrarPopUp(event) {
             if (!popUp.contains(event.target) && event.target !== elemento) {
                 document.body.removeChild(popUp);
@@ -135,18 +128,54 @@ document.addEventListener('DOMContentLoaded', function () {
     mostrarMesMovil.addEventListener('click', function (event) {
         if (event.target.classList.contains('flecha-mes')) {
             if (event.target.textContent === '<') {
-                flechaIzquierda.click(); // Llama a la función de flecha izquierda
+                flechaIzquierda.click();
             } else {
-                flechaDerecha.click(); // Llama a la función de flecha derecha
+                flechaDerecha.click();
             }
         }
     });
 
-    // Cambiar el cursor a "pointer" cuando esté sobre las flechas
     [flechaIzquierda, flechaDerecha].forEach(flecha => {
         flecha.style.cursor = 'pointer';
     });
 
-    // Inicializar el calendario al cargar
     actualizarCalendario();
 });
+
+function trasladarCarritoAlHeader() {
+    console.log('Ejecutando trasladarCarritoAlHeader');
+    const removerCarritoDeLosBotones = document.querySelector('#remover-carrito-de-media-query');
+    if (removerCarritoDeLosBotones) {
+        removerCarritoDeLosBotones.remove();
+    }
+    const contenedorLogo = document.querySelector('.js-logo-container');
+    let crearDivParaContenedorCarrito = document.querySelector('.js_contenedor_carrito');
+    if (!crearDivParaContenedorCarrito) {
+        crearDivParaContenedorCarrito = document.createElement('div');
+        crearDivParaContenedorCarrito.classList.add('contenedor_carrito_btn');
+        crearDivParaContenedorCarrito.style.zIndex = '2000';
+        crearDivParaContenedorCarrito.style.width = 'auto';
+        crearDivParaContenedorCarrito.classList.add('contenedor_carrito');
+        crearDivParaContenedorCarrito.classList.add('js_contenedor_carrito');
+        crearDivParaContenedorCarrito.innerHTML = `
+            <img class="img-carrito" src="../images/carritoDeComprasColor.png" alt="CarroDeCompras">
+            <a href="./html/carritoDeCompra.html" class="numero-carrito-fijo js-numero-carrito">0</a>
+            <ul class="carrito-lista"></ul>`;
+        contenedorLogo.appendChild(crearDivParaContenedorCarrito);
+        const contenedorCarritoLista = document.querySelector('.carrito-lista');
+        contenedorCarritoLista.style.left = '-420%';
+    }
+}
+
+function verificarMediaQuery() {
+
+    const mediaQuery768 = window.matchMedia('(max-width: 768px)');
+    const mediaQuery575 = window.matchMedia('(max-width: 575px)');
+    if (mediaQuery768.matches || mediaQuery575.matches) {
+        trasladarCarritoAlHeader();
+    }
+}
+
+document.addEventListener('DOMContentLoaded', verificarMediaQuery);
+
+window.addEventListener('resize', verificarMediaQuery);

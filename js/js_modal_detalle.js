@@ -109,7 +109,7 @@ function mostrarNumeroYContenidoCarrito() {
         });
     }
 
-    actualizarPrecioTotal();
+
 }
 
 function eliminarCurso(cursoId) {
@@ -134,38 +134,59 @@ function eliminarCurso(cursoId) {
         carritoLista.innerHTML = '<p>No se agregaron cursos</p>';
     }
 
-    actualizarPrecioTotal();
 }
 
-function actualizarPrecioTotal() {
-    const divPrecioTotalCarrito = document.querySelector('.precio_total_carrito');
-    let totalPrecio = 0;
-    let cursosAgregados = JSON.parse(sessionStorage.getItem('cursosAgregados')) || [];
-    cursosAgregados.forEach(cursoId => {
-        const curso = cursos.find(c => c.id.toString() === cursoId);
-        if (curso) {
-            totalPrecio += curso.precio;
-        }
-    });
-    divPrecioTotalCarrito.textContent = `Total: $${totalPrecio}`;
-    sessionStorage.setItem('precioTotal', totalPrecio);
-}
 
-function initCarritoEnPaginas(paginas) {
-    const pathname = window.location.pathname;
-    if (paginas.some(pagina => pathname.includes(pagina))) {
-        mostrarNumeroYContenidoCarrito();
+
+function trasladarCarritoAlHeader() {
+    console.log('Ejecutando trasladarCarritoAlHeader');
+    const removerCarritoDeLosBotones = document.querySelector('#remover-carrito-de-media-query');
+    if (removerCarritoDeLosBotones) {
+        removerCarritoDeLosBotones.remove();
+    } 
+    const contenedorLogo = document.querySelector('.js-logo-container');
+    let crearDivParaContenedorCarrito = document.querySelector('.js_contenedor_carrito');
+    if (!crearDivParaContenedorCarrito) {
+        crearDivParaContenedorCarrito = document.createElement('div');
+        crearDivParaContenedorCarrito.classList.add('contenedor_carrito_btn');
+        crearDivParaContenedorCarrito.style.zIndex = '2000';
+        crearDivParaContenedorCarrito.style.width = 'auto';
+        crearDivParaContenedorCarrito.classList.add('contenedor_carrito');
+        crearDivParaContenedorCarrito.classList.add('js_contenedor_carrito');
+        crearDivParaContenedorCarrito.innerHTML = `
+            <img class="img-carrito" src="../images/carritoDeComprasColor.png" alt="CarroDeCompras">
+            <a href="./html/carritoDeCompra.html" class="numero-carrito-fijo js-numero-carrito">0</a>
+            <ul class="carrito-lista"></ul>`;
+        contenedorLogo.appendChild(crearDivParaContenedorCarrito);
+        const contenedorCarritoLista = document.querySelector('.carrito-lista');
+        contenedorCarritoLista.style.left ='-420%';
     }
 }
 
-const paginasConCarrito = [
-    'carritoDeCompra.html',
-    'detalleDeCurso.html',
-    'detalleDeCursoCiber.html',
-    'detalleDeCursoFront.html',
-    'detalleDeCursoFullStack.html',
-    'calendario.html',
-    'contacto.html'
-];  
+function verificarMediaQuery() {
+    
+    const mediaQuery768 = window.matchMedia('(max-width: 768px)');
+    const mediaQuery575 = window.matchMedia('(max-width: 575px)');
+    if ( mediaQuery768.matches || mediaQuery575.matches) {
+        trasladarCarritoAlHeader();
+    }
+}
 
-initCarritoEnPaginas(paginasConCarrito);
+document.addEventListener('DOMContentLoaded', verificarMediaQuery);
+
+window.addEventListener('resize', verificarMediaQuery);
+
+
+
+function initCarrito() {
+    const pathname = window.location.pathname;
+    mostrarNumeroYContenidoCarrito();
+
+}
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    console.log('El DOM está completamente cargado y listo para ser manipulado');
+    initCarrito();
+});
+

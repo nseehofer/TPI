@@ -19,31 +19,30 @@ window.onload = function () {
 
     if (imagen) {
         function cambiarImagen() {
-            imagen.classList.add('transicion'); // Inicia la animación de desvanecimiento
+            imagen.classList.add('transicion'); 
 
             setTimeout(() => {
                 indice = (indice + 1) % imagenes.length;
                 imagen.src = imagenes[indice];
-                imagen.classList.remove('transicion'); // Quita la clase después de cambiar la imagen
+                imagen.classList.remove('transicion'); 
                 console.log('Imagen cambiada a:', imagenes[indice]);
-            }, 1000); // Espera el tiempo de la transición antes de cambiar la imagen
+            }, 1000); 
         }
 
         function iniciarIntervalo() {
-            intervalo = setInterval(cambiarImagen, 3500); // Cambia la imagen cada 2 segundos
+            intervalo = setInterval(cambiarImagen, 3500); 
         }
 
         function detenerIntervalo() {
-            clearInterval(intervalo); // Detiene el cambio de imagen
+            clearInterval(intervalo); 
         }
 
-        iniciarIntervalo(); // Inicia el intervalo al cargar la página
+        iniciarIntervalo(); 
 
-        // Agregar funcionalidad para seleccionar imagen
         const botones = document.querySelectorAll('.selector button');
         botones.forEach(button => {
             button.addEventListener('click', function () {
-                detenerIntervalo(); // Detiene el cambio automático de imágenes
+                detenerIntervalo(); 
                 indice = parseInt(this.getAttribute('data-index'));
                 imagen.src = imagenes[indice];
                 console.log('Imagen seleccionada:', imagenes[indice]);
@@ -96,11 +95,11 @@ function initCarrito() {
             if (cursosAgregados.includes(cursoId)) {
                 contenedor.classList.add('aniadido');
             } else {
-                contenedor.classList.remove('aniadido'); 
+                contenedor.classList.remove('aniadido');
             }
 
             contenedor.removeEventListener('click', handleAgregarCurso);
-            if (!cursosAgregados.includes(cursoId)) { 
+            if (!cursosAgregados.includes(cursoId)) {
                 contenedor.addEventListener('click', handleAgregarCurso);
             }
 
@@ -163,10 +162,10 @@ function initCarrito() {
             cursosAgregados = cursosAgregados.filter(id => id !== cursoId);
             sessionStorage.setItem('cursosAgregados', JSON.stringify(cursosAgregados));
 
-            
+
             mostrarMensajeSiCarritoVacio(numeroActual);
 
-            
+
             const contenedorCurso = document.getElementById(cursoId);
             if (contenedorCurso) {
                 contenedorCurso.classList.remove('aniadido');
@@ -180,7 +179,7 @@ function initCarrito() {
         });
     }
 
-   
+
     function mostrarMensajeSiCarritoVacio(numeroActual) {
         const carritoLista = document.querySelector('.carrito-lista');
         const mensajeVacio = document.querySelector('.mensaje-vacio');
@@ -213,3 +212,42 @@ function modificarPropiedadSiScriptEjecuta() {
 
 
 modificarPropiedadSiScriptEjecuta();
+
+
+function trasladarCarritoAlHeader() {
+    console.log('Ejecutando trasladarCarritoAlHeader');
+    const removerCarritoDeLosBotones = document.querySelector('#remover-carrito-de-media-query');
+    if (removerCarritoDeLosBotones) {
+        removerCarritoDeLosBotones.remove();
+    } 
+    const contenedorLogo = document.querySelector('.js-logo-container');
+    let crearDivParaContenedorCarrito = document.querySelector('.js_contenedor_carrito');
+    if (!crearDivParaContenedorCarrito) {
+        crearDivParaContenedorCarrito = document.createElement('div');
+        crearDivParaContenedorCarrito.classList.add('contenedor_carrito_btn');
+        crearDivParaContenedorCarrito.style.zIndex = '2000';
+        crearDivParaContenedorCarrito.style.width = 'auto';
+        crearDivParaContenedorCarrito.classList.add('contenedor_carrito');
+        crearDivParaContenedorCarrito.classList.add('js_contenedor_carrito');
+        crearDivParaContenedorCarrito.innerHTML = `
+            <img class="img-carrito" src="images/carritoDeComprasColor.png" alt="CarroDeCompras">
+            <a href="./html/carritoDeCompra.html" class="numero-carrito-fijo js-numero-carrito">0</a>
+            <ul class="carrito-lista"></ul>`;
+        contenedorLogo.appendChild(crearDivParaContenedorCarrito);
+        const contenedorCarritoLista = document.querySelector('.carrito-lista');
+        contenedorCarritoLista.style.left ='-420%';
+    }
+}
+
+function verificarMediaQuery() {
+    
+    const mediaQuery768 = window.matchMedia('(max-width: 768px)');
+    const mediaQuery575 = window.matchMedia('(max-width: 575px)');
+    if ( mediaQuery768.matches || mediaQuery575.matches) {
+        trasladarCarritoAlHeader();
+    }
+}
+
+document.addEventListener('DOMContentLoaded', verificarMediaQuery);
+
+window.addEventListener('resize', verificarMediaQuery);
