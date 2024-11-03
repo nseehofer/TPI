@@ -15,9 +15,15 @@
 </head>
 
 <body>
-
+    <header class="header-giftcard"><a href="../index.html" class="volver"> &#x2190; Volver </a>
+        <div class="contenedor_carrito_btn contenedor_carrito js_contenedor_carrito" id="remover-carrito-de-media-query"><img
+                class="img-carrito" src="../images/carritoDeComprasColor.png" alt="CarroDeCompras">
+            <a href="../html/carritoDeCompra.html" class="numero-carrito-fijo js-numero-carrito">0</a>
+            <ul class="carrito-lista">
+            </ul>
+        </div>
+    </header>
     <main>
-        <a href="../index.html" class="volver"> &#x2190; Volver </a>
         <section class="contenedor_principal_giftcard">
             <div class="contenedor-giftcard">
 
@@ -33,7 +39,7 @@
 
                     <p class="nombre-destinatario" id="nombre-destinatario">Nombre Destinatario</p>
                     <div class="codigo_QR">
-                        <img src="../images/QR.jpg" alt="QR codigo">
+                        <img class="imagen-giftcard" src="../images/QR.jpg" alt="QR codigo">
                     </div>
                 </div>
             </div>
@@ -180,6 +186,12 @@
                 </form>
             </div>
         </section>
+        <div id="modal" class="modal_detalle">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>La giftcard se agregó al carrito</p>
+            </div>
+        </div>
     </main>
 
     <footer>
@@ -275,4 +287,5 @@
     </footer>
     <script src="../js/js-Giftcard.js"></script>
 </body>
+
 </html>

@@ -2352,6 +2352,13 @@ details li {
 
 /*giftcard*/
 
+.header-giftcard{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
 .contenedor_principal_giftcard {
     display: grid;
     grid-template-columns: 1fr 1fr;

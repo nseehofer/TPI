@@ -11,11 +11,12 @@ function mostrarNumeroYContenidoCarrito() {
     numeroCarrito.textContent = numeroActual.toString();
 
     let cursosAgregados = JSON.parse(sessionStorage.getItem('cursosAgregados')) || [];
+    let giftcardsAgregadas = JSON.parse(sessionStorage.getItem('giftcardsAgregadas')) || [];
 
     const carritoLista = document.querySelector('.carrito-lista');
     carritoLista.innerHTML = '';
 
-    if (cursosAgregados.length === 0) {
+    if (cursosAgregados.length === 0 && giftcardsAgregadas.length === 0) {
         carritoLista.innerHTML = '<p>No se agregaron cursos</p>';
     } else {
         cursosAgregados.forEach(cursoId => {
@@ -38,6 +39,21 @@ function mostrarNumeroYContenidoCarrito() {
                 });
             }
         });
+
+        giftcardsAgregadas.forEach(giftcard => {
+            const giftcardElemento = document.createElement('li');
+            giftcardElemento.classList.add('carrito-elemento-lista');
+            giftcardElemento.innerHTML = `
+                <p class="carrito-nombre-curso">GiftCard</p>
+                <p class="carrito-precio-curso">Monto: ${giftcard.monto}</p>
+                <button class="btn-borrar">Eliminar</button>
+            `;
+            carritoLista.appendChild(giftcardElemento);
+
+            giftcardElemento.querySelector('.btn-borrar').addEventListener('click', function () {
+                eliminarGiftcard(giftcardElemento);
+            });
+        });
     }
 }
 
@@ -59,23 +75,114 @@ function eliminarCurso(cursoId) {
         cursoElemento.remove();
     }
 
-    if (cursosAgregados.length === 0) {
+    if (cursosAgregados.length === 0 && JSON.parse(sessionStorage.getItem('giftcardsAgregadas')).length === 0) {
         carritoLista.innerHTML = '<p>No se agregaron cursos</p>';
     }
-
-
 }
 
+function eliminarGiftcard(elemento) {
+    let giftcardsAgregadas = JSON.parse(sessionStorage.getItem('giftcardsAgregadas')) || [];
+    const index = Array.from(elemento.parentNode.children).indexOf(elemento);
+    giftcardsAgregadas.splice(index, 1);
+    sessionStorage.setItem('giftcardsAgregadas', JSON.stringify(giftcardsAgregadas));
 
+    let numeroActual = parseInt(sessionStorage.getItem('numeroCarrito')) || 0;
+    if (numeroActual > 0) {
+        numeroActual -= 1;
+        sessionStorage.setItem('numeroCarrito', numeroActual);
+        document.querySelector('.js-numero-carrito').textContent = numeroActual.toString();
+    }
+
+    elemento.remove();
+
+    const carritoLista = document.querySelector('.carrito-lista');
+    if (giftcardsAgregadas.length === 0 && JSON.parse(sessionStorage.getItem('cursosAgregados')).length === 0) {
+        carritoLista.innerHTML = '<p>No se agregaron cursos</p>';
+    }
+}
 
 function initCarrito() {
     const pathname = window.location.pathname;
     mostrarNumeroYContenidoCarrito();
-
 }
-
 
 document.addEventListener('DOMContentLoaded', function () {
     console.log('El DOM está completamente cargado y listo para ser manipulado');
     initCarrito();
 });
+
+// Nueva funcionalidad para agregar la giftcard al carrito
+document.querySelector('form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Evitar el envío del formulario
+
+    const monto = document.querySelector('.giftcard .monto span').innerText;
+
+    // Actualizar sessionStorage
+    let numeroActual = parseInt(sessionStorage.getItem('numeroCarrito')) || 0;
+    numeroActual += 1;
+    sessionStorage.setItem('numeroCarrito', numeroActual);
+    document.querySelector('.js-numero-carrito').textContent = numeroActual.toString();
+
+    let giftcardsAgregadas = JSON.parse(sessionStorage.getItem('giftcardsAgregadas')) || [];
+    giftcardsAgregadas.push({ titulo: 'GiftCard', monto: monto });
+    sessionStorage.setItem('giftcardsAgregadas', JSON.stringify(giftcardsAgregadas));
+
+    // Agregar el elemento 'li' al carrito
+    const carritoLista = document.querySelector('.carrito-lista');
+    const giftcardElemento = document.createElement('li');
+    giftcardElemento.classList.add('carrito-elemento-lista');
+    giftcardElemento.innerHTML = `
+        <p class="carrito-nombre-curso">GiftCard</p>
+        <p class="carrito-precio-curso">Monto: ${monto}</p>
+        <button class="btn-borrar">Eliminar</button>
+    `;
+    carritoLista.appendChild(giftcardElemento);
+
+    // Agregar funcionalidad al botón de eliminar
+    giftcardElemento.querySelector('.btn-borrar').addEventListener('click', function() {
+        eliminarGiftcard(giftcardElemento);
+    });
+
+    // Mostrar mensaje si el carrito está vacío
+    if (giftcardsAgregadas.length === 0) {
+        carritoLista.innerHTML = '<p>No se agregaron cursos</p>';
+    }
+
+    // Mostrar el modal
+    mostrarModal();
+});
+
+// Función para mostrar el modal
+function mostrarModal() {
+    const modal = document.getElementById('modal');
+    modal.style.display = 'block';
+
+    // Cerrar el modal después de 3 segundos
+    setTimeout(() => {
+        modal.style.display = 'none';
+    }, 3000);
+
+    // Cerrar el modal al hacer clic en la "x"
+    modal.querySelector('.close').onclick = function() {
+        modal.style.display = 'none';
+    };
+
+    // Cerrar el modal al hacer clic fuera del contenido del modal
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    };
+}
+
+function verificarMediaQuery() {
+    const mediaQuery768 = window.matchMedia('(max-width: 768px)');
+    const mediaQuery575 = window.matchMedia('(max-width: 575px)');
+    if (mediaQuery768.matches || mediaQuery575.matches) {
+        const contenedorCarritoLista = document.querySelector('.carrito-lista');
+        contenedorCarritoLista.style.left = '-420%';
+    }
+}
+
+document.addEventListener('DOMContentLoaded', verificarMediaQuery);
+window.addEventListener('resize', verificarMediaQuery);

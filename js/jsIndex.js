@@ -1,16 +1,3 @@
-/* CONSIGNA
-
- El SlideroCarousel mostrará al menos 3 imágenes, las cuales iterarán
- automáticamente y se debe permitir adicionalmente la elección de una imagen en
- particular
-
-*/
-
-// CLASES A UTILIZAR 
-// js-traslacion 
-// js_contenedor_imagen_carrousel
-// js-img-carrousel
-
 window.onload = function () {
     const imagenes = ['./images/sliderImagen.jpeg', './images/sliderImagen2.jpeg', './images/sliderImagen3.jpeg'];
     let indice = 0;
@@ -52,18 +39,6 @@ window.onload = function () {
         console.error('No se encontró el elemento con la clase "js-img-carrousel".');
     }
 };
-
-
-/*
-    El contador de cursos obtenidos tendrá un número que se irá incrementando a medida
-    que vayamos clickeando sobre los botones “Comprar”/”Inscribirse”. El valor que toma
-    el contador se debe almacenar en el sessionstorage para que no se “pierda” durante la
-    navegación.
-*/
-
-// 1RO ALOJO TODOS LOS CURSOS EN UN ARRAY PARA ACCEDER A SUS CONTENIDOS EN SUS ETIQUETAS HTML
-// 2DO CREO MI CONSTANTE DE CURSOS CON LOS DATOS QUE ME INTERESAN 
-// 3RO UTILIZO A GUSTO ESA CONSTANTE  
 
 const todosLosCursos = document.querySelectorAll('.js-curso');
 console.log(todosLosCursos);
