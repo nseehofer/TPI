@@ -56,12 +56,14 @@ function initCarrito() {
     numeroCarrito.textContent = numeroActual.toString();
 
     let cursosAgregados = JSON.parse(sessionStorage.getItem('cursosAgregados')) || [];
+    let giftcardsAgregadas = JSON.parse(sessionStorage.getItem('giftcardsAgregadas')) || [];
 
     mostrarMensajeSiCarritoVacio(numeroActual);
 
     marcarCursosAniadidos(cursosAgregados);
 
     cursosAgregados.forEach(cursoId => agregarCursoAlCarrito(cursoId));
+    giftcardsAgregadas.forEach(giftcard => agregarGiftcardAlCarrito(giftcard));
 
     function marcarCursosAniadidos(cursosAgregados) {
         const contenedoresCarritoCurso = document.querySelectorAll('.js-carrito-curso');
@@ -120,6 +122,40 @@ function initCarrito() {
         actualizarContadorYEliminar(cursoElemento, cursoId);
     }
 
+    function agregarGiftcardAlCarrito(giftcard) {
+        const carritoLista = document.querySelector('.carrito-lista');
+
+        const giftcardElemento = document.createElement('li');
+        giftcardElemento.classList.add('carrito-elemento-lista');
+        giftcardElemento.innerHTML = `
+            <p class="carrito-nombre-curso">GiftCard</p>
+            <p class="carrito-precio-curso">Monto: ${giftcard.monto}</p>
+            <button class="btn-borrar">Eliminar</button>
+        `;
+        carritoLista.appendChild(giftcardElemento);
+
+        giftcardElemento.querySelector('.btn-borrar').addEventListener('click', function() {
+            eliminarGiftcard(giftcardElemento, giftcard);
+        });
+    }
+
+    function eliminarGiftcard(giftcardElemento, giftcard) {
+        giftcardElemento.remove();
+
+        let numeroActual = parseInt(sessionStorage.getItem('numeroCarrito')) || 0;
+        if (numeroActual > 0) {
+            numeroActual -= 1;
+            sessionStorage.setItem('numeroCarrito', numeroActual);
+            document.querySelector('.js-numero-carrito').textContent = numeroActual.toString();
+        }
+
+        let giftcardsAgregadas = JSON.parse(sessionStorage.getItem('giftcardsAgregadas')) || [];
+        giftcardsAgregadas = giftcardsAgregadas.filter(g => g.monto !== giftcard.monto);
+        sessionStorage.setItem('giftcardsAgregadas', JSON.stringify(giftcardsAgregadas));
+
+        mostrarMensajeSiCarritoVacio(numeroActual);
+    }
+
     function actualizarContadorYEliminar(cursoElemento, cursoId) {
         const numeroCarrito = document.querySelector('.js-numero-carrito');
 
@@ -137,9 +173,7 @@ function initCarrito() {
             cursosAgregados = cursosAgregados.filter(id => id !== cursoId);
             sessionStorage.setItem('cursosAgregados', JSON.stringify(cursosAgregados));
 
-
             mostrarMensajeSiCarritoVacio(numeroActual);
-
 
             const contenedorCurso = document.getElementById(cursoId);
             if (contenedorCurso) {
@@ -153,7 +187,6 @@ function initCarrito() {
             }
         });
     }
-
 
     function mostrarMensajeSiCarritoVacio(numeroActual) {
         const carritoLista = document.querySelector('.carrito-lista');
@@ -176,25 +209,21 @@ function initCarrito() {
 
 initCarrito();
 
-
-
 function modificarPropiedadSiScriptEjecuta() {
     if (window.location.pathname.includes('homeSesionIniciada.html')) {
         const contenedorListaCarrito = document.querySelector('.carrito-lista');
         contenedorListaCarrito.classList.add('carrito-lista-sesion');
     }
-};
-
+}
 
 modificarPropiedadSiScriptEjecuta();
-
 
 function trasladarCarritoAlHeader() {
     console.log('Ejecutando trasladarCarritoAlHeader');
     const removerCarritoDeLosBotones = document.querySelector('#remover-carrito-de-media-query');
     if (removerCarritoDeLosBotones) {
         removerCarritoDeLosBotones.remove();
-    } 
+    }
     const contenedorLogo = document.querySelector('.js-logo-container');
     let crearDivParaContenedorCarrito = document.querySelector('.js_contenedor_carrito');
     if (!crearDivParaContenedorCarrito) {
@@ -210,9 +239,12 @@ function trasladarCarritoAlHeader() {
             <ul class="carrito-lista"></ul>`;
         contenedorLogo.appendChild(crearDivParaContenedorCarrito);
         const contenedorCarritoLista = document.querySelector('.carrito-lista');
-        contenedorCarritoLista.style.left ='-420%';
+        contenedorCarritoLista.style.left = '-420%';
     }
+
+    initCarrito();
 }
+
 
 function verificarMediaQuery() {
     
