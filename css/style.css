@@ -1461,7 +1461,7 @@ body {
     margin-bottom: 1em;
     min-width: 18em;
     font-size: 1em;
-    color: var(--grisIntermedio);
+    color: black;
 }
 
 .input-formulario::placeholder {

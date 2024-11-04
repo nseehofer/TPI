@@ -44,8 +44,8 @@
                 <ul class="carrito-lista">
                 </ul>
             </div>
-            <a href="./html/inicioDeSesion.html" class="btn-header">Iniciar Sesión</a>
-            <a href="./html/registro.html" class="btn-header">Registrarse</a>
+            <a href="../html/inicioDeSesion.html" class="btn-header">Iniciar Sesión</a>
+            <a href="../html/registro.html" class="btn-header">Registrarse</a>
 
         </div>
 
@@ -53,18 +53,17 @@
 
     <main class="contenedor-contacto">
         <div class="seccion-contacto">
-            <form class="formulario-contacto" action="">
+            <form class="formulario-contacto" action="" novalidate>
                 <h1 class="tituloPrincipal-formulario">Contacto</h1>
-                <input class="input-formulario" type="text" id="nombre" name="nombre" placeholder="Nombre" required>
-                <input class="input-formulario" type="text" id="apellido" name="apellido" placeholder="Apellido"
-                    required>
-                <input class="input-formulario" type="email" id="email" name="email" placeholder="Email" required>
-                <input class="input-formulario" type="tel" id="telefono" name="telefono" placeholder="Teléfono"
-                    required>
-                <input class="input-formulario" name="consulta" placeholder="Deje su consulta..." required>
+                <input class="input-formulario" type="text" id="nombre" name="nombre" placeholder="Nombre">
+                <input class="input-formulario" type="text" id="apellido" name="apellido" placeholder="Apellido">
+                <input class="input-formulario" type="email" id="email" name="email" placeholder="Email">
+                <input class="input-formulario" type="tel" id="telefono" name="telefono" placeholder="Teléfono">
+                <input class="input-formulario" name="consulta" placeholder="Deje su consulta...">
                 <div class="contenedor-boton-contacto">
-                    <button class="btn btn-azul .btn-formulario-contacto" type="submit">Enviar</button>
+                   <button class="btn btn-azul btn-formulario-contacto" type="submit">Enviar</button>
                 </div>
+                <div id="error-message" class="error-message" style="display: none; color: red;"></div>
             </form>
         </div>
         <div class="seccion-info">
@@ -151,7 +150,6 @@
                         </ul>
                     </div>
                 </div>
-
 
                 <div class="desplegable-item_footer">
                     <input type="checkbox" id="desplegable-2" class="desplegable-checkbox_footer">
