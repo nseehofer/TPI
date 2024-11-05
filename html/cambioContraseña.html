@@ -11,37 +11,42 @@
 
 <body>
     <header class="header-formularios">
-            <div class="logo">
-                <a href="index.html">
-                    <img src="../images/LogoTest.png" alt="Logo" class="logo-img">
-                </a>
-            </div>
-            <div class="volver">
-                <div class="flecha">
+        <div class="logo">
+            <a href="index.html">
+                <img src="../images/LogoTest.png" alt="Logo" class="logo-img">
+            </a>
+        </div>
+        <div class="volver">
+            <div class="flecha">
                 <a href="../index.html">
                     <img src="../images/FlechaIzquierda.png" alt="Logo" class="logo-img">
                 </a>
-                <a class="a-volver" href="../html/inicioDeSesion.html"">Volver</a>
+                <a class="a-volver" href="../html/inicioDeSesion.html">Volver</a>
             </div>
-        
+        </div>
     </header>
     <main class="Formulario">
-        <form class="formulario-cuenta"  action="">
+        <form class="formulario-cuenta" action="">
             <h1 class="tituloPrincipal-formularios">Cambiar contraseña</h1>
+
             <div>
-                <label class="label-formulario-cuenta" for="password">Contraseña nueva</label>
+                <label class="label-formulario-cuenta" for="email">Correo Electrónico</label>
+                <input class="input-formulario" type="email" id="email" name="email" required placeholder="ejemplo@dominio.com">
+            </div>
+            <div>
+                <label class="label-formulario-cuenta" for="password">Contraseña actual</label>
                 <input class="input-formulario" type="password" id="password" name="password" required placeholder="Contraseña">
             </div>
             <div>
-                <label class="label-formulario-cuenta" for="password">Repetir contraseña nueva</label>
-                <input class="input-formulario" type="password" id="password" name="password" required placeholder="Repetir contraseña">
+                <label class="label-formulario-cuenta" for="new_password">Nueva Contraseña</label>
+                <input class="input-formulario" type="password" id="new_password" name="new_password" required placeholder="Nueva Contraseña">
             </div>
 
-
-            <a href="inicioDeSesion.html" type="submit" class="btn btn-azul btn-formularios">Cambiar contraseña</a>
+            <div id="error-message" class="error-message"></div>
+            <button type="submit" class="btn btn-azul btn-formularios">Cambiar contraseña</button>
         </form>
     </main>
-
+    <script src="../js/cambiarContraseña.js"></script>
 </body>
 
 </html>
