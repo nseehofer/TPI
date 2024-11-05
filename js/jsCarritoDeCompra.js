@@ -193,6 +193,7 @@ function trasladarCarritoAlHeader() {
     if (!crearDivParaContenedorCarrito) {
         crearDivParaContenedorCarrito = document.createElement('div');
         crearDivParaContenedorCarrito.classList.add('contenedor_carrito_btn');
+        crearDivParaContenedorCarrito.style.zIndex = '2000';
         crearDivParaContenedorCarrito.style.width = 'auto';
         crearDivParaContenedorCarrito.classList.add('contenedor_carrito');
         crearDivParaContenedorCarrito.classList.add('js_contenedor_carrito');
@@ -213,6 +214,8 @@ function verificarMediaQuery() {
     if (mediaQuery768.matches || mediaQuery575.matches) {
         contenedorHeader.style.position = 'static';
         trasladarCarritoAlHeader();
+        initCarritoCarritoDeCompra();
+
     }
 }
 

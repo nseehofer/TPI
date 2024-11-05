@@ -3447,7 +3447,7 @@ a {
 }
 
 
-.contenedor_carrito_btn:hover .carrito-lista {
+.contenedor_carrito:hover .carrito-lista {
     display: block;
     
 }
@@ -3471,7 +3471,7 @@ a {
 }
 
 
-.contenedor_carrito_btn:hover {
+.contenedor_carrito:hover {
     cursor: pointer;
     
 }
