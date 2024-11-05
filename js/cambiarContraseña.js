@@ -5,36 +5,41 @@ function showError(message) {
     
     setTimeout(() => {
         errorMessage.style.display = "none";
-    }, 3000);
+    }, 15000);
 }
 
-function cambiarContraseña(email, password, newPassword) {
+function showSuccessModal() {
+    const modal = document.getElementById("success-modal");
+    modal.style.display = "block";
+}
+
+function cambiarContraseña(email, password, newPassword, confirmPassword) {
     const usuarios = JSON.parse(localStorage.getItem('usuarios')) || {};
 
-    // Verifica si el usuario existe
     if (!usuarios[email]) {
         showError("El correo electrónico no está registrado.");
         return;
     }
 
-    // Verifica que la contraseña actual sea correcta
     if (usuarios[email].password !== password) {
         showError("La contraseña ingresada no es correcta.");
         return;
     }
 
-    // Verifica que la nueva contraseña tenga al menos 8 caracteres
     if (newPassword.length < 8) {
         showError("La nueva contraseña debe tener al menos 8 caracteres.");
         return;
     }
 
-    // Actualiza la contraseña
+    if (newPassword !== confirmPassword) {
+        showError("Las contraseñas no coinciden.");
+        return;
+    }
+
     usuarios[email].password = newPassword;
     localStorage.setItem('usuarios', JSON.stringify(usuarios));
 
-    alert("Contraseña cambiada exitosamente.");
-    window.location.href = '../html/inicioDeSesion.html'; // Redirige al inicio de sesión
+    showSuccessModal();
 }
 
 document.querySelector('.formulario-cuenta').addEventListener('submit', function(event) {
@@ -43,6 +48,13 @@ document.querySelector('.formulario-cuenta').addEventListener('submit', function
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
     const newPassword = document.getElementById('new_password').value;
+    const confirmPassword = document.getElementById('confirm_password').value;
 
-    cambiarContraseña(email, password, newPassword);
+    cambiarContraseña(email, password, newPassword, confirmPassword);
+});
+
+document.getElementById('modal-ok-button').addEventListener('click', function() {
+    const modal = document.getElementById("success-modal");
+    modal.style.display = "none";
+    window.location.href = '../html/inicioDeSesion.html';
 });

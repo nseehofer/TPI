@@ -5,7 +5,7 @@ function showError(message) {
     
     setTimeout(() => {
         errorMessage.style.display = "none";
-    }, 3000);
+    }, 15000);
 }
 
 function registrarUsuarios(email, nombre, apellido, password, confirmPassword) {

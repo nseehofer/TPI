@@ -41,11 +41,23 @@
                 <label class="label-formulario-cuenta" for="new_password">Nueva Contraseña</label>
                 <input class="input-formulario" type="password" id="new_password" name="new_password" required placeholder="Nueva Contraseña">
             </div>
+            <div>
+                <label class="label-formulario-cuenta" for="confirm_password">Repetir Nueva Contraseña</label>
+                <input class="input-formulario" type="password" id="confirm_password" name="confirm_password" required placeholder="Repetir Nueva Contraseña">
+            </div>
 
             <div id="error-message" class="error-message"></div>
             <button type="submit" class="btn btn-azul btn-formularios">Cambiar contraseña</button>
         </form>
     </main>
+
+    <div id="success-modal" class="registro-modal">
+        <div class="contenido-registro-modal">
+            <h2>Cambio de contraseña exitoso</h2>
+            <p>Tu contraseña ha sido modificada con éxito.</p>
+            <button id="modal-ok-button">Aceptar</button>
+        </div>
+    </div>
     <script src="../js/cambiarContraseña.js"></script>
 </body>
 
