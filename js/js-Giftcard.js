@@ -6,7 +6,7 @@ const cursos = [
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Funcionalidad existente para personalizar la giftcard
+    
     document.querySelector('input[placeholder="Nombre Destinatario"]').oninput = function () {
         document.getElementById('nombre-destinatario').innerText = this.value;
     };
@@ -45,13 +45,28 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Nueva funcionalidad para agregar la giftcard al carrito
+    
+    document.querySelectorAll('input[name="opcion"]').forEach(function(radio) {
+        radio.addEventListener('change', function() {
+            const backgrounds = {
+                1: '../images/hexagonos-naranja.jpg',
+                2: '../images/circuitos.jpg',
+                3: '../images/ia.jpg',
+                4: '../images/marco-azul.jpg',
+                5: '../images/panal-rojo.jpg'
+            };
+            const fondo = backgrounds[this.value];
+            document.querySelector('.giftcard').style.backgroundImage = `url(${fondo})`;
+        });
+    });
+
+  
     document.querySelector('form').addEventListener('submit', function (event) {
-        event.preventDefault(); // Evitar el envío del formulario
+        event.preventDefault(); 
 
         const monto = document.querySelector('.giftcard .monto span').innerText;
 
-        // Actualizar sessionStorage
+        
         let numeroActual = parseInt(sessionStorage.getItem('numeroCarrito')) || 0;
         numeroActual += 1;
         sessionStorage.setItem('numeroCarrito', numeroActual);
@@ -61,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
         giftcardsAgregadas.push({ titulo: 'GiftCard', monto: monto });
         sessionStorage.setItem('giftcardsAgregadas', JSON.stringify(giftcardsAgregadas));
 
-        // Agregar el elemento 'li' al carrito
+       
         const carritoLista = document.querySelector('.carrito-lista');
         const giftcardElemento = document.createElement('li');
         giftcardElemento.classList.add('carrito-elemento-lista');
