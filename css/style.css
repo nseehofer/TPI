@@ -3518,4 +3518,23 @@ a {
     color: red;
 }
 
+.btn-borrar-usuario {
+    padding:2px 7px;
+    border: none;
+    border-radius: 2em;
+    background-color: red;
+    color: #fff;
+    font-size: 11px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.div-contenedor-botones{
+    position: absolute;
+    top: 100%;
+    display: flex;
+    gap: 5%;
+    left:40%;
+}
+
 /**/

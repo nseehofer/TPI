@@ -6,30 +6,30 @@ window.onload = function () {
 
     if (imagen) {
         function cambiarImagen() {
-            imagen.classList.add('transicion'); 
+            imagen.classList.add('transicion');
 
             setTimeout(() => {
                 indice = (indice + 1) % imagenes.length;
                 imagen.src = imagenes[indice];
-                imagen.classList.remove('transicion'); 
+                imagen.classList.remove('transicion');
                 console.log('Imagen cambiada a:', imagenes[indice]);
-            }, 1000); 
+            }, 1000);
         }
 
         function iniciarIntervalo() {
-            intervalo = setInterval(cambiarImagen, 3500); 
+            intervalo = setInterval(cambiarImagen, 3500);
         }
 
         function detenerIntervalo() {
-            clearInterval(intervalo); 
+            clearInterval(intervalo);
         }
 
-        iniciarIntervalo(); 
+        iniciarIntervalo();
 
         const botones = document.querySelectorAll('.selector button');
         botones.forEach(button => {
             button.addEventListener('click', function () {
-                detenerIntervalo(); 
+                detenerIntervalo();
                 indice = parseInt(this.getAttribute('data-index'));
                 imagen.src = imagenes[indice];
                 console.log('Imagen seleccionada:', imagenes[indice]);
@@ -134,7 +134,7 @@ function initCarrito() {
         `;
         carritoLista.appendChild(giftcardElemento);
 
-        giftcardElemento.querySelector('.btn-borrar').addEventListener('click', function() {
+        giftcardElemento.querySelector('.btn-borrar').addEventListener('click', function () {
             eliminarGiftcard(giftcardElemento, giftcard);
         });
     }
@@ -247,10 +247,10 @@ function trasladarCarritoAlHeader() {
 
 
 function verificarMediaQuery() {
-    
+
     const mediaQuery768 = window.matchMedia('(max-width: 768px)');
     const mediaQuery575 = window.matchMedia('(max-width: 575px)');
-    if ( mediaQuery768.matches || mediaQuery575.matches) {
+    if (mediaQuery768.matches || mediaQuery575.matches) {
         trasladarCarritoAlHeader();
     }
 }
@@ -258,3 +258,72 @@ function verificarMediaQuery() {
 document.addEventListener('DOMContentLoaded', verificarMediaQuery);
 
 window.addEventListener('resize', verificarMediaQuery);
+
+document.addEventListener('DOMContentLoaded', eliminarUsuarioOCerrarSesion);
+
+document.addEventListener('DOMContentLoaded', eliminarUsuarioOCerrarSesion);
+
+function mostrarBotones() {
+    const contenedorBtnUsuario = document.querySelector('.js_contenedor_usuario_icon');
+    if (contenedorBtnUsuario && !contenedorBtnUsuario.querySelector('.btn-borrar-usuario')) {
+        let divParaContenedorBtnUsuario = document.createElement('div');
+        divParaContenedorBtnUsuario.innerHTML = `
+        <button class="btn-borrar-usuario js-btn-cerrar-sesion">Cerrar sesión</button>
+        <button class="btn-borrar-usuario js-btn-eliminar-cuenta">Eliminar cuenta</button>
+        `;
+        divParaContenedorBtnUsuario.className += ' div-contenedor-botones';
+        contenedorBtnUsuario.appendChild(divParaContenedorBtnUsuario);
+
+        // Añadir eventos a los botones
+        document.querySelector('.js-btn-eliminar-cuenta').addEventListener('click', eliminarUsuario);
+        divParaContenedorBtnUsuario.addEventListener('mouseover', mantenerBotones);
+        divParaContenedorBtnUsuario.addEventListener('mouseout', ocultarBotones);
+    }
+}
+
+function mantenerBotones(event) {
+    event.stopPropagation();
+}
+
+function ocultarBotones(event) {
+    const contenedorLogoUsuario = document.querySelector('.js_usuario_icon');
+    const contenedorBtnUsuario = document.querySelector('.js_contenedor_usuario_icon');
+    if (event.relatedTarget !== contenedorLogoUsuario && !contenedorLogoUsuario.contains(event.relatedTarget) &&
+        event.relatedTarget !== contenedorBtnUsuario && !contenedorBtnUsuario.contains(event.relatedTarget)) {
+        const botones = contenedorBtnUsuario.querySelector('.div-contenedor-botones');
+        if (botones) {
+            botones.remove();
+        }
+    }
+}
+
+function eliminarUsuario() {
+    const emailUsuarioLogeado = 'email_del_usuario_logeado'; // Reemplaza esto con la forma correcta de obtener el email del usuario logeado
+    console.log('Estado del localStorage antes de eliminar:', localStorage.getItem('usuarios'));
+
+    const usuarios = JSON.parse(localStorage.getItem('usuarios')) || {};
+    if (usuarios[emailUsuarioLogeado]) {
+        delete usuarios[emailUsuarioLogeado];
+        localStorage.setItem('usuarios', JSON.stringify(usuarios));
+        console.log(`Usuario con email ${emailUsuarioLogeado} eliminado.`);
+        console.log('Estado del localStorage después de eliminar:', localStorage.getItem('usuarios'));
+    } else {
+        console.error(`Usuario con email ${emailUsuarioLogeado} no encontrado.`);
+    }
+
+    window.location.href = 'index.html';
+}
+
+function eliminarUsuarioOCerrarSesion() {
+    if (window.location.pathname.includes('homeSesionIniciada.html')) {     
+        const contenedorLogoUsuario = document.querySelector('.js_usuario_icon');
+        if (contenedorLogoUsuario) {
+            contenedorLogoUsuario.addEventListener('mouseover', mostrarBotones);
+            contenedorLogoUsuario.addEventListener('mouseout', ocultarBotones);
+        } else {
+            console.error('El elemento .js_usuario_icon no se encontró en el DOM.');
+        }
+    }
+}
+
+
