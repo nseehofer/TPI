@@ -176,7 +176,6 @@ function mostrarModal() {
 }
 
 function trasladarCarritoAlHeader() {
-    console.log('Ejecutando trasladarCarritoAlHeader');
     const removerCarritoDeLosBotones = document.querySelector('#remover-carrito-de-media-query');
     if (removerCarritoDeLosBotones) {
         removerCarritoDeLosBotones.remove();
@@ -201,6 +200,24 @@ function trasladarCarritoAlHeader() {
     }
 }
 
+function trasladarLogoAlHeader() {
+    const removerLogooDeLosBotones = document.querySelector('#remover-logueado-de-media-query');
+    if (removerLogooDeLosBotones) {
+        removerLogooDeLosBotones.remove();
+    } 
+    const contenedorLogo = document.querySelector('.js-logo-container');
+    
+    let crearDivParaContenedorLogo = document.querySelector('.js_contenedor_carrito');
+    if (!crearDivParaContenedorLogo) {
+        crearDivParaContenedorLogo = document.createElement('div');
+        crearDivParaContenedorLogo.classList.add('usuario_icon');
+        crearDivParaContenedorLogo.classList.add('js_usuario_icon');
+        crearDivParaContenedorLogo.innerHTML = `
+            <img class="icon-img" src="../iconos/usuario.png" alt="">`;
+        contenedorLogo.appendChild(crearDivParaContenedorLogo);
+    }
+}
+
 function verificarMediaQuery() {
     const contenedorHeader = document.querySelector('.header');
     const mediaQuery768 = window.matchMedia('(max-width: 768px)');
@@ -208,6 +225,7 @@ function verificarMediaQuery() {
     if (mediaQuery768.matches || mediaQuery575.matches) {
         contenedorHeader.style.position = 'static';
         trasladarCarritoAlHeader();
+        trasladarLogoAlHeader();
         initCarrito();
     }
 }

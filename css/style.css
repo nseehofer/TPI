@@ -45,6 +45,14 @@ body {
     width: 100%;
 }
 
+.div-contenedor-botones-chico {
+    position: absolute;
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: column;
+    right: 8%;
+    z-index: 2000;
+}
 
 
 /* HEADER PRINCIPAL */
