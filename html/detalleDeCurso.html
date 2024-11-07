@@ -38,14 +38,14 @@
             </datalist>
         </form>
         <div class="contenedor_carrito_btn">
-            <div class="contenedor_carrito js_contenedor_carrito" id="remover-carrito-de-media-query"><img class="img-carrito"
-                    src="../images/carritoDeComprasColor.png" alt="CarroDeCompras">
+            <div class="contenedor_carrito js_contenedor_carrito" id="remover-carrito-de-media-query"><img
+                    class="img-carrito" src="../images/carritoDeComprasColor.png" alt="CarroDeCompras">
                 <a href="../html/carritoDeCompra.html" class="numero-carrito-fijo js-numero-carrito">0</a>
                 <ul class="carrito-lista">
-                </ul> 
-        </div>
-        <a href="../html/inicioDeSesion.html" class="btn-header">Iniciar Sesión</a>
-        <a href="../html/registro.html" class="btn-header">Registrarse</a>
+                </ul>
+            </div>
+            <a href="../html/inicioDeSesion.html" class="btn-header">Iniciar Sesión</a>
+            <a href="../html/registro.html" class="btn-header">Registrarse</a>
 
         </div>
 
@@ -88,61 +88,61 @@
 
     <!-- Detalle del curso -->
     <section class="course-details">
-        <div class="course-image">
+        <div class="course-image js-imagen-curso">
             <img src="../images/uxui.png" alt="Imagen del Curso">
         </div>
-        <div class="course-info">
-            <h2 class="course-title">Diseño UX/UI</h2>
-            <p><strong>Valor:</strong> <span class="course-price">$20.000</span></p>
-            <p><strong>Modalidad:</strong> <span class="course-mode">Virtual</span></p>
-            <p><strong>Duración:</strong> <span class="course-duration">13 meses</span></p>
-            <p><strong>Requisitos previos:</strong> Conocimiento básico de Diseño</p>
-            <p><strong>Descripción:</strong> Aprende los principios fundamentales del diseño UX/UI para crear experiencias de usuario atractivas y funcionales en plataformas digitales</p>
+        <div class="course-info js-info-curso">
+            <h2 class="course-title js-titulo-curso"></h2>
+            <p><strong>Valor:</strong> <span class="course-price js-precio-curso"></span></p>
+            <p><strong>Modalidad:</strong> <span class="course-mode js-modalidad-curso"></span></p>
+            <p><strong>Duración:</strong> <span class="course-duration js-duracion-curso"></span></p>
+            <p><strong>Requisitos previos:</strong> <span class="js-requisitos-curso"></span></p>
+            <p><strong>Descripción:</strong> <span class="js-descripcion-curso"></span></p>
         </div>
         <a class="btn btn-azul" href="../html/formularioEmpresa.html">Inscribirse</a>
     </section>
     <!-- Modal de Felicitación -->
-<div id="modal-inscripcion" class="modal_detalle">
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2>¡Felicitaciones!</h2>
-        <p>Se agregó al carrito el curso.</p>
-        <p><strong>Curso:</strong> <span id="modal-course-title"></span></p>
-        <p><strong>Modalidad:</strong> <span id="modal-course-mode"></span></p>
-        <p><strong>Duración:</strong> <span id="modal-course-duration"></span></p>
-        <p><strong>Valor:</strong> <span id="modal-course-price"></span></p>
-        <button id="close-btn" class="btn btn-azul">Cerrar</button>
+    <div id="modal-inscripcion" class="modal_detalle">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>¡Felicitaciones!</h2>
+            <p>Se agregó al carrito el curso.</p>
+            <p><strong>Curso:</strong> <span id="modal-course-title"></span></p>
+            <p><strong>Modalidad:</strong> <span id="modal-course-mode"></span></p>
+            <p><strong>Duración:</strong> <span id="modal-course-duration"></span></p>
+            <p><strong>Valor:</strong> <span id="modal-course-price"></span></p>
+            <button id="close-btn" class="btn btn-azul">Cerrar</button>
+        </div>
     </div>
-</div>
     <!-- Contenidos por clase e Instructor -->
     <div class="content-instructor">
         <section class="class-contents">
             <h3 class="tutorial-subtitulo">Contenidos por clase</h3>
             <details>
                 <summary>MÓDULO 1</summary>
-                <li>Definiciones básicas de UX y UI.</li>
+                <li class="js-modulo1">Definiciones básicas de UX y UI.</li>
                 <li>Diferencias entre UX y UI.</li>
             </details>
             <details>
                 <summary>MÓDULO 2</summary>
-                <li>Técnicas de investigación de usuarios.</li>
+                <li class="js-modulo2">Técnicas de investigación de usuarios.</li>
                 <li>Creación de personas y escenarios de usuario.</li>
             </details>
             <details>
                 <summary>MÓDULO 3</summary>
-                <li>Arquitectura de la información.</li>
+                <li class="js-modulo3">Arquitectura de la información.</li>
                 <li>Creación de flujos de usuario.</li>
             </details>
             <details>
                 <summary>MÓDULO 4</summary>
-                <li>Prototipado con herramientas como Figma y Adobe XD.</li>
+                <li class="js-modulo4">Prototipado con herramientas como Figma y Adobe XD.</li>
                 <li>Creación de wireframes interactivos.</li>
             </details>
         </section>
 
         <section class="instructor-info">
             <img src="../images/profesor.png" alt="Instructor">
-            <h3>Juan Garay</h3>
+            <h3 class="js-instructor">Juan Garay</h3>
             <span>★★★★★</span>
         </section>
     </div>
@@ -154,7 +154,7 @@
         <article class="article-cursos-destacados-detalle">
             <div class="div-curso-destacado-detalle">
                 <figure class="bloque-curso-destacado-detalle">
-                    <img class="imagen-curso-destacado-detalle" src="../images/fullstack.jpg"
+                    <img class="imagen-curso-destacado-detalle js-imagen-curso-relacionado1" src="../images/fullstack.jpg"
                         alt="curso de experiencia e interfaz de usuario">
                     <figcaption class="contenedor_boton-detalle">
                         <a class="btn_detalle" href="detalleDeCursoFullStack.html">Ver Detalle</a>
@@ -162,16 +162,16 @@
                 </figure>
                 <div class="bloque-curso-destacado-detalle">
                     <div>
-                        <p class="titulo-curso-detalle">Desarrollo Full stack</p>
-                        <p>Aprende los principios fundamentales del Desarrollo Full stack</p>
+                        <p class="titulo-curso-detalle js-titulo-curso-relacionado1"></p>
+                        <p class="js-descripcion-curso-relacionado1">Aprende los principios fundamentales del Desarrollo Full stack</p>
                     </div>
                     <div class="particion-datos-curso-detalle">
                         <div class="primer-particion">
-                            <p><strong>35 horas</strong></p>
-                            <p><strong>$6000</strong></p>
+                            <p class="js-duracion-curso-relacionado1"><strong></strong></p>
+                            <p class="js-precio-curso-relacionado1"><strong></strong></p>
                         </div>
                         <div class="segunda-particion-detalle">
-                            <p>VIRTUAL</p>
+                            <p class="js-modalidad-curso"></p>
                         </div>
                     </div>
                 </div>
@@ -179,7 +179,7 @@
 
             <div class="div-curso-destacado-detalle">
                 <figure class="bloque-curso-destacado-detalle">
-                    <img class="imagen-curso-destacado-detalle" src="../images/ciberseguridad.png"
+                    <img class="imagen-curso-destacado-detalle js-imagen-curso-relacionado2" src="../images/ciberseguridad.png"
                         alt="curso de ciberseguridad">
                     <figcaption class="contenedor_boton-detalle">
                         <a class="btn_detalle" href="detalleDeCursoCiber.html">Ver Detalle</a>
@@ -187,16 +187,16 @@
                 </figure>
                 <div class="bloque-curso-destacado-detalle">
                     <div>
-                        <p class="titulo-curso-detalle">Ciberseguridad</p>
-                        <p>Aprende los principios fundamentales de la Ciberseguridad</p>
+                        <p class="titulo-curso-detalle js-titulo-curso-relacionado2">Ciberseguridad</p>
+                        <p class="js-descripcion-curso-relacionado2"></p>
                     </div>
                     <div class="particion-datos-curso-detalle">
                         <div class="primer-particion">
-                            <p><strong>5 meses</strong></p>
-                            <p><strong>$50000</strong></p>
+                            <p class="js-duracion-curso-relacionado2"><strong></strong></p>
+                            <p class="js-precio-curso-relacionado2"><strong></strong></p>
                         </div>
                         <div class="segunda-particion-detalle">
-                            <p>VIRTUAL</p>
+                            <p class="js-modalidad-curso"></p>
                         </div>
                     </div>
                 </div>
