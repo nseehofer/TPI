@@ -369,3 +369,26 @@ function eliminarUsuarioOCerrarSesion() {
 
 
 
+// FUNCIONALIDAD PARA GUARDAR ID DEL BOTON VER DETALLE DE CADA CURSO
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Obtener todos los botones "Ver Detalle"
+    const botonesVerDetalle = document.querySelectorAll('.btn-header');
+
+    // Añadir un evento click a cada botón
+    botonesVerDetalle.forEach(boton => {
+        boton.addEventListener('click', (event) => {
+            // Prevenir el comportamiento por defecto del enlace
+            event.preventDefault();
+            
+            // Obtener el ID del curso desde el botón
+            const idCurso = boton.id;
+
+            // Guardar el ID del curso en el localStorage
+            localStorage.setItem('cursoSeleccionado', idCurso);
+
+            // Redirigir al usuario a la página de detalle del curso
+            window.location.href = boton.href;
+        });
+    });
+});
