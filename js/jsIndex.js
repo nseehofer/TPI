@@ -273,7 +273,6 @@ function mostrarBotones() {
         `;
         divParaContenedorBtnUsuario.className += ' div-contenedor-botones';
         
-        // Aplicar estilos CSS
         divParaContenedorBtnUsuario.style.zIndex = '2000';
         divParaContenedorBtnUsuario.style.gap = '0.5rem';
         divParaContenedorBtnUsuario.style.flexDirection = 'column';
@@ -281,7 +280,6 @@ function mostrarBotones() {
         
         contenedorBtnUsuario.appendChild(divParaContenedorBtnUsuario);
 
-        // Añadir eventos a los botones
         document.querySelector('.js-btn-cerrar-sesion').addEventListener('click', cerrarSesion);
         document.querySelector('.js-btn-eliminar-cuenta').addEventListener('click', eliminarUsuario);
         divParaContenedorBtnUsuario.addEventListener('mouseover', mantenerBotones);
@@ -339,7 +337,6 @@ function eliminarUsuario() {
         console.error(`Usuario con email ${emailUsuarioLogeado} no encontrado.`);
     }
 
-    // Limpiar el email del usuario logeado
     localStorage.removeItem('emailUsuarioLogeado');
     console.log('Email del usuario logeado eliminado del localStorage.');
 
@@ -347,11 +344,9 @@ function eliminarUsuario() {
 }
 
 function cerrarSesion() {
-    // Limpiar el email del usuario logeado
     localStorage.removeItem('emailUsuarioLogeado');
     console.log('Email del usuario logeado eliminado del localStorage.');
 
-    // Redirigir a la página de inicio
     window.location.href = 'index.html';
 }
 
@@ -372,22 +367,16 @@ function eliminarUsuarioOCerrarSesion() {
 // FUNCIONALIDAD PARA GUARDAR ID DEL BOTON VER DETALLE DE CADA CURSO
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Obtener todos los botones "Ver Detalle"
     const botonesVerDetalle = document.querySelectorAll('.btn-header');
 
-    // Añadir un evento click a cada botón
     botonesVerDetalle.forEach(boton => {
         boton.addEventListener('click', (event) => {
-            // Prevenir el comportamiento por defecto del enlace
             event.preventDefault();
             
-            // Obtener el ID del curso desde el botón
             const idCurso = boton.id;
 
-            // Guardar el ID del curso en el localStorage
             localStorage.setItem('cursoSeleccionado', idCurso);
 
-            // Redirigir al usuario a la página de detalle del curso
             window.location.href = boton.href;
         });
     });

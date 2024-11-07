@@ -75,19 +75,15 @@ localStorage.setItem("datos", JSON.stringify(datosSimulados));
 // AGREGUE EL 'MOCKDATA == DATOSSIMULADOS' Y LOS PUSE EN EL LOCALSTORAGE PARA GENERAR LOS CURSOS DINAMICOS
 // LA FUNCIONALIDAD PARA COMPLETAR EL DETALLE DE CURSO 
 document.addEventListener('DOMContentLoaded', () => {
-    // Obtener el ID del curso seleccionado del localStorage
     const idCursoSeleccionado = localStorage.getItem('cursoSeleccionado');
 
     if (idCursoSeleccionado) {
-        // Obtener los datos de los cursos del localStorage
         const datosSimulados = JSON.parse(localStorage.getItem('datos'));
 
-        // Asegurarnos de que datosSimulados.cursos es un array
         if (Array.isArray(datosSimulados.cursos)) {
             const curso = datosSimulados.cursos.find(c => c.identificadorCurso === idCursoSeleccionado);
 
             if (curso) {
-                // Actualizar la información del curso en la página
                 document.querySelector('.js-imagen-curso img').src = curso.imagen;
                 document.querySelector('.js-titulo-curso').textContent = curso.nombre;
                 document.querySelector('.js-precio-curso').textContent = `$${curso.precio}`;
@@ -101,7 +97,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.querySelector('.js-modulo4').textContent = curso.modulo4;
                 document.querySelector('.js-instructor').textContent = curso.instructor;
 
-                // Definir los cursos relacionados
                 const cursosRelacionadosMap = {
                     'curso_uxui': ['curso_full', 'curso_front'],
                     'curso_ciber': ['curso_full', 'curso_uxui'],
@@ -112,7 +107,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 const cursosRelacionados = cursosRelacionadosMap[idCursoSeleccionado];
 
                 if (cursosRelacionados) {
-                    // Completar los datos del primer curso relacionado
                     const cursoRelacionado1 = datosSimulados.cursos.find(c => c.identificadorCurso === cursosRelacionados[0]);
                     if (cursoRelacionado1) {
                         document.querySelector('.js-imagen-curso-relacionado1').src = cursoRelacionado1.imagen;
@@ -122,7 +116,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         document.querySelector('.js-precio-curso-relacionado1').textContent = `Precio: $${cursoRelacionado1.precio}`;
                         document.querySelector('.js-modalidad-curso-relacionado1').textContent = `Modalidad: ${cursoRelacionado1.modalidad}`;
 
-                        // Añadir el ID del curso relacionado al botón "Ver Detalle"
                         const btnDetalle1 = document.querySelector('.js-imagen-curso-relacionado1').closest('.div-curso-destacado-detalle').querySelector('.btn_detalle');
                         btnDetalle1.id = cursoRelacionado1.identificadorCurso;
                         btnDetalle1.addEventListener('click', () => {
@@ -132,7 +125,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         console.error('Primer curso relacionado no encontrado.');
                     }
 
-                    // Completar los datos del segundo curso relacionado
                     const cursoRelacionado2 = datosSimulados.cursos.find(c => c.identificadorCurso === cursosRelacionados[1]);
                     if (cursoRelacionado2) {
                         document.querySelector('.js-imagen-curso-relacionado2').src = cursoRelacionado2.imagen;
@@ -142,7 +134,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         document.querySelector('.js-precio-curso-relacionado2').textContent = `Precio: $${cursoRelacionado2.precio}`;
                         document.querySelector('.js-modalidad-curso-relacionado2').textContent = `Modalidad: ${cursoRelacionado2.modalidad}`;
 
-                        // Añadir el ID del curso relacionado al botón "Ver Detalle"
                         const btnDetalle2 = document.querySelector('.js-imagen-curso-relacionado2').closest('.div-curso-destacado-detalle').querySelector('.btn_detalle');
                         btnDetalle2.id = cursoRelacionado2.identificadorCurso;
                         btnDetalle2.addEventListener('click', () => {
@@ -247,10 +238,8 @@ function mostrarNumeroYContenidoCarrito() {
     if (cursosAgregados.length === 0) {
         carritoLista.innerHTML = '<p>No se agregaron cursos</p>';
     } else {
-        // Obtener los datos de los cursos del localStorage
         const datosSimulados = JSON.parse(localStorage.getItem('datos'));
 
-        // Asegurarnos de que datosSimulados.cursos es un array
         if (Array.isArray(datosSimulados.cursos)) {
             cursosAgregados.forEach(cursoId => {
                 const curso = datosSimulados.cursos.find(c => c.id.toString() === cursoId);

@@ -111,13 +111,11 @@ document.addEventListener('DOMContentLoaded', function () {
     initCarrito();
 });
 
-// Nueva funcionalidad para agregar la giftcard al carrito
 document.querySelector('form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Evitar el envío del formulario
+    event.preventDefault(); 
 
     const monto = document.querySelector('.giftcard .monto span').innerText;
 
-    // Actualizar sessionStorage
     let numeroActual = parseInt(sessionStorage.getItem('numeroCarrito')) || 0;
     numeroActual += 1;
     sessionStorage.setItem('numeroCarrito', numeroActual);
@@ -127,7 +125,6 @@ document.querySelector('form').addEventListener('submit', function(event) {
     giftcardsAgregadas.push({ titulo: 'GiftCard', monto: monto });
     sessionStorage.setItem('giftcardsAgregadas', JSON.stringify(giftcardsAgregadas));
 
-    // Agregar el elemento 'li' al carrito
     const carritoLista = document.querySelector('.carrito-lista');
     const giftcardElemento = document.createElement('li');
     giftcardElemento.classList.add('carrito-elemento-lista');
@@ -138,36 +135,29 @@ document.querySelector('form').addEventListener('submit', function(event) {
     `;
     carritoLista.appendChild(giftcardElemento);
 
-    // Agregar funcionalidad al botón de eliminar
     giftcardElemento.querySelector('.btn-borrar').addEventListener('click', function() {
         eliminarGiftcard(giftcardElemento);
     });
 
-    // Mostrar mensaje si el carrito está vacío
     if (giftcardsAgregadas.length === 0) {
         carritoLista.innerHTML = '<p>No se agregaron cursos</p>';
     }
 
-    // Mostrar el modal
     mostrarModal();
 });
 
-// Función para mostrar el modal
 function mostrarModal() {
     const modal = document.getElementById('modal');
     modal.style.display = 'block';
 
-    // Cerrar el modal después de 3 segundos
     setTimeout(() => {
         modal.style.display = 'none';
     }, 3000);
 
-    // Cerrar el modal al hacer clic en la "x"
     modal.querySelector('.close').onclick = function() {
         modal.style.display = 'none';
     };
 
-    // Cerrar el modal al hacer clic fuera del contenido del modal
     window.onclick = function(event) {
         if (event.target == modal) {
             modal.style.display = 'none';
