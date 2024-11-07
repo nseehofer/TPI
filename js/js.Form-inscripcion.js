@@ -1,106 +1,96 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const containerCampos = document.querySelector('.grupo-campos');
-    const btnAgregar = document.querySelector('.container-btnes-mas-menos .boton-agregar-quitar:first-child');
-    const btnQuitar = document.querySelector('.container-btnes-mas-menos .boton-agregar-quitar:last-child');
-    const precioElemento = document.querySelector('.precio');
-    const precioPorPersona = 18000;
-    const btnInscribirse = document.getElementById('btnInscribirse');
-    const modal = document.getElementById('modalResumen');
-    const closeModal = document.getElementById('closeModal');
-    let totalPersonas = 1;
 
-    function actualizarTotal() {
-        const total = totalPersonas * precioPorPersona;
-        precioElemento.textContent = `$ ${total.toFixed(2)}`;
+const params = new URLSearchParams(window.location.search);
+const nombreCurso = params.get('curso');
+const precioCurso = parseFloat(params.get('precio')); 
+let cantidadPersonas = 1;
+
+document.addEventListener('DOMContentLoaded', function() {
+    if (nombreCurso) {
+        document.querySelector('h1').textContent = nombreCurso;
     }
-
-    function agregarPersona() {
-        totalPersonas++;
-        const nuevoGrupo = document.createElement('div');
-        nuevoGrupo.classList.add('grupo-campos');
-
-        nuevoGrupo.innerHTML = `
-            <input class="input-descripcion" type="text" placeholder="Nombre" required>
-            <input class="input-descripcion" type="text" placeholder="Apellido" required>
-            <input class="input-descripcion" type="number" placeholder="DNI" required>
-            <input class="input-descripcion" type="email" placeholder="E-mail" required>
-        `;
-        containerCampos.parentNode.insertBefore(nuevoGrupo, containerCampos.nextSibling);
-        actualizarTotal();
-    }
-
-    function quitarPersona() {
-        if (totalPersonas > 1) {
-            const ultimoGrupo = containerCampos.nextElementSibling;
-            if (ultimoGrupo) {
-                ultimoGrupo.remove();
-                totalPersonas--;
-                actualizarTotal();
-            }
-        } else {
-            containerCampos.querySelectorAll('input').forEach(input => input.value = '');
-        }
-    }
-
-    function guardarDatosEnLocalStorage() {
-        const inscritos = [];
-        document.querySelectorAll('.grupo-campos').forEach(grupo => {
-            const nombre = grupo.querySelector('input[placeholder="Nombre"]').value;
-            const apellido = grupo.querySelector('input[placeholder="Apellido"]').value;
-            const dni = grupo.querySelector('input[placeholder="DNI"]').value;
-            const email = grupo.querySelector('input[placeholder="E-mail"]').value;
-
-            inscritos.push({ nombre, apellido, dni, email });
-        });
-        localStorage.setItem('inscritos', JSON.stringify(inscritos));
-        localStorage.setItem('totalPago', totalPersonas * precioPorPersona);
-    }
-
-    function mostrarResumen() {
-        guardarDatosEnLocalStorage();
-
-        const listaInscritos = document.getElementById('listaInscritos');
-        listaInscritos.innerHTML = '';
-
-        const inscritos = JSON.parse(localStorage.getItem('inscritos'));
-        inscritos.forEach(inscrito => {
-            const p = document.createElement('p');
-            p.textContent = `${inscrito.nombre} ${inscrito.apellido} - DNI: ${inscrito.dni} - Email: ${inscrito.email}`;
-            listaInscritos.appendChild(p);
-        });
-
-        const totalPago = document.getElementById('totalPago');
-        totalPago.textContent = `$ ${localStorage.getItem('totalPago')}`;
-
-        modal.style.display = 'flex';
-    }
-
-    btnAgregar.addEventListener('click', (e) => {
-        e.preventDefault();
-        agregarPersona();
-    });
-
-    btnQuitar.addEventListener('click', (e) => {
-        e.preventDefault();
-        quitarPersona();
-    });
-
-    btnInscribirse.addEventListener('click', (e) => {
-        e.preventDefault();
-        mostrarResumen();
-    });
-
-    // Listener para cerrar el modal
-    closeModal.addEventListener('click', () => {
-        modal.style.display = 'none';
-    });
-
-    // Cerrar el modal al hacer clic fuera del contenido
-    window.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            modal.style.display = 'none';
-        }
-    });
-
+    
     actualizarTotal();
+    
+    document.querySelector('.boton-agregar-quitar:nth-child(1)').addEventListener('click', agregarPersona);
+    document.querySelector('.boton-agregar-quitar:nth-child(2)').addEventListener('click', quitarPersona);
+    document.getElementById('btnInscribirse').addEventListener('click', mostrarResumen);
 });
+
+
+function agregarPersona(event) {
+    event.preventDefault();
+
+    const nuevoGrupo = document.createElement('div');
+    nuevoGrupo.classList.add('grupo-campos');
+    nuevoGrupo.innerHTML = `
+        <input class="input-descripcion" type="text" placeholder="Nombre" required>
+        <input class="input-descripcion" type="text" placeholder="Apellido" required>
+        <input class="input-descripcion" type="number" placeholder="DNI" required>
+        <input class="input-descripcion" type="email" placeholder="E-mail" required>
+    `;
+    
+    document.querySelector('form').insertBefore(nuevoGrupo, document.querySelector('.container-btnes-mas-menos'));
+    cantidadPersonas++;
+    actualizarTotal(); 
+}
+
+function quitarPersona(event) {
+    event.preventDefault();
+
+    const grupos = document.querySelectorAll('.grupo-campos');
+    if (grupos.length > 1) {
+        grupos[grupos.length - 1].remove();
+        cantidadPersonas--; 
+    } else {
+      
+        grupos[0].querySelectorAll('input').forEach(input => input.value = '');
+    }
+    actualizarTotal(); 
+}
+
+
+function actualizarTotal() {
+    const total = precioCurso * cantidadPersonas;
+    document.querySelector('.precio').textContent = `$${total.toFixed(2)}`;
+    document.getElementById('contadorPersonas').textContent = cantidadPersonas;
+}
+
+
+function mostrarResumen(event) {
+    event.preventDefault();
+
+    
+    const primerosCampos = document.querySelector('.grupo-campos').querySelectorAll('input');
+    for (const campo of primerosCampos) {
+        if (campo.value.trim() === '') {
+            alert("Por favor, completa los campos de la primera persona.");
+            return;
+        }
+    }
+
+  
+    const listaInscritos = document.getElementById('listaInscritos');
+    listaInscritos.innerHTML = ''; 
+
+    document.querySelectorAll('.grupo-campos').forEach((grupo, index) => {
+        const nombre = grupo.querySelector('input[placeholder="Nombre"]').value;
+        const apellido = grupo.querySelector('input[placeholder="Apellido"]').value;
+        const dni = grupo.querySelector('input[placeholder="DNI"]').value;
+        const email = grupo.querySelector('input[placeholder="E-mail"]').value;
+        
+       
+        const personaItem = document.createElement('p');
+        personaItem.textContent = `Persona ${index + 1}: ${nombre} ${apellido} - DNI: ${dni} - Email: ${email}`;
+        listaInscritos.appendChild(personaItem);
+    });
+
+    document.getElementById('totalPersonas-inscriptos').textContent = cantidadPersonas;
+    document.getElementById('totalPago-inscriptos').textContent = `$${(precioCurso * cantidadPersonas).toFixed(2)}`;
+
+   
+    document.getElementById('modalResumenn').style.display = 'block';
+
+    document.getElementById('cerrarModal').onclick = function() {
+        document.getElementById('modalResumenn').style.display = 'none';
+    };
+}

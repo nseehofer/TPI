@@ -19,8 +19,7 @@
                 <h1>Título de curso</h1>
                 <h2 class="titulo-inscripcion">Inscripción</h2>
 
-                <form action="../html/carritoDeCompra.html" method="get">
-
+                <form>
                     <div class="grupo-campos">
                         <input class="input-descripcion" type="text" placeholder="Nombre" required>
                         <input class="input-descripcion" type="text" placeholder="Apellido" required>
@@ -38,23 +37,25 @@
                     </div>
 
                     <div class="container-precio-btnIscribir">
-                        <span class="precio">$ 18.000</span>
-                        <button class="btn btn-azul" id="btnInscribirse" type="submit">Inscribirse</button>
+                        <span class="precio">$ </span>
+                        <button class="btn btn-azul" id="btnInscribirse">Inscribirse</button>
+                        <p class="total-personas">Total de personas: <span id="contadorPersonas">1</span></p>
                     </div>
+                </form>
             </div>
-           
-            </form>
-        
+
         </div>
-       <!--modal-->
-       <div id="modalResumen" class="modal" style="display: none;">
-        <div class="modal-content">
-            <span id="closeModal" class="close">&times;</span>
-            <h2>Resumen de Inscripción</h2>
-            <div id="listaInscritos"></div>
-            <p>Total a pagar: <span id="totalPago"></span></p>
+        <!--modal-->
+        <div id="modalResumenn" class="modal-inscrip" style="display: none;">
+            <div class="modal-contentidoo">
+                <span id="cerrarModal" class="cerrar">&times;</span>
+                <h2>Resumen de Inscripción</h2>
+                <div id="listaInscritos"></div>
+                <p>Total de personas inscritas: <span id="totalPersonas-inscriptos"></span></p>
+                <p>Total a pagar: <span id="totalPago-inscriptos"></span></p>
+                <a class="btn btn-azul " href="../html/carritoDeCompra.html">Pagar</a>
+            </div>
         </div>
-    </div>
     </main>
 
     <footer>
@@ -96,7 +97,7 @@
             </div>
         </div>
         <div class="fila2-footer">
-            <p> Codyright © 2024-2024 Aprender-UNLaM.Todos los derechos reservados </p>
+            <p> Copyright © 2024-Aprender-UNLaM.Todos los derechos reservados </p>
         </div>
 
         <!--modelo responsivo-->
@@ -147,12 +148,12 @@
                 <a href="https://www.youtube.com/@UNLaMOficial"><img src="../iconos/youtube_amarillo.png"
                         alt="YouTube"></a>
             </div>
-            <p> Codyright © 2024-2024 Aprender-UNLaM.Todos los derechos reservados </p>
+            <p> Copyright © 2024- Aprender-UNLaM.Todos los derechos reservados </p>
         </div>
     </footer>
-   
+
     <script src="../js/js.Form-inscripcion.js"></script>
- 
- 
-    </body>
+
+</body>
+
 </html>
