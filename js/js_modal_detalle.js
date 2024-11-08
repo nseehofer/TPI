@@ -6,7 +6,7 @@ const datosSimulados = {
         precio: 20000, // js-precio-curso
         duracion: '13 meses', // js-modalidad-curso
         modalidad: 'Virtual', // js-duracion-curso
-        imagen: '../images/uxui.png',
+        imagen: '../images/uxui.png', // js-img-curso
         requisitosPrevios: 'Conocimiento básico de Diseño', // js-requisitos-curso // js-descripcion-curso
         descripcion: 'Aprende los principios fundamentales del diseño UX/UI para crear experiencias de usuario atractivas y funcionales en plataformas digitales', // js-descripcion-curso
         modulo1: 'Definiciones básicas de UX y UI', //js-modulo1

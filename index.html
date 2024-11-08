@@ -18,6 +18,14 @@
             <a href="index.html">
                 <img src="images/LogoTest.png" alt="Logo Aprender" class="logo">
             </a>
+            <!--ocultar-en-escritorio-->
+            <div class="contenedor_carrito js_contenedor_carrito ocultar-en-escritorio"><img
+                class="img-carrito" src="images/carritoDeComprasColor.png" alt="CarroDeCompras">
+            <a href="./html/carritoDeCompra.html" class="numero-carrito-fijo js-numero-carrito">0</a>
+            <ul class="carrito-lista">
+            </ul>
+            </div>
+
         </figure>
         <nav class="nav-bar">
             <ul class="nav-menu">
@@ -39,181 +47,170 @@
             </datalist>
         </form>
         <!-- TENGO CAMBIOS EN EL HEADER -->
-        <div class="contenedor_carrito_btn">
-            <div class="contenedor_carrito js_contenedor_carrito" id="remover-carrito-de-media-query"><img class="img-carrito"
-                    src="images/carritoDeComprasColor.png" alt="CarroDeCompras">
+        <div class="contenedor_carrito_btn ">
+            <div class="contenedor_carrito js_contenedor_carrito ocultar"><img
+                    class="img-carrito" src="images/carritoDeComprasColor.png" alt="CarroDeCompras">
                 <a href="./html/carritoDeCompra.html" class="numero-carrito-fijo js-numero-carrito">0</a>
                 <ul class="carrito-lista">
-                </ul> 
-        </div>
-        <a href="./html/inicioDeSesion.html" class="btn-header">Iniciar Sesión</a>
-        <a href="./html/registro.html" class="btn-header">Registrarse</a>
+                </ul>
+            </div>
+            <a href="./html/inicioDeSesion.html" class="btn-header">Iniciar Sesión</a>
+            <a href="./html/registro.html" class="btn-header">Registrarse</a>
 
         </div>
 
     </header>
     <!-- BARRA DEGRADE -->
     <main class="main">
-    <!-- SECCION CARROUSEL -->
-    <section class="section-main-carrousel">
-        <article class="contenedor_imagen_carrousel js_contenedor_imagen_carrousel">
-            <img class="img-carrousel-principal js-img-carrousel" src="./images/sliderImagen.jpeg"
-                alt="imagen-carrousel-principal">
-            <div class="selector">
-                <button data-index="0"></button>
-                <button data-index="1"></button>
-                <button data-index="2"></button>
-            </div>
-        </article>
-    </section>
-
-    <section class="section-main-pasos-a-seguir">
-        <article class="article-titulo-pasos-a-seguir">
-            <div class="div-inscripcion">
-                <p class="titulo inscripcion">Inscripcion</p>
-                <p class="titulo pasos">Pasos a seguir</p>
-            </div>
-        </article>
-        <article class="article-pasos-enumerados">
-            <div class="div-paso paso-uno">
-                <p class="titulo">Iniciar Sesion</p>
-                <p>Si aún no tenes cuenta</p>
-                <p>necesitas
-                    <a class="vinculo-div-tutorial" href="./html/registro.html">registrarte</a>
-            </div>
-            <div class="div-paso paso-dos">
-                <p class="titulo">Elegir curso</p>
-                <p>ver la <a class="vinculo-div-tutorial" href="#oferta">oferta</a></p>
-            </div>
-            <div class="div-paso paso-tres">
-                <p class="titulo">Inscribirse</p>
-                <p>Completar el formulario</p>
-            </div>
-        </article>
-
-    </section>
-
-    <section class="section-oferta-de-cursos" id="oferta">
-        <p class="titulo">Oferta de cursos</p>
-        <article class="article-oferta-de-curso">
-            <div class="div-curso">
-                <figure class="figure-img-curso">
-                    <img src="./images/ciberseguridad.png" alt="Curso de CiberSeguridad">
-                    <figcaption class="figcaption-epigrafe-curso" class="contenedor_boton"><a class="btn-header"
-                        href="./html/detalleDeCurso.html" id="curso_ciber">Ver
-                        Detalle</a>
-                    </figcaption>
-                </figure>
-                <div>
-                    <p class="titulo-curso">CiberSeguridad</h2>
-                    <p><strong>Valor:</strong> $50.000</p>
-                    <p><strong>Modalidad:</strong> Virtual</p>
-                    <p><strong>Duración:</strong> 5 meses</p>
-                    <p class="ocultar"><strong>Requisitos previos:</strong> Conocimiento básico de redes</p>
-                    <p class="ocultar"><strong>Descripción:</strong> Aprende los conceptos básicos de ciberseguridad
-                        para proteger
-                        redes y sistemas contra amenazas y ataques.</p>
+        <!-- SECCION CARROUSEL -->
+        <section class="section-main-carrousel">
+            <article class="contenedor_imagen_carrousel js_contenedor_imagen_carrousel">
+                <img class="img-carrousel-principal js-img-carrousel" src="./images/sliderImagen.jpeg"
+                    alt="imagen-carrousel-principal">
+                <div class="selector">
+                    <button data-index="0"></button>
+                    <button data-index="1"></button>
+                    <button data-index="2"></button>
                 </div>
-                <div class="contenedor-carrito-oferta-cursos js-carrito-curso" id="2"><img
-                    class="img-carrito-cursos" src="./images/carritoDeComprasColor.png"
-                    alt="carrito de compras"></div>
-            </div>
+            </article>
+        </section>
 
-            <div class="div-curso">
-                <figure class="figure-img-curso">
-                    <img src="./images/uxui.png" alt="Curso de Diseño UX-UI">
-                    <figcaption class="figcaption-epigrafe-curso" class="contenedor_boton"><a class="btn-header"
-                            href="./html/detalleDeCurso.html" id="curso_uxui">Ver
-                            Detalle</a>
-                    </figcaption>
-                </figure>
-                <div>
-                    <p class="titulo-curso">Diseño UX-UI</h2>
-                    <p><strong>Valor:</strong> $20.000</p>
-                    <p><strong>Modalidad:</strong> Virtual</p>
-                    <p><strong>Duración:</strong> 13 meses</p>
-                    <p class="ocultar"><strong>Requisitos previos:</strong> Conocimiento básico de Diseño</p>
-                    <p class="ocultar"><strong>Descripción:</strong> Aprende los principios fundamentales del diseño
-                        UX/UI para
-                        crear experiencias de usuario atractivas
-                        y funcionales en plataformas digitales</p>
+        <section class="section-main-pasos-a-seguir">
+            <article class="article-titulo-pasos-a-seguir">
+                <div class="div-inscripcion">
+                    <p class="titulo inscripcion">Inscripcion</p>
+                    <p class="titulo pasos">Pasos a seguir</p>
                 </div>
-                <div class="contenedor-carrito-oferta-cursos js-carrito-curso" id="1"><img
-                    class="img-carrito-cursos" src="./images/carritoDeComprasColor.png"
-                    alt="carrito de compras"></div>
-            </div>
-        </article>
-        <!-- OTRO ARTICLE DE CURSOS -->
-
-        <article class="article-oferta-de-curso">
-            <div class="div-curso">
-                <figure class="figure-img-curso">
-                    <img src="./images/front.jpg" alt="Desarrollo Front End">
-                    <figcaption class="figcaption-epigrafe-curso" class="contenedor_boton"><a class="btn-header"
-                            href="./html/detalleDeCurso.html" id="curso_front">Ver
-                            Detalle</a>
-                    </figcaption>
-                </figure>
-                <div>
-                    <p class="titulo-curso ocultar">Desarrollo Front End</p>
-                    <p class="titulo-curso ocultar-en-escritorio">Desarrollo</p>
-                    <p class="titulo-curso ocultar-en-escritorio">Front End</p>
-                    <p><strong>Valor:</strong> $45.000</p>
-                    <p><strong>Modalidad:</strong> Virtual</p>
-                    <p><strong>Duración:</strong> 4 meses</p>
-                    <p class="ocultar"><strong>Requisitos previos:</strong> Conocimientos básicos de HTML y CSS</p>
-                    <p class="ocultar"><strong>Descripción:</strong> Aprende a desarrollar interfaces web modernas y
-                        atractivas
-                        utilizando HTML, CSS y JavaScript.</p>
+            </article>
+            <article class="article-pasos-enumerados">
+                <div class="div-paso paso-uno">
+                    <p class="titulo">Iniciar Sesion</p>
+                    <p>Si aún no tenes cuenta</p>
+                    <p>necesitas
+                        <a class="vinculo-div-tutorial" href="./html/registro.html">registrarte</a>
                 </div>
-                <div class="contenedor-carrito-oferta-cursos js-carrito-curso" id="4"><img
-                    class="img-carrito-cursos" src="./images/carritoDeComprasColor.png"
-                    alt="carrito de compras"></div>
-            </div>
-
-            <div class="div-curso">
-                <figure class="figure-img-curso">
-                    <img src="./images/fullstack.jpg" alt="Desarrollo Full Stack">
-                    <figcaption class="figcaption-epigrafe-curso" class="contenedor_boton"><a class="btn-header"
-                        href="./html/detalleDeCurso.html" id="curso_full">Ver
-                        Detalle</a>
-                    </figcaption>
-                </figure>
-                <div>
-                    <p class="titulo-curso ocultar">Desarrollo Full Stack</p>
-                    <p class="titulo-curso ocultar-en-escritorio">Desarrollo</p>
-                    <p class="titulo-curso ocultar-en-escritorio">Full Stack</p>
-                    <p><strong>Valor:</strong> $60.000</p>
-                    <p><strong>Modalidad:</strong> Virtual</p>
-                    <p><strong>Duración:</strong> 6 meses</p>
-                    <p class="ocultar"><strong>Requisitos previos:</strong> Conocimientos en desarrollo web básico
-                        (HTML, CSS,
-                        JavaScript)</p>
-                    <p class="ocultar"><strong>Descripción:</strong> Aprende a desarrollar aplicaciones completas, tanto
-                        en el
-                        frontend como en el backend, utilizando tecnologías modernas.</p>
+                <div class="div-paso paso-dos">
+                    <p class="titulo">Elegir curso</p>
+                    <p>ver la <a class="vinculo-div-tutorial" href="#oferta">oferta</a></p>
                 </div>
-                <div class="contenedor-carrito-oferta-cursos js-carrito-curso" id="3"><img
-                    class="img-carrito-cursos" src="./images/carritoDeComprasColor.png"
-                    alt="carrito de compras"></div>
+                <div class="div-paso paso-tres">
+                    <p class="titulo">Inscribirse</p>
+                    <p>Completar el formulario</p>
+                </div>
+            </article>
+
+        </section>
+
+        <section class="section-oferta-de-cursos" id="oferta">
+            <p class="titulo">Oferta de cursos</p>
+            <article class="article-oferta-de-curso">
+                <div class="div-curso">
+                    <figure class="figure-img-curso  js-imagen-curso">
+                        <img>
+                        <figcaption class="figcaption-epigrafe-curso" class="contenedor_boton"><a class="btn-header"
+                                href="./html/detalleDeCurso.html" id="curso_ciber">Ver
+                                Detalle</a>
+                        </figcaption>
+                    </figure>
+                    <div>
+                        <p class="titulo-curso js-titulo-curso"></p>
+                        <p class="js-precio-curso"> </p>
+                        <p class="js-modalidad-curso"></p>
+                        <p class="js-duracion-curso"></p>
+                        <p class="ocultar js-requisitos-curso"></p>
+                        <p class="ocultar js-descripcion-curso"> </p>
+                    </div>
+                    <div class="contenedor-carrito-oferta-cursos js-carrito-curso" id="2"><img
+                            class="img-carrito-cursos" src="./images/carritoDeComprasColor.png"
+                            alt="carrito de compras"></div>
+                </div>
+
+                <div class="div-curso">
+                    <figure class="figure-img-curso  js-imagen-curso">
+                        <img>
+                        <figcaption class="figcaption-epigrafe-curso" class="contenedor_boton"><a class="btn-header"
+                                href="./html/detalleDeCurso.html" id="curso_uxui">Ver
+                                Detalle</a>
+                        </figcaption>
+                    </figure>
+                    <div>
+                        <p class="titulo-curso js-titulo-curso"></p>
+                        <p class="js-precio-curso"> </p>
+                        <p class="js-modalidad-curso"></p>
+                        <p class="js-duracion-curso"></p>
+                        <p class="ocultar js-requisitos-curso"></p>
+                        <p class="ocultar js-descripcion-curso"> </p>
+                    </div>
+                    <div class="contenedor-carrito-oferta-cursos js-carrito-curso" id="1"><img
+                            class="img-carrito-cursos" src="./images/carritoDeComprasColor.png"
+                            alt="carrito de compras"></div>
+                </div>
+            </article>
+            <!-- OTRO ARTICLE DE CURSOS -->
+
+            <article class="article-oferta-de-curso">
+                <div class="div-curso">
+                    <figure class="figure-img-curso  js-imagen-curso">
+                        <img>
+                        <figcaption class="figcaption-epigrafe-curso" class="contenedor_boton"><a class="btn-header"
+                                href="./html/detalleDeCurso.html" id="curso_front">Ver
+                                Detalle</a>
+                        </figcaption>
+                    </figure>
+                    <div>
+                        <p class="titulo-curso js-titulo-curso ocultar"></p>
+                        <p class="titulo-curso ocultar-en-escritorio">Desarrollo</p>
+                        <p class="titulo-curso ocultar-en-escritorio">Front End</p>
+                        <p class="js-precio-curso"> </p>
+                        <p class="js-modalidad-curso"></p>
+                        <p class="js-duracion-curso"></p>
+                        <p class="ocultar js-requisitos-curso"></p>
+                        <p class="ocultar js-descripcion-curso"> </p>
+                    </div>
+                    <div class="contenedor-carrito-oferta-cursos js-carrito-curso" id="4"><img
+                            class="img-carrito-cursos" src="./images/carritoDeComprasColor.png"
+                            alt="carrito de compras"></div>
+                </div>
+
+                <div class="div-curso">
+                    <figure class="figure-img-curso js-imagen-curso">
+                        <img>
+                        <figcaption class="figcaption-epigrafe-curso" class="contenedor_boton"><a class="btn-header"
+                                href="./html/detalleDeCurso.html" id="curso_full">Ver
+                                Detalle</a>
+                        </figcaption>
+                    </figure>
+                    <div>
+                        <p class="titulo-curso js-titulo-curso ocultar"></p>
+                        <p class="titulo-curso ocultar-en-escritorio">Desarrollo</p>
+                        <p class="titulo-curso ocultar-en-escritorio">Full Stack</p>
+                        <p class="js-precio-curso"> </p>
+                        <p class="js-modalidad-curso"></p>
+                        <p class="js-duracion-curso"></p>
+                        <p class="ocultar js-requisitos-curso"></p>
+                        <p class="ocultar js-descripcion-curso"> </p>
+                    </div>
+                    <div class="contenedor-carrito-oferta-cursos js-carrito-curso" id="3"><img
+                            class="img-carrito-cursos" src="./images/carritoDeComprasColor.png"
+                            alt="carrito de compras"></div>
+                </div>
+            </article>
+
+        </section>
+
+        <section class="section-medio-de-pago">
+            <div class="div-titulo-medio-de-pago">
+                <p class="titulo">Medios de pago</p>
             </div>
-        </article>
-
-    </section>
-
-    <section class="section-medio-de-pago">
-        <div class="div-titulo-medio-de-pago">
-            <p class="titulo">Medios de pago</p>
-        </div>
-        <article class="article-medio-de-pago">
-            <figure class="figure-flecha"><img src="./images/FlechaIzquierdaCarrouselMdPagos.png"></figure>
-            <figure class="figure-medio-de-pago ocultar"><img src="./images/visa.png"></figure>
-            <figure class="figure-medio-de-pago"><img src="./images/rpago.png"></figure>
-            <figure class="figure-medio-de-pago ocultar "> <img src="./images/paypal.png"></figure>
-            <figure class="figure-medio-de-pago"><img src="./images/mpago.png"></figure>
-            <figure class="figure-flecha"><img src="./images/FlechaDerechaCarrouselMdPagos.png"></figure>
-        </article>
-    </section>
+            <article class="article-medio-de-pago">
+                <figure class="figure-flecha"><img src="./images/FlechaIzquierdaCarrouselMdPagos.png"></figure>
+                <figure class="figure-medio-de-pago ocultar"><img src="./images/visa.png"></figure>
+                <figure class="figure-medio-de-pago"><img src="./images/rpago.png"></figure>
+                <figure class="figure-medio-de-pago ocultar "> <img src="./images/paypal.png"></figure>
+                <figure class="figure-medio-de-pago"><img src="./images/mpago.png"></figure>
+                <figure class="figure-flecha"><img src="./images/FlechaDerechaCarrouselMdPagos.png"></figure>
+            </article>
+        </section>
 
     </main>
     <footer>
