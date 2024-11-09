@@ -219,16 +219,14 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         };
     }
-});
-
-function verificarMediaQuery() {
-    const mediaQuery768 = window.matchMedia('(max-width: 768px)');
-    const mediaQuery575 = window.matchMedia('(max-width: 575px)');
-    if (mediaQuery768.matches || mediaQuery575.matches) {
+    function moverCarritoLista() {
+    
         const contenedorCarritoLista = document.querySelector('.carrito-lista');
         contenedorCarritoLista.style.left = '-420%';
-    }
+    
 }
 
-document.addEventListener('DOMContentLoaded', verificarMediaQuery);
-window.addEventListener('resize', verificarMediaQuery);
+moverCarritoLista();
+});
+
+

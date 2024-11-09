@@ -74,6 +74,15 @@ localStorage.setItem("datos", JSON.stringify(datosSimulados));
 
 // AGREGUE EL 'MOCKDATA == DATOSSIMULADOS' Y LOS PUSE EN EL LOCALSTORAGE PARA GENERAR LOS CURSOS DINAMICOS
 // LA FUNCIONALIDAD PARA COMPLETAR EL DETALLE DE CURSO 
+
+const cursos = [
+    { id: 1, nombre: 'Diseño UX/UI', precio: 20000, duracion: '13 meses', modalidad: 'Virtual', imagen: '../images/uxui.png' },
+    { id: 2, nombre: 'Ciberseguridad', precio: 50000, duracion: '5 meses', modalidad: 'Virtual', imagen: '../images/ciberseguridad.png' },
+    { id: 3, nombre: 'Desarrollo Full Stack', precio: 60000, duracion: '6 meses', modalidad: 'Virtual', imagen: '../images/fullstack.jpg' },
+    { id: 4, nombre: 'Desarrollo Front End', precio: 45000, duracion: '4 meses', modalidad: 'Virtual', imagen: '../images/front.jpg' }
+];
+
+
 document.addEventListener('DOMContentLoaded', () => {
     const idCursoSeleccionado = localStorage.getItem('cursoSeleccionado');
 
@@ -227,45 +236,53 @@ window.addEventListener("click", function (event) {
 });
 
 function mostrarNumeroYContenidoCarrito() {
-    const numeroCarrito = document.querySelector('.js-numero-carrito');
+    const numeroCarritos = document.querySelectorAll('.js-numero-carrito');
     let numeroActual = parseInt(sessionStorage.getItem('numeroCarrito')) || 0;
-    numeroCarrito.textContent = numeroActual.toString();
+
+    numeroCarritos.forEach(numeroCarrito => {
+        numeroCarrito.textContent = numeroActual.toString();
+    });
 
     let cursosAgregados = JSON.parse(sessionStorage.getItem('cursosAgregados')) || [];
-    const carritoLista = document.querySelector('.carrito-lista');
-    carritoLista.innerHTML = '';
 
-    if (cursosAgregados.length === 0) {
-        carritoLista.innerHTML = '<p>No se agregaron cursos</p>';
-    } else {
-        const datosSimulados = JSON.parse(localStorage.getItem('datos'));
+    const carritoListas = document.querySelectorAll('.carrito-lista');
 
-        if (Array.isArray(datosSimulados.cursos)) {
-            cursosAgregados.forEach(cursoId => {
-                const curso = datosSimulados.cursos.find(c => c.id.toString() === cursoId);
-                if (curso) {
-                    const cursoElemento = document.createElement('li');
-                    cursoElemento.classList.add('carrito-elemento-lista');
-                    cursoElemento.setAttribute('data-id', cursoId);
-                    cursoElemento.innerHTML = `
-                        <p id="modal-course-title" class="carrito-nombre-curso">${curso.nombre}</p>
-                        <p id="modal-course-price" class="carrito-precio-curso">Precio: $${curso.precio}</p>
-                        <p id="modal-course-duration" class="carrito-duracion-curso">Duración: ${curso.duracion}</p>
-                        <p id="modal-course-mode" class="carrito-modalidad-curso">Modalidad: ${curso.modalidad}</p>
-                        <button class="btn-borrar" data-id="${cursoId}">Eliminar</button>
-                    `;
-                    carritoLista.appendChild(cursoElemento);
+    carritoListas.forEach(carritoLista => {
+        carritoLista.innerHTML = '';
 
-                    cursoElemento.querySelector('.btn-borrar').addEventListener('click', function () {
-                        eliminarCurso(cursoId);
-                    });
-                }
-            });
+        if (cursosAgregados.length === 0) {
+            carritoLista.innerHTML = '<p>No se agregaron cursos</p>';
         } else {
-            console.error('Los cursos no son un array.');
+            const datosSimulados = JSON.parse(localStorage.getItem('datos'));
+
+            if (Array.isArray(datosSimulados.cursos)) {
+                cursosAgregados.forEach(cursoId => {
+                    const curso = datosSimulados.cursos.find(c => c.id.toString() === cursoId);
+                    if (curso) {
+                        const cursoElemento = document.createElement('li');
+                        cursoElemento.classList.add('carrito-elemento-lista');
+                        cursoElemento.setAttribute('data-id', cursoId);
+                        cursoElemento.innerHTML = `
+                            <p id="modal-course-title" class="carrito-nombre-curso">${curso.nombre}</p>
+                            <p id="modal-course-price" class="carrito-precio-curso">Precio: $${curso.precio}</p>
+                            <p id="modal-course-duration" class="carrito-duracion-curso">Duración: ${curso.duracion}</p>
+                            <p id="modal-course-mode" class="carrito-modalidad-curso">Modalidad: ${curso.modalidad}</p>
+                            <button class="btn-borrar" data-id="${cursoId}">Eliminar</button>
+                        `;
+                        carritoLista.appendChild(cursoElemento);
+
+                        cursoElemento.querySelector('.btn-borrar').addEventListener('click', function () {
+                            eliminarCurso(cursoId);
+                        });
+                    }
+                });
+            } else {
+                console.error('Los cursos no son un array.');
+            }
         }
-    }
+    });
 }
+
 
 
 function eliminarCurso(cursoId) {
@@ -277,30 +294,34 @@ function eliminarCurso(cursoId) {
     if (numeroActual > 0) {
         numeroActual -= 1;
         sessionStorage.setItem('numeroCarrito', numeroActual);
-        document.querySelector('.js-numero-carrito').textContent = numeroActual.toString();
+
+        document.querySelectorAll('.js-numero-carrito').forEach(numeroCarrito => {
+            numeroCarrito.textContent = numeroActual.toString();
+        });
     }
 
-    const carritoLista = document.querySelector('.carrito-lista');
-    const cursoElemento = carritoLista.querySelector(`li[data-id="${cursoId}"]`);
-    if (cursoElemento) {
-        cursoElemento.remove();
-    }
+    document.querySelectorAll('.carrito-lista').forEach(carritoLista => {
+        const cursoElemento = carritoLista.querySelector(`li[data-id="${cursoId}"]`);
+        if (cursoElemento) {
+            cursoElemento.remove();
+        }
 
-    if (cursosAgregados.length === 0) {
-        carritoLista.innerHTML = '<p>No se agregaron cursos</p>';
-    }
-
+        if (cursosAgregados.length === 0) {
+            carritoLista.innerHTML = '<p>No se agregaron cursos</p>';
+        }
+    });
 }
-
-
 
 function moverCarritoLista() {
-    
-    const carritoLista = document.querySelector('.carrito-lista');
-    const numeroCarrito = document.querySelector('.js-numero-carrito');
+    document.querySelectorAll('.carrito-lista').forEach(carritoLista => {
         carritoLista.style.left = '-420%';
+    });
+
+    document.querySelectorAll('.js-numero-carrito').forEach(numeroCarrito => {
         numeroCarrito.style.top = '0%';
+    });
 }
+
 
 
 function verificarMediaQuery() {

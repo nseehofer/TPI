@@ -6,56 +6,63 @@ const cursos = [
 ];
 
 function mostrarNumeroYContenidoCarrito() {
-    const numeroCarrito = document.querySelector('.js-numero-carrito');
+    const numeroCarritos = document.querySelectorAll('.js-numero-carrito');
     let numeroActual = parseInt(sessionStorage.getItem('numeroCarrito')) || 0;
-    numeroCarrito.textContent = numeroActual.toString();
+
+    numeroCarritos.forEach(numeroCarrito => {
+        numeroCarrito.textContent = numeroActual.toString();
+    });
 
     let cursosAgregados = JSON.parse(sessionStorage.getItem('cursosAgregados')) || [];
     let giftcardsAgregadas = JSON.parse(sessionStorage.getItem('giftcardsAgregadas')) || [];
 
-    const carritoLista = document.querySelector('.carrito-lista');
-    carritoLista.innerHTML = '';
+    const carritoListas = document.querySelectorAll('.carrito-lista');
 
-    if (cursosAgregados.length === 0 && giftcardsAgregadas.length === 0) {
-        carritoLista.innerHTML = '<p>No se agregaron cursos</p>';
-    } else {
-        cursosAgregados.forEach(cursoId => {
-            const curso = cursos.find(c => c.id.toString() === cursoId);
-            if (curso) {
-                const cursoElemento = document.createElement('li');
-                cursoElemento.classList.add('carrito-elemento-lista');
-                cursoElemento.setAttribute('data-id', cursoId);
-                cursoElemento.innerHTML = `
-                    <p class="carrito-nombre-curso">${curso.nombre}</p>
-                    <p class="carrito-precio-curso">Precio: $${curso.precio}</p>
-                    <p class="carrito-duracion-curso">Duración: ${curso.duracion}</p>
-                    <p class="carrito-modalidad-curso">Modalidad: ${curso.modalidad}</p>
-                    <button class="btn-borrar" data-id="${cursoId}">Eliminar</button>
-                `;
-                carritoLista.appendChild(cursoElemento);
+    carritoListas.forEach(carritoLista => {
+        carritoLista.innerHTML = '';
 
-                cursoElemento.querySelector('.btn-borrar').addEventListener('click', function () {
-                    eliminarCurso(cursoId);
-                });
-            }
-        });
+        if (cursosAgregados.length === 0 && giftcardsAgregadas.length === 0) {
+            carritoLista.innerHTML = '<p>No se agregaron cursos</p>';
+        } else {
+            cursosAgregados.forEach(cursoId => {
+                const curso = cursos.find(c => c.id.toString() === cursoId);
+                if (curso) {
+                    const cursoElemento = document.createElement('li');
+                    cursoElemento.classList.add('carrito-elemento-lista');
+                    cursoElemento.setAttribute('data-id', cursoId);
+                    cursoElemento.innerHTML = `
+                        <p class="carrito-nombre-curso">${curso.nombre}</p>
+                        <p class="carrito-precio-curso">Precio: $${curso.precio}</p>
+                        <p class="carrito-duracion-curso">Duración: ${curso.duracion}</p>
+                        <p class="carrito-modalidad-curso">Modalidad: ${curso.modalidad}</p>
+                        <button class="btn-borrar" data-id="${cursoId}">Eliminar</button>
+                    `;
+                    carritoLista.appendChild(cursoElemento);
 
-        giftcardsAgregadas.forEach(giftcard => {
-            const giftcardElemento = document.createElement('li');
-            giftcardElemento.classList.add('carrito-elemento-lista');
-            giftcardElemento.innerHTML = `
-                <p class="carrito-nombre-curso">GiftCard</p>
-                <p class="carrito-precio-curso">Monto: ${giftcard.monto}</p>
-                <button class="btn-borrar">Eliminar</button>
-            `;
-            carritoLista.appendChild(giftcardElemento);
-
-            giftcardElemento.querySelector('.btn-borrar').addEventListener('click', function () {
-                eliminarGiftcard(giftcardElemento);
+                    cursoElemento.querySelector('.btn-borrar').addEventListener('click', function () {
+                        eliminarCurso(cursoId);
+                    });
+                }
             });
-        });
-    }
+
+            giftcardsAgregadas.forEach(giftcard => {
+                const giftcardElemento = document.createElement('li');
+                giftcardElemento.classList.add('carrito-elemento-lista');
+                giftcardElemento.innerHTML = `
+                    <p class="carrito-nombre-curso">GiftCard</p>
+                    <p class="carrito-precio-curso">Monto: ${giftcard.monto}</p>
+                    <button class="btn-borrar">Eliminar</button>
+                `;
+                carritoLista.appendChild(giftcardElemento);
+
+                giftcardElemento.querySelector('.btn-borrar').addEventListener('click', function () {
+                    eliminarGiftcard(giftcardElemento);
+                });
+            });
+        }
+    });
 }
+
 
 function eliminarCurso(cursoId) {
     let cursosAgregados = JSON.parse(sessionStorage.getItem('cursosAgregados')) || [];
