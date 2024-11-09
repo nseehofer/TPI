@@ -165,60 +165,22 @@ function mostrarModal() {
     };
 }
 
-function trasladarCarritoAlHeader() {
-    const removerCarritoDeLosBotones = document.querySelector('#remover-carrito-de-media-query');
-    if (removerCarritoDeLosBotones) {
-        removerCarritoDeLosBotones.remove();
-    } 
-    const contenedorLogo = document.querySelector('.js-logo-container');
+function moverCarritoLista() {
     
-    let crearDivParaContenedorCarrito = document.querySelector('.js_contenedor_carrito');
-    if (!crearDivParaContenedorCarrito) {
-        crearDivParaContenedorCarrito = document.createElement('div');
-        crearDivParaContenedorCarrito.classList.add('contenedor_carrito_btn');
-        crearDivParaContenedorCarrito.style.zIndex = '2000';
-        crearDivParaContenedorCarrito.style.width = 'auto';
-        crearDivParaContenedorCarrito.classList.add('contenedor_carrito');
-        crearDivParaContenedorCarrito.classList.add('js_contenedor_carrito');
-        crearDivParaContenedorCarrito.innerHTML = `
-            <img class="img-carrito" src="../images/carritoDeComprasColor.png" alt="CarroDeCompras">
-            <a href="./html/carritoDeCompra.html" class="numero-carrito-fijo js-numero-carrito">0</a>
-            <ul class="carrito-lista"></ul>`;
-        contenedorLogo.appendChild(crearDivParaContenedorCarrito);
-        const contenedorCarritoLista = document.querySelector('.carrito-lista');
-        contenedorCarritoLista.style.left = '-420%';
-    }
+    const carritoLista = document.querySelector('.carrito-lista');
+    const numeroCarrito = document.querySelector('.js-numero-carrito');
+        carritoLista.style.left = '-420%';
+        numeroCarrito.style.top = '0%';
 }
 
-function trasladarLogoAlHeader() {
-    const removerLogooDeLosBotones = document.querySelector('#remover-logueado-de-media-query');
-    if (removerLogooDeLosBotones) {
-        removerLogooDeLosBotones.remove();
-    } 
-    const contenedorLogo = document.querySelector('.js-logo-container');
-    
-    let crearDivParaContenedorLogo = document.querySelector('.js_contenedor_carrito');
-    if (!crearDivParaContenedorLogo) {
-        crearDivParaContenedorLogo = document.createElement('div');
-        crearDivParaContenedorLogo.classList.add('usuario_icon');
-        crearDivParaContenedorLogo.classList.add('js_usuario_icon');
-        crearDivParaContenedorLogo.innerHTML = `
-            <img class="icon-img" src="../iconos/usuario.png" alt="">`;
-        contenedorLogo.appendChild(crearDivParaContenedorLogo);
-    }
-}
 
 function verificarMediaQuery() {
-    const contenedorHeader = document.querySelector('.header');
+
     const mediaQuery768 = window.matchMedia('(max-width: 768px)');
     const mediaQuery575 = window.matchMedia('(max-width: 575px)');
     if (mediaQuery768.matches || mediaQuery575.matches) {
-        contenedorHeader.style.position = 'static';
-        trasladarCarritoAlHeader();
-        trasladarLogoAlHeader();
-        initCarrito();
+        moverCarritoLista();
     }
 }
 
 document.addEventListener('DOMContentLoaded', verificarMediaQuery);
-window.addEventListener('resize', verificarMediaQuery);

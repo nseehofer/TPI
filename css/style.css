@@ -678,6 +678,9 @@ body {
             width: 100%;
         }
 
+        .ocultar_carrito{
+            display:none;
+        }
 
 
         .header .contenedor_carrito_btn .btn-header {
@@ -820,6 +823,9 @@ body {
             width: 10%;
         }
 
+        .carrito-lista {
+            left: -420%;
+        }
 
     }
 
@@ -1183,6 +1189,10 @@ body {
         width: 100%;
     }
 
+    .ocultar_carrito{
+        display:none;
+    }
+
     .header form,
     .ocultar {
         display: none;
@@ -1345,6 +1355,11 @@ body {
 
     .contenedor-carrousel-medio-de-pago .flecha {
         width: 10%;
+    }
+
+
+    .carrito-lista {
+        left: -420%;
     }
 
 
@@ -2360,7 +2375,7 @@ details li {
 
 /*giftcard*/
 
-.header-giftcard{
+.header-giftcard {
     display: flex;
     justify-content: space-between;
     padding-left: 5%;
@@ -3280,7 +3295,7 @@ a {
 
 
 @media screen and (max-width: 768px) {
-    
+
 
 
     .section_principal_carrito {
@@ -3430,22 +3445,22 @@ a {
 
 .carrito-lista::-webkit-scrollbar-thumb {
     background: #888;
-    
+
     border-radius: 10px;
-    
+
 }
 
 .carrito-lista::-webkit-scrollbar-thumb:hover {
     background: #555;
-    
+
 }
 
 
 .carrito-lista {
     scrollbar-width: thin;
-    
+
     scrollbar-color: #888 #f1f1f1;
-    
+
 }
 
 .carrito-precio-curso,
@@ -3457,14 +3472,14 @@ a {
 
 .contenedor_carrito:hover .carrito-lista {
     display: block;
-    
+
 }
 
 
 .carrito-elemento-lista {
     display: flex;
     flex-direction: column;
-    
+
 }
 
 
@@ -3473,15 +3488,15 @@ a {
 .carrito-duracion-curso,
 .carrito-modalidad-curso {
     margin: 0;
-  
+
     font-size: 14px;
-  
+
 }
 
 
 .contenedor_carrito:hover {
     cursor: pointer;
-    
+
 }
 
 .carrito-nombre-curso {
@@ -3527,7 +3542,7 @@ a {
 }
 
 .btn-borrar-usuario {
-    padding:2px 7px;
+    padding: 2px 7px;
     border: none;
     border-radius: 2em;
     background-color: red;
@@ -3537,12 +3552,12 @@ a {
     transition: background-color 0.3s;
 }
 
-.div-contenedor-botones{
+.div-contenedor-botones {
     position: absolute;
     top: 100%;
     display: flex;
     gap: 5%;
-    left:40%;
+    left: 40%;
 }
 
 /**/
