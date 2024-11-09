@@ -114,7 +114,6 @@ function initCarrito() {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    console.log('El DOM está completamente cargado y listo para ser manipulado');
     initCarrito();
 });
 

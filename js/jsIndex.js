@@ -150,8 +150,7 @@ window.onload = function () {
     }
 };
 
-const todosLosCursos = document.querySelectorAll('.js-curso');
-console.log(todosLosCursos);
+
 
 const cursos = [
     { id: 1, nombre: 'Diseño UX/UI', precio: 20000, duracion: '13 meses', modalidad: 'Virtual', imagen: '../images/uxui.png' },
