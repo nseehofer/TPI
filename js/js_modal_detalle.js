@@ -178,6 +178,31 @@ const modalMode = document.getElementById("modal-course-mode");
 const modalDuration = document.getElementById("modal-course-duration");
 const modalPrice = document.getElementById("modal-course-price");
 
+//formulario para empresas
+
+
+function agregarYRedirigirACursoEmpresa() {
+    agregarCursoAlCarrito(); 
+    mostrarNumeroYContenidoCarrito();
+
+    const courseTitle = document.querySelector(".js-titulo-curso").textContent;
+    const coursePrice = document.querySelector(".js-precio-curso").textContent;
+
+    localStorage.setItem('cursoSeleccionado', courseTitle);
+    localStorage.setItem('precioSeleccionado', coursePrice);
+    window.location.href = "../html/formularioEmpresa.html"; 
+}
+
+const empresaBtn = document.querySelector(".btn.btn-empresa");
+empresaBtn.addEventListener("click", function (event) {    
+    event.preventDefault(); 
+
+    agregarYRedirigirACursoEmpresa(); 
+});
+
+
+
+
 inscribirseBtn.addEventListener("click", function (event) {
     event.preventDefault();
 

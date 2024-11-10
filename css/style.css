@@ -2335,38 +2335,81 @@ details li {
 }
 
 /*modal form inscripcion*/
+.btn-empresa {
+    display: inline-block ;
 
-.modal {
+    font-size: 1.2em;
+    font-weight: normal;
+}
+
+.modalResumenn {
     display: none;
     position: fixed;
-    z-index: 1;
+    z-index: 1000;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.5);
-    justify-content: center;
+    background-color: rgba(0,0,0,0.4);
     align-items: center;
-}
-
-.modal-content {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    width: 80%;
-    max-width: 400px;
+    justify-content: center;
+    
+  }
+  .btn-a {
+     display: inline;
+  }
+  .modal-contentidoo {
+    background-color: #f4f4f4;
     text-align: center;
-    position: relative;
-}
-
-.close {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 24px;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #dee2e6;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+   
+  }
+  
+  .cerrarModal {
+    color: #6c757d;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
     cursor: pointer;
-}
+    transition: color 0.3s ease;
+  }
+  
+  .cerrarModal:hover {
+    color: #333;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  /* Estilos adicionales para el contenido del modal */
+  .modal-contentidoo h2 {
+    margin:1em;
+    color:var(--azul);
+  }
+  
+  .modal-contentidoo p {
+    margin-bottom: 10px;
+    text-align: left;
+    margin-bottom: 1em;
+  }
+
+  @media screen and (max-width: 600px) {
+    .modal-contentidoo {
+      width: 95%;
+      margin: 10% auto;
+    }
+  }
+
+  .modalResumenn {
+    animation: fadeIn 0.3s ease-in-out;
+  }
+
 
 
 /*giftcard*/
