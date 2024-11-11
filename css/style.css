@@ -58,6 +58,10 @@ body {
 
 /* HEADER PRINCIPAL */
 
+.header-stikcy {
+    position:sticky;
+}
+
 .header {
     display: flex;
     position: fixed;
@@ -1179,6 +1183,7 @@ body {
         overflow: hidden;
         text-wrap: nowrap;
     }
+    
 
 }
 

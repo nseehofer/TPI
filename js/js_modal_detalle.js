@@ -182,7 +182,7 @@ const modalPrice = document.getElementById("modal-course-price");
 
 
 function agregarYRedirigirACursoEmpresa() {
-    agregarCursoAlCarrito(); 
+    agregarCursoAlCarrito();
     mostrarNumeroYContenidoCarrito();
 
     const courseTitle = document.querySelector(".js-titulo-curso").textContent;
@@ -190,14 +190,14 @@ function agregarYRedirigirACursoEmpresa() {
 
     localStorage.setItem('cursoSeleccionado', courseTitle);
     localStorage.setItem('precioSeleccionado', coursePrice);
-    window.location.href = "../html/formularioEmpresa.html"; 
+    window.location.href = "../html/formularioEmpresa.html";
 }
 
 const empresaBtn = document.querySelector(".btn.btn-empresa");
-empresaBtn.addEventListener("click", function (event) {    
-    event.preventDefault(); 
+empresaBtn.addEventListener("click", function (event) {
+    event.preventDefault();
 
-    agregarYRedirigirACursoEmpresa(); 
+    agregarYRedirigirACursoEmpresa();
 });
 
 
@@ -355,6 +355,8 @@ function verificarMediaQuery() {
     const mediaQuery575 = window.matchMedia('(max-width: 575px)');
     if (mediaQuery768.matches || mediaQuery575.matches) {
         moverCarritoLista();
+        const headerNodo = document.querySelector('.header');
+        headerNodo.style.position = 'sticky';
     }
 }
 
@@ -383,12 +385,12 @@ function mostrarBotones() {
             <button class="btn-borrar-usuario js-btn-eliminar-cuenta">Eliminar cuenta</button>
             `;
             divParaContenedorBtnUsuario.className += ' div-contenedor-botones';
-            
+
             divParaContenedorBtnUsuario.style.zIndex = '2000';
             divParaContenedorBtnUsuario.style.gap = '0.5rem';
             divParaContenedorBtnUsuario.style.flexDirection = 'column';
             divParaContenedorBtnUsuario.style.right = '6%';
-            
+
             contenedorBtnUsuario.appendChild(divParaContenedorBtnUsuario);
 
             document.querySelector('.js-btn-cerrar-sesion').addEventListener('click', cerrarSesion);
@@ -478,9 +480,9 @@ function eliminarUsuarioOCerrarSesion() {
     });
 }
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const emailUsuarioLogeado = localStorage.getItem('emailUsuarioLogeado');
-    
+
     if (emailUsuarioLogeado) {
         const usuarioIcons = document.querySelectorAll('.js_usuario_icon');
         usuarioIcons.forEach(icon => {
@@ -493,3 +495,4 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
