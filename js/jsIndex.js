@@ -380,37 +380,37 @@ function verificarMediaQuery() {
 
 document.addEventListener('DOMContentLoaded', verificarMediaQuery);
 
-
-
 document.addEventListener('DOMContentLoaded', eliminarUsuarioOCerrarSesion);
 
 function mostrarBotones() {
-    const contenedorBtnUsuario = document.querySelector('.js_contenedor_usuario_icon');
-    if (contenedorBtnUsuario && !contenedorBtnUsuario.querySelector('.btn-borrar-usuario')) {
-        let divParaContenedorBtnUsuario = document.createElement('div');
-        divParaContenedorBtnUsuario.innerHTML = `
-        <button class="btn-borrar-usuario js-btn-cerrar-sesion">Cerrar sesión</button>
-        <button class="btn-borrar-usuario js-btn-eliminar-cuenta">Eliminar cuenta</button>
-        `;
-        divParaContenedorBtnUsuario.className += ' div-contenedor-botones';
-        
-        divParaContenedorBtnUsuario.style.zIndex = '2000';
-        divParaContenedorBtnUsuario.style.gap = '0.5rem';
-        divParaContenedorBtnUsuario.style.flexDirection = 'column';
-        divParaContenedorBtnUsuario.style.right = '6%';
-        
-        contenedorBtnUsuario.appendChild(divParaContenedorBtnUsuario);
+    const contenedorBtnUsuarios = document.querySelectorAll('.js_usuario_icon');
+    contenedorBtnUsuarios.forEach(contenedorBtnUsuario => {
+        if (contenedorBtnUsuario && !contenedorBtnUsuario.querySelector('.btn-borrar-usuario')) {
+            let divParaContenedorBtnUsuario = document.createElement('div');
+            divParaContenedorBtnUsuario.innerHTML = `
+            <button class="btn-borrar-usuario js-btn-cerrar-sesion">Cerrar sesión</button>
+            <button class="btn-borrar-usuario js-btn-eliminar-cuenta">Eliminar cuenta</button>
+            `;
+            divParaContenedorBtnUsuario.className += ' div-contenedor-botones';
+            
+            divParaContenedorBtnUsuario.style.zIndex = '2000';
+            divParaContenedorBtnUsuario.style.gap = '0.5rem';
+            divParaContenedorBtnUsuario.style.flexDirection = 'column';
+            divParaContenedorBtnUsuario.style.right = '6%';
+            
+            contenedorBtnUsuario.appendChild(divParaContenedorBtnUsuario);
 
-        document.querySelector('.js-btn-cerrar-sesion').addEventListener('click', cerrarSesion);
-        document.querySelector('.js-btn-eliminar-cuenta').addEventListener('click', eliminarUsuario);
-        divParaContenedorBtnUsuario.addEventListener('mouseover', mantenerBotones);
-        divParaContenedorBtnUsuario.addEventListener('mouseout', ocultarBotones);
-    } else if (contenedorBtnUsuario) {
-        const botones = contenedorBtnUsuario.querySelector('.div-contenedor-botones');
-        if (botones) {
-            botones.style.display = 'flex';
+            document.querySelector('.js-btn-cerrar-sesion').addEventListener('click', cerrarSesion);
+            document.querySelector('.js-btn-eliminar-cuenta').addEventListener('click', eliminarUsuario);
+            divParaContenedorBtnUsuario.addEventListener('mouseover', mantenerBotones);
+            divParaContenedorBtnUsuario.addEventListener('mouseout', ocultarBotones);
+        } else if (contenedorBtnUsuario) {
+            const botones = contenedorBtnUsuario.querySelector('.div-contenedor-botones');
+            if (botones) {
+                botones.style.display = 'flex';
+            }
         }
-    }
+    });
 }
 
 function mantenerBotones(event) {
@@ -418,21 +418,25 @@ function mantenerBotones(event) {
 }
 
 function ocultarBotones(event) {
-    const contenedorLogoUsuario = document.querySelector('.js_usuario_icon');
-    const contenedorBtnUsuario = document.querySelector('.js_contenedor_usuario_icon');
+    const contenedorLogoUsuarios = document.querySelectorAll('.js_usuario_icon');
+    const contenedorBtnUsuarios = document.querySelectorAll('.js_usuario_icon');
 
-    if (!contenedorLogoUsuario || !contenedorBtnUsuario) {
-        console.error('No se encontró el contenedor del logo de usuario o el contenedor de botones de usuario.');
-        return;
-    }
+    contenedorLogoUsuarios.forEach((contenedorLogoUsuario, index) => {
+        const contenedorBtnUsuario = contenedorBtnUsuarios[index];
 
-    if (event.relatedTarget !== contenedorLogoUsuario && !contenedorLogoUsuario.contains(event.relatedTarget) &&
-        event.relatedTarget !== contenedorBtnUsuario && !contenedorBtnUsuario.contains(event.relatedTarget)) {
-        const botones = contenedorBtnUsuario.querySelector('.div-contenedor-botones');
-        if (botones) {
-            botones.style.display = 'none';
+        if (!contenedorLogoUsuario || !contenedorBtnUsuario) {
+            console.error('No se encontró el contenedor del logo de usuario o el contenedor de botones de usuario.');
+            return;
         }
-    }
+
+        if (event.relatedTarget !== contenedorLogoUsuario && !contenedorLogoUsuario.contains(event.relatedTarget) &&
+            event.relatedTarget !== contenedorBtnUsuario && !contenedorBtnUsuario.contains(event.relatedTarget)) {
+            const botones = contenedorBtnUsuario.querySelector('.div-contenedor-botones');
+            if (botones) {
+                botones.style.display = 'none';
+            }
+        }
+    });
 }
 
 function obtenerEmailUsuarioLogeado() {
@@ -472,16 +476,32 @@ function cerrarSesion() {
 }
 
 function eliminarUsuarioOCerrarSesion() {
-    if (window.location.pathname.includes('homeSesionIniciada.html')) {     
-        const contenedorLogoUsuario = document.querySelector('.js_usuario_icon');
+    const contenedorLogoUsuarios = document.querySelectorAll('.js_usuario_icon');
+    contenedorLogoUsuarios.forEach(contenedorLogoUsuario => {
         if (contenedorLogoUsuario) {
             contenedorLogoUsuario.addEventListener('mouseover', mostrarBotones);
             contenedorLogoUsuario.addEventListener('mouseout', ocultarBotones);
         } else {
             console.error('El elemento .js_usuario_icon no se encontró en el DOM.');
         }
-    }
+    });
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    const emailUsuarioLogeado = localStorage.getItem('emailUsuarioLogeado');
+    
+    if (emailUsuarioLogeado) {
+        const usuarioIcons = document.querySelectorAll('.js_usuario_icon');
+        usuarioIcons.forEach(icon => {
+            icon.style.display = 'block';
+        });
+
+        const btnsAEliminar = document.querySelectorAll('.btn-a-eliminar');
+        btnsAEliminar.forEach(btn => {
+            btn.style.display = 'none';
+        });
+    }
+});
 
 
 
@@ -501,59 +521,4 @@ document.addEventListener('DOMContentLoaded', () => {
             window.location.href = boton.href;
         });
     });
-});
-
-
-document.addEventListener('DOMContentLoaded', function() {
-    // Verificar si el usuario está logueado
-    const emailUsuarioLogeado = localStorage.getItem('emailUsuarioLogeado');
-    
-    if (emailUsuarioLogeado) {
-        // Lista de páginas donde se debe cambiar el header
-        const paginas = [
-            '../html/detalleDeCurso.html',
-            '../html/carritoDeCompra.html',
-              //'../html/giftCard.html', AVISAR A CECI
-            '../html/contacto.html',
-            '../html/calendario.html'
-        ];
-
-        // Obtener la URL actual
-        const urlActual = window.location.pathname;
-
-        // Verificar si la URL actual está en la lista de páginas
-        if (paginas.includes(urlActual)) {
-            // Mostrar los divs que estaban ocultos
-            const usuarioIcon = document.querySelectorAll('.js_usuario_icon');
-            usuarioIcon.forEach(icon => {
-                icon.style.display = 'block';
-            });
-
-            // Ocultar los enlaces de "Iniciar Sesión" y "Registrarse"
-            const btnsAEliminar = document.querySelectorAll('.btn-a-eliminar');
-            btnsAEliminar.forEach(btn => {
-                btn.style.display = 'none';
-            });
-        }
-    }
-});
-
-
-document.addEventListener('DOMContentLoaded', function() {
-
-    const emailUsuarioLogeado = localStorage.getItem('emailUsuarioLogeado');
-    
-    if (emailUsuarioLogeado) {
-    
-        const usuarioIcons = document.querySelectorAll('.js_usuario_icon');
-        usuarioIcons.forEach(icon => {
-            icon.style.display = 'block';
-        });
-
-   
-        const btnsAEliminar = document.querySelectorAll('.btn-a-eliminar');
-        btnsAEliminar.forEach(btn => {
-            btn.style.display = 'none';
-        });
-    }
 });
