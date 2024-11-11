@@ -216,3 +216,23 @@ function verificarMediaQuery() {
 
 document.addEventListener('DOMContentLoaded', verificarMediaQuery);
 window.addEventListener('resize', verificarMediaQuery);
+
+
+document.addEventListener('DOMContentLoaded', function() {
+
+    const emailUsuarioLogeado = localStorage.getItem('emailUsuarioLogeado');
+    
+    if (emailUsuarioLogeado) {
+      
+        const usuarioIcons = document.querySelectorAll('.js_usuario_icon');
+        usuarioIcons.forEach(icon => {
+            icon.style.display = 'block';
+        });
+
+       
+        const btnsAEliminar = document.querySelectorAll('.btn-a-eliminar');
+        btnsAEliminar.forEach(btn => {
+            btn.style.display = 'none';
+        });
+    }
+});

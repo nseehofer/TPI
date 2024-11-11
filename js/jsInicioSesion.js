@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function() {
         console.log("Inicio de sesión exitoso.");
         localStorage.setItem('emailUsuarioLogeado', email);
         console.log("Email del usuario logeado almacenado:", localStorage.getItem('emailUsuarioLogeado'));
-        window.location.href = '../homeSesionIniciada.html';
+        window.location.href = '../index.html';
     }
 
     document.getElementById('login-form').addEventListener('submit', function(event) {
