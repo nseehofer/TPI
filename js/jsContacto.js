@@ -92,3 +92,22 @@ function validarFormulario(event) {
 
 
 formulario.addEventListener('submit', validarFormulario);
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Verificar si el usuario está logueado
+    const emailUsuarioLogeado = localStorage.getItem('emailUsuarioLogeado');
+    
+    if (emailUsuarioLogeado) {
+        // Mostrar los divs que estaban ocultos
+        const usuarioIcons = document.querySelectorAll('.js_usuario_icon');
+        usuarioIcons.forEach(icon => {
+            icon.style.display = 'block';
+        });
+
+        // Ocultar los enlaces de "Iniciar Sesión" y "Registrarse"
+        const btnsAEliminar = document.querySelectorAll('.btn-a-eliminar');
+        btnsAEliminar.forEach(btn => {
+            btn.style.display = 'none';
+        });
+    }
+});

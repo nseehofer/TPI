@@ -502,3 +502,38 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Verificar si el usuario está logueado
+    const emailUsuarioLogeado = localStorage.getItem('emailUsuarioLogeado');
+    
+    if (emailUsuarioLogeado) {
+        // Lista de páginas donde se debe cambiar el header
+        const paginas = [
+            '../html/detalleDeCurso.html',
+            '../html/carritoDeCompra.html',
+              //'../html/giftCard.html', AVISAR A CECI
+            '../html/contacto.html',
+            '../html/calendario.html'
+        ];
+
+        // Obtener la URL actual
+        const urlActual = window.location.pathname;
+
+        // Verificar si la URL actual está en la lista de páginas
+        if (paginas.includes(urlActual)) {
+            // Mostrar los divs que estaban ocultos
+            const usuarioIcon = document.querySelectorAll('.js_usuario_icon');
+            usuarioIcon.forEach(icon => {
+                icon.style.display = 'block';
+            });
+
+            // Ocultar los enlaces de "Iniciar Sesión" y "Registrarse"
+            const btnsAEliminar = document.querySelectorAll('.btn-a-eliminar');
+            btnsAEliminar.forEach(btn => {
+                btn.style.display = 'none';
+            });
+        }
+    }
+});
