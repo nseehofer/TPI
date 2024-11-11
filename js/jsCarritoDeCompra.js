@@ -208,8 +208,6 @@ function verificarMediaQuery() {
     const mediaQuery575 = window.matchMedia('(max-width: 575px)');
     if (mediaQuery768.matches || mediaQuery575.matches) {
         contenedorHeader.style.position = 'static';
-        const numeroDelCarritoAlineado = document.querySelector('.js-numero-carrito');
-        numeroDelCarritoAlineado.style.textAlign = 'center';
         moverCarritoLista();
         initCarritoCarritoDeCompra();
 
