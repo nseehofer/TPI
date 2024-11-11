@@ -382,51 +382,106 @@ document.addEventListener('DOMContentLoaded', verificarMediaQuery);
 
 
 
-document.querySelectorAll('.js_usuario_icon').forEach(icono => {
-    icono.style.cursor = 'pointer';
+document.addEventListener('DOMContentLoaded', eliminarUsuarioOCerrarSesion);
 
-    icono.addEventListener('click', function() {
-        const botonesContenedor = document.createElement('div');
-        botonesContenedor.className += ' div-contenedor-botones';
-        
-        botonesContenedor.style.zIndex = '2000';
-        botonesContenedor.style.gap = '0.5rem';
-        botonesContenedor.style.flexDirection = 'column';
-        botonesContenedor.style.right = '6%';
-        botonesContenedor.innerHTML = `
-            <button class="btn-borrar-usuario js-btn-cerrar-sesion">Cerrar sesión</button>
-            <button class="btn-borrar-usuario js-btn-eliminar-cuenta">Eliminar cuenta</button>
+function mostrarBotones() {
+    const contenedorBtnUsuario = document.querySelector('.js_contenedor_usuario_icon');
+    if (contenedorBtnUsuario && !contenedorBtnUsuario.querySelector('.btn-borrar-usuario')) {
+        let divParaContenedorBtnUsuario = document.createElement('div');
+        divParaContenedorBtnUsuario.innerHTML = `
+        <button class="btn-borrar-usuario js-btn-cerrar-sesion">Cerrar sesión</button>
+        <button class="btn-borrar-usuario js-btn-eliminar-cuenta">Eliminar cuenta</button>
         `;
-
+        divParaContenedorBtnUsuario.className += ' div-contenedor-botones';
         
-        if (icono.nextElementSibling && icono.nextElementSibling.classList.contains('btn-container')) {
-            icono.nextElementSibling.remove();
-        } else {
-            botonesContenedor.classList.add('btn-container');
-            icono.insertAdjacentElement('afterend', botonesContenedor);
+        divParaContenedorBtnUsuario.style.zIndex = '2000';
+        divParaContenedorBtnUsuario.style.gap = '0.5rem';
+        divParaContenedorBtnUsuario.style.flexDirection = 'column';
+        divParaContenedorBtnUsuario.style.right = '6%';
+        
+        contenedorBtnUsuario.appendChild(divParaContenedorBtnUsuario);
 
-            
-            botonesContenedor.querySelector('.js-btn-cerrar-sesion').addEventListener('click', function() {
-                localStorage.removeItem('emailUsuarioLogeado');
-                alert('Sesión cerrada');
-            });
-
-            botonesContenedor.querySelector('.js-btn-eliminar-cuenta').addEventListener('click', function() {
-                const emailUsuarioLogeado = localStorage.getItem('emailUsuarioLogeado');
-                if (emailUsuarioLogeado) {
-                    const usuarios = JSON.parse(localStorage.getItem('usuarios')) || {};
-                    delete usuarios[emailUsuarioLogeado];
-                    localStorage.setItem('usuarios', JSON.stringify(usuarios));
-                    localStorage.removeItem('emailUsuarioLogeado');
-                    alert('Cuenta eliminada');
-                } else {
-                    alert('No hay usuario logeado.');
-                }
-            });
+        document.querySelector('.js-btn-cerrar-sesion').addEventListener('click', cerrarSesion);
+        document.querySelector('.js-btn-eliminar-cuenta').addEventListener('click', eliminarUsuario);
+        divParaContenedorBtnUsuario.addEventListener('mouseover', mantenerBotones);
+        divParaContenedorBtnUsuario.addEventListener('mouseout', ocultarBotones);
+    } else if (contenedorBtnUsuario) {
+        const botones = contenedorBtnUsuario.querySelector('.div-contenedor-botones');
+        if (botones) {
+            botones.style.display = 'flex';
         }
-    });
-});
+    }
+}
 
+function mantenerBotones(event) {
+    event.stopPropagation();
+}
+
+function ocultarBotones(event) {
+    const contenedorLogoUsuario = document.querySelector('.js_usuario_icon');
+    const contenedorBtnUsuario = document.querySelector('.js_contenedor_usuario_icon');
+
+    if (!contenedorLogoUsuario || !contenedorBtnUsuario) {
+        console.error('No se encontró el contenedor del logo de usuario o el contenedor de botones de usuario.');
+        return;
+    }
+
+    if (event.relatedTarget !== contenedorLogoUsuario && !contenedorLogoUsuario.contains(event.relatedTarget) &&
+        event.relatedTarget !== contenedorBtnUsuario && !contenedorBtnUsuario.contains(event.relatedTarget)) {
+        const botones = contenedorBtnUsuario.querySelector('.div-contenedor-botones');
+        if (botones) {
+            botones.style.display = 'none';
+        }
+    }
+}
+
+function obtenerEmailUsuarioLogeado() {
+    return localStorage.getItem('emailUsuarioLogeado');
+}
+
+function eliminarUsuario() {
+    const emailUsuarioLogeado = obtenerEmailUsuarioLogeado();
+    if (!emailUsuarioLogeado) {
+        console.error('No se pudo obtener el email del usuario logeado.');
+        return;
+    }
+
+    console.log('Estado del localStorage antes de eliminar:', localStorage.getItem('usuarios'));
+
+    const usuarios = JSON.parse(localStorage.getItem('usuarios')) || {};
+    if (usuarios[emailUsuarioLogeado]) {
+        delete usuarios[emailUsuarioLogeado];
+        localStorage.setItem('usuarios', JSON.stringify(usuarios));
+        console.log(`Usuario con email ${emailUsuarioLogeado} eliminado.`);
+        console.log('Estado del localStorage después de eliminar:', localStorage.getItem('usuarios'));
+    } else {
+        console.error(`Usuario con email ${emailUsuarioLogeado} no encontrado.`);
+    }
+
+    localStorage.removeItem('emailUsuarioLogeado');
+    console.log('Email del usuario logeado eliminado del localStorage.');
+
+    window.location.href = 'index.html';
+}
+
+function cerrarSesion() {
+    localStorage.removeItem('emailUsuarioLogeado');
+    console.log('Email del usuario logeado eliminado del localStorage.');
+
+    window.location.href = 'index.html';
+}
+
+function eliminarUsuarioOCerrarSesion() {
+    if (window.location.pathname.includes('homeSesionIniciada.html')) {     
+        const contenedorLogoUsuario = document.querySelector('.js_usuario_icon');
+        if (contenedorLogoUsuario) {
+            contenedorLogoUsuario.addEventListener('mouseover', mostrarBotones);
+            contenedorLogoUsuario.addEventListener('mouseout', ocultarBotones);
+        } else {
+            console.error('El elemento .js_usuario_icon no se encontró en el DOM.');
+        }
+    }
+}
 
 
 
@@ -470,8 +525,8 @@ document.addEventListener('DOMContentLoaded', function() {
         if (paginas.includes(urlActual)) {
             // Mostrar los divs que estaban ocultos
             const usuarioIcon = document.querySelectorAll('.js_usuario_icon');
-            usuarioIcon.forEach(icono => {
-                icono.style.display = 'block';
+            usuarioIcon.forEach(icon => {
+                icon.style.display = 'block';
             });
 
             // Ocultar los enlaces de "Iniciar Sesión" y "Registrarse"
@@ -491,8 +546,8 @@ document.addEventListener('DOMContentLoaded', function() {
     if (emailUsuarioLogeado) {
     
         const usuarioIcons = document.querySelectorAll('.js_usuario_icon');
-        usuarioIcons.forEach(icono => {
-            icono.style.display = 'block';
+        usuarioIcons.forEach(icon => {
+            icon.style.display = 'block';
         });
 
    
