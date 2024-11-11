@@ -456,14 +456,14 @@ function eliminarUsuario() {
     localStorage.removeItem('emailUsuarioLogeado');
     console.log('Email del usuario logeado eliminado del localStorage.');
 
-    window.location.href = 'index.html';
+    window.location.href = '../index.html';
 }
 
 function cerrarSesion() {
     localStorage.removeItem('emailUsuarioLogeado');
     console.log('Email del usuario logeado eliminado del localStorage.');
 
-    window.location.href = 'index.html';
+    window.location.href = '../index.html';
 }
 
 function eliminarUsuarioOCerrarSesion() {
