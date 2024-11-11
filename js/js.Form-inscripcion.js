@@ -106,9 +106,26 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const inscritos = JSON.parse(localStorage.getItem('inscritos'));
         inscritos.forEach((inscrito, index) => {
-            const p = document.createElement('p');
-            p.textContent = `Persona ${index + 1}: ${inscrito.nombre} ${inscrito.apellido} - DNI: ${inscrito.dni} - Email: ${inscrito.email}`;
-            listaInscritos.appendChild(p);
+            const personaDiv = document.createElement('div');
+            personaDiv.classList.add('persona-div'); 
+        
+            const personaIndex = document.createElement('p');
+            personaIndex.innerHTML = `<span class="info-negrita">Persona ${index + 1}:</span>`;
+            personaDiv.appendChild(personaIndex);
+        
+            const nombreApellido = document.createElement('p');
+            nombreApellido.innerHTML = `<span class="info-negrita">Nombre y Apellido:</span> ${inscrito.nombre} ${inscrito.apellido}`;
+            personaDiv.appendChild(nombreApellido);
+        
+            const dni = document.createElement('p');
+            dni.innerHTML = `<span class="info-negrita">DNI:</span> ${inscrito.dni}`;
+            personaDiv.appendChild(dni);
+    
+            const email = document.createElement('p');
+            email.innerHTML = `<span class="info-negrita">Email:</span> ${inscrito.email}`;
+            personaDiv.appendChild(email);
+        
+            listaInscritos.appendChild(personaDiv);
         });
 
         document.getElementById('totalPersonas-inscriptos').textContent = contadorPersonas.textContent;

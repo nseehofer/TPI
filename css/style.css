@@ -8,6 +8,7 @@
     --grisIntermedio: #b3b3b3;
     --grisClaro: #f0f0f0;
     --blanco: white;
+    --azulClarito:#dff3f4;
 }
 
 * {
@@ -2341,6 +2342,18 @@ details li {
     font-size: 1.2em;
     font-weight: normal;
 }
+.persona-div {
+    background-color:var(--azulClarito);
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+
+.info-negrita {
+    font-weight: bold;
+}
+
 
 .modalResumenn {
     display: none;
