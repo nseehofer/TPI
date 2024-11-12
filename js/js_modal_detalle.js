@@ -242,8 +242,19 @@ function agregarCursoAlCarrito() {
         let numeroActual = parseInt(sessionStorage.getItem('numeroCarrito')) || 0;
         numeroActual += 1;
         sessionStorage.setItem('numeroCarrito', numeroActual);
-        cartCounter.textContent = numeroActual.toString();
+        actualizarNumeroCarrito(numeroActual);
     }
+}
+
+function agregarGiftcardAlCarrito(giftcard) {
+    let giftcardsAgregadas = JSON.parse(sessionStorage.getItem('giftcardsAgregadas')) || [];
+    giftcardsAgregadas.push(giftcard);
+    sessionStorage.setItem('giftcardsAgregadas', JSON.stringify(giftcardsAgregadas));
+
+    let numeroActual = parseInt(sessionStorage.getItem('numeroCarrito')) || 0;
+    numeroActual += 1;
+    sessionStorage.setItem('numeroCarrito', numeroActual);
+    actualizarNumeroCarrito(numeroActual);
 }
 
 function cerrarModal() {
@@ -260,22 +271,26 @@ window.addEventListener("click", function (event) {
     }
 });
 
-function mostrarNumeroYContenidoCarrito() {
+function actualizarNumeroCarrito(numero) {
     const numeroCarritos = document.querySelectorAll('.js-numero-carrito');
-    let numeroActual = parseInt(sessionStorage.getItem('numeroCarrito')) || 0;
-
     numeroCarritos.forEach(numeroCarrito => {
-        numeroCarrito.textContent = numeroActual.toString();
+        numeroCarrito.textContent = numero.toString();
     });
+}
+
+function mostrarNumeroYContenidoCarrito() {
+    let numeroActual = parseInt(sessionStorage.getItem('numeroCarrito')) || 0;
+    actualizarNumeroCarrito(numeroActual);
 
     let cursosAgregados = JSON.parse(sessionStorage.getItem('cursosAgregados')) || [];
+    let giftcardsAgregadas = JSON.parse(sessionStorage.getItem('giftcardsAgregadas')) || [];
 
     const carritoListas = document.querySelectorAll('.carrito-lista');
 
     carritoListas.forEach(carritoLista => {
         carritoLista.innerHTML = '';
 
-        if (cursosAgregados.length === 0) {
+        if (cursosAgregados.length === 0 && giftcardsAgregadas.length === 0) {
             carritoLista.innerHTML = '<p>No se agregaron cursos</p>';
         } else {
             const datosSimulados = JSON.parse(localStorage.getItem('datos'));
@@ -304,11 +319,25 @@ function mostrarNumeroYContenidoCarrito() {
             } else {
                 console.error('Los cursos no son un array.');
             }
+
+            giftcardsAgregadas.forEach(giftcard => {
+                const giftcardElemento = document.createElement('li');
+                giftcardElemento.classList.add('carrito-elemento-lista');
+                giftcardElemento.setAttribute('data-monto', giftcard.monto);
+                giftcardElemento.innerHTML = `
+                    <p class="carrito-nombre-curso">GiftCard</p>
+                    <p class="carrito-precio-curso">Monto: ${giftcard.monto}</p>
+                    <button class="btn-borrar">Eliminar</button>
+                `;
+                carritoLista.appendChild(giftcardElemento);
+
+                giftcardElemento.querySelector('.btn-borrar').addEventListener('click', function () {
+                    eliminarGiftcard(giftcard);
+                });
+            });
         }
     });
 }
-
-
 
 function eliminarCurso(cursoId) {
     let cursosAgregados = JSON.parse(sessionStorage.getItem('cursosAgregados')) || [];
@@ -319,10 +348,7 @@ function eliminarCurso(cursoId) {
     if (numeroActual > 0) {
         numeroActual -= 1;
         sessionStorage.setItem('numeroCarrito', numeroActual);
-
-        document.querySelectorAll('.js-numero-carrito').forEach(numeroCarrito => {
-            numeroCarrito.textContent = numeroActual.toString();
-        });
+        actualizarNumeroCarrito(numeroActual);
     }
 
     document.querySelectorAll('.carrito-lista').forEach(carritoLista => {
@@ -331,11 +357,41 @@ function eliminarCurso(cursoId) {
             cursoElemento.remove();
         }
 
-        if (cursosAgregados.length === 0) {
+        if (cursosAgregados.length === 0 && JSON.parse(sessionStorage.getItem('giftcardsAgregadas')).length === 0) {
             carritoLista.innerHTML = '<p>No se agregaron cursos</p>';
         }
     });
 }
+
+function eliminarGiftcard(giftcard) {
+    let giftcardsAgregadas = JSON.parse(sessionStorage.getItem('giftcardsAgregadas')) || [];
+    giftcardsAgregadas = giftcardsAgregadas.filter(g => g.monto !== giftcard.monto);
+    sessionStorage.setItem('giftcardsAgregadas', JSON.stringify(giftcardsAgregadas));
+
+    let numeroActual = parseInt(sessionStorage.getItem('numeroCarrito')) || 0;
+    if (numeroActual > 0) {
+        numeroActual -= 1;
+        sessionStorage.setItem('numeroCarrito', numeroActual);
+        actualizarNumeroCarrito(numeroActual);
+    }
+
+    document.querySelectorAll('.carrito-lista').forEach(carritoLista => {
+        const giftcardElemento = carritoLista.querySelector(`li[data-monto="${giftcard.monto}"]`);
+        if (giftcardElemento) {
+            giftcardElemento.remove();
+        }
+
+        if (JSON.parse(sessionStorage.getItem('cursosAgregados')).length === 0 && giftcardsAgregadas.length === 0) {
+            carritoLista.innerHTML = '<p>No se agregaron cursos</p>';
+        }
+    });
+}
+
+mostrarNumeroYContenidoCarrito();
+
+
+
+//////////////////
 
 function moverCarritoLista() {
     document.querySelectorAll('.carrito-lista').forEach(carritoLista => {
@@ -346,7 +402,6 @@ function moverCarritoLista() {
         numeroCarrito.style.top = '0%';
     });
 }
-
 
 
 function verificarMediaQuery() {
@@ -361,14 +416,6 @@ function verificarMediaQuery() {
 }
 
 document.addEventListener('DOMContentLoaded', verificarMediaQuery);
-
-
-
-function initCarrito() {
-    const pathname = window.location.pathname;
-    mostrarNumeroYContenidoCarrito();
-
-}
 
 
 ///////////////////////
