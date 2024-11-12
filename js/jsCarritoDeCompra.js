@@ -189,9 +189,9 @@ function initCarritoCarritoDeCompra() {
     }
 }
 
-if (window.location.pathname.includes('carritoDeCompra.html')) {
+
     initCarritoCarritoDeCompra();
-}
+
 
 
 
