@@ -1222,7 +1222,6 @@ body {
 
     .header .contenedor_carrito_btn {
         justify-content: flex-end;
-        width: 38%;
     }
 
     .header .contenedor_carrito_btn .btn-header {
