@@ -27,8 +27,9 @@ contadorCaracteres.style.color = 'gray';
 consulta.insertAdjacentElement('afterend', contadorCaracteres);
 
 consulta.addEventListener('input', () => {
-    const caracteresRestantes = maxCaracteres - consulta.value.length;
-    contadorCaracteres.textContent = `Caracteres restantes: ${caracteresRestantes}`;
+    const caracteresUtilizados = consulta.value.length;
+    const caracteresRestantes = maxCaracteres - caracteresUtilizados;
+    contadorCaracteres.innerHTML = `Caracteres utilizados: ${caracteresUtilizados}<br>Caracteres restantes: ${caracteresRestantes}`;
     
     if (consulta.value.length > maxCaracteres) {
         consulta.value = consulta.value.substring(0, maxCaracteres);
