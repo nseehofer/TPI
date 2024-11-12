@@ -248,3 +248,20 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+
+///////////////
+
+function verificarMediaQuery() {
+
+    const mediaQuery768 = window.matchMedia('(max-width: 768px)');
+    const mediaQuery575 = window.matchMedia('(max-width: 575px)');
+    if (mediaQuery768.matches || mediaQuery575.matches) {
+        const headerNodo = document.querySelector('.header');
+        const numeroCarritoNodo = document.querySelector('.js-numero-carrito');
+        headerNodo.style.position = 'sticky';
+        numeroCarritoNodo.style.top ='0%';
+    }
+}
+
+document.addEventListener('DOMContentLoaded', verificarMediaQuery);

@@ -194,6 +194,7 @@ if (window.location.pathname.includes('carritoDeCompra.html')) {
 }
 
 
+
 function moverCarritoLista() {
 
     const carritoLista = document.querySelector('.carrito-lista');
