@@ -2432,6 +2432,10 @@ details li {
 
 
 /*giftcard*/
+.main-gift, .body-gift{
+    min-height: 100vh;
+    overflow-x: hidden;
+}
 
 .header-giftcard {
     display: flex;
@@ -2439,6 +2443,13 @@ details li {
     padding-left: 5%;
     padding-right: 5%;
 }
+.buscador-enGift{
+    width: 16em;
+   padding:.3em ;
+    border-radius: 1em;
+    border:1px var(--grisOscuro) solid;
+}
+
 
 .contenedor_principal_giftcard {
     display: grid;
@@ -3160,6 +3171,9 @@ a {
         justify-items: center;
         padding: 0;
         width: 99%;
+    }
+    .buscador-enGift{
+       display: none;
     }
 
     .contenedor-giftcard,
